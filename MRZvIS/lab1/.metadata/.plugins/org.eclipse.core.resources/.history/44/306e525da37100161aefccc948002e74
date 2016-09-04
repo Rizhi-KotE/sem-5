@@ -1,0 +1,10 @@
+#include <iostream>
+#include <SFML/Graphics.hpp>
+
+int main()
+{
+	sf::Image image("/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/1470409247115339106.jpg");
+    std::cout << "Hello World!" << std::endl;
+    return 0;
+}
+

@@ -1,0 +1,5 @@
+#include "say_hello.h"
+
+char *say_hello(){
+    return "Hello, world!";
+}

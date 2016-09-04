@@ -1,0 +1,12 @@
+#include <iostream>
+#include "CImg.h"
+
+using namespace std;
+
+int main()
+{
+	cimg_library::CImg image("/home/rizhi\-kote/Student/CImg-1.7.5/CImg.h");
+    cout << "Hello World!" << endl;
+    return 0;
+}
+
