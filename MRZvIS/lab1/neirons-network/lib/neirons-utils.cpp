@@ -7,16 +7,37 @@
 using namespace std;
 
 template <typename T>
+vector<T> parse_vector(const char *str){
+    stringstream ss(str);
+    int size;
+        ss >> size;
+    T *mas = new T[size];
+    for(int i = 0; i < size && ss; i++){
+        ss >> mas[i];
+    }
+    return vector<T>(mas, size);
+}
+
+template <typename T>
+vector<T> parse_vector(string str){
+    return parse_vector<T>(str.c_str());
+}
+
+
+
+template <typename T>
 void parse_weights(neiron<T> &n, stringstream &ss){
     int size;
     if(ss){
         ss >> size;
     }
-    T *mas = new T[size];
+    vector<T> mas(size);
     for(int i = 0; i < size && ss; i++){
-        ss >> mas[i];
+        T number;
+        ss >> number;
+        mas[i] = number;
     }
-    set_weights(n, simple_mas<T>(mas, size));
+    set_weights(n, mas);
 }
 
 template <typename T>
@@ -50,12 +71,25 @@ neiron<double> load_neiron(const string filename){
     return parse_neiron(s.c_str());
 }
 
+template <typename T>
+string encode_vector(T *mas, int length){
+    vector<T> v(mas);
+    return encode_vector(v);
+}
+
+template <typename T>
+string encode_vector(vector<T> mas){
+    stringstream ss;
+    ss << mas.size();
+    for(int i = 0; i < mas.size(); i++){
+        ss << " " << mas[i];
+    }
+    return ss.str();
+}
+
 string encode_neiron(neiron<double> n){
     stringstream ss;
-    ss << n.weights.length;
-    for(int i = 0; i < n.weights.length; i++){
-        ss << " " << n.weights.mas[i];
-    }
+    ss << encode_vector(n.weights);
     ss << " " << n.porog;
     return ss.str();
 }
@@ -65,4 +99,45 @@ bool save_neiron(const string filename, neiron<double> n){
     ofstream F(filename.c_str());
     F << str.c_str();
     return true;
+}
+
+template <typename T>
+T **parse_matrix(string str){
+    stringstream ss(str);
+    int length = ss.get();
+    T **matrix = new T*[length];
+    int i = 0;
+    while(ss){
+        string line;
+        std::getline(ss, line);
+        vector<T> mas = parse_vector<T>(line);
+        matrix[i] = mas.mas;
+        i++;
+    }
+    return matrix;
+}
+
+template <typename T>
+string encode_matrix(T **matrix, int width, int height){
+    stringstream ss;
+    ss << height;
+    for(int i = 0; i < height; i++){
+        ss << encode_vector(matrix[i], width);
+    }
+    return ss.str();
+}
+
+std::string read_file(std::string filename){
+    ifstream F(filename.c_str());
+    stringstream ss;
+    while(F){
+        char simbol = F.get();
+        ss << simbol;
+    }
+    return ss.str();
+}
+
+void write_file(std::string filename, std::string content){
+    ofstream F(filename.c_str());
+    F << content;
 }

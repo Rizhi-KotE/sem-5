@@ -1,8 +1,9 @@
 #ifndef TRIPLE_H
 #define TRIPLE_H
 
-#include <simple_mas.h>
+#include <vector>
 
+using namespace std;
 template<typename T, typename E, typename D>
 struct triple{
     T first;

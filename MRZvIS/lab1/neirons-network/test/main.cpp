@@ -2,41 +2,41 @@
 #include <nw-math.h>
 #include <neiron.h>
 #include <neirons-utils.h>
-#include <simple_mas.h>
 #include "triple.h"
 #include <boost/test/included/unit_test.hpp>
 #include <iostream>
 
-triple<simple_mas<double>, simple_mas<double>, double > init_simple_vectors(){
-    double *array = new double[3]{1, 2, 3};
-    double *array2 = new double[3]{1, 2, 3};
-    simple_mas<double> mas1(array, 3);
-    simple_mas<double> mas2(array2, 3);
-    return triple<simple_mas<double>, simple_mas<double>, double >(mas1, mas2, 14);
+
+triple<vector<double>, vector<double>, double > init_simple_vectors(){
+    double *mas1 = new double[3]{1, 2, 3};
+    double *mas2 = new double[3]{1, 2, 3};
+    vector<double> array1(mas1, mas1+3);
+    vector<double> array2(mas2, mas2+3);
+    return triple<vector<double>, vector<double>, double >(array1, array1, 14);
 }
 
 BOOST_AUTO_TEST_CASE (scalar_composition_test_1){
-    triple<simple_mas<double>, simple_mas<double>, double> inits = init_simple_vectors();
-    BOOST_CHECK(scalar_composition(inits.first.mas, inits.second.mas, inits.first.length)==inits.third);
+    triple<vector<double>, vector<double>, double > inits = init_simple_vectors();
+    BOOST_CHECK(scalar_composition(inits.first, inits.second)==inits.third);
 
 }
 
 BOOST_AUTO_TEST_CASE (scalar_composition_test_2){
-    triple<simple_mas<double>, simple_mas<double>, double> inits = init_simple_vectors();
+    triple<vector<double>, vector<double>, double> inits = init_simple_vectors();
     BOOST_CHECK(scalar_composition(inits.first, inits.second)==inits.third);
 }
 
 
 
 BOOST_AUTO_TEST_CASE (calc_neiron_out_signal){
-    triple<simple_mas<double>, simple_mas<double>, double> inits = init_simple_vectors();
+    triple<vector<double>, vector<double>, double> inits = init_simple_vectors();
     neiron<double> n = create_neiron<double>();
     set_signals(n, inits.first);
     set_weights(n, inits.second);
-    BOOST_CHECK_EQUAL(inits.first.mas[0], 1);
-    BOOST_CHECK_EQUAL(n.in_signals.mas[0], 1.);
-    BOOST_CHECK_EQUAL(n.in_signals.mas, inits.first.mas);
-    BOOST_CHECK_EQUAL(n.weights.mas, inits.second.mas);
+    BOOST_CHECK_EQUAL_COLLECTIONS(n.in_signals.begin(),n.in_signals.end(),
+                      inits.first.begin(), inits.first.end());
+    BOOST_CHECK_EQUAL_COLLECTIONS(n.weights.begin(),n.weights.end(),
+                      inits.second.begin(),inits.second.end());
     BOOST_CHECK_EQUAL(neiron_function(n), inits.third);
 }
 
@@ -45,7 +45,7 @@ BOOST_AUTO_TEST_CASE (parse_neiron_test){
     neiron<double> n = parse_neiron(str);
 
     double *mas = new double[3]{1, 2, 3};
-    double *weights = n.weights.mas;
+    double *weights = n.weights.data();
     double step = 2;
     BOOST_CHECK_EQUAL_COLLECTIONS(weights, weights+3, mas, mas+3);
     BOOST_CHECK_EQUAL(n.porog, step);
@@ -56,7 +56,7 @@ BOOST_AUTO_TEST_CASE (load_neiron_test){
     neiron<double> n = load_neiron("/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/neirons-network/test/neiron.txt");
 
     double *mas = new double[3]{1, 2, 3};
-    double *weights = n.weights.mas;
+    double *weights = n.weights.data();
     double step = 2;
     BOOST_CHECK_EQUAL_COLLECTIONS(weights, weights+3, mas, mas+3);
     BOOST_CHECK_EQUAL(n.porog, step);
@@ -81,3 +81,9 @@ BOOST_AUTO_TEST_CASE (save_neiron_test){
     BOOST_CHECK_EQUAL(encode_neiron(result), str);
 }
 
+BOOST_AUTO_TEST_CASE (encode_vector_test){
+    double *mas = new double[3]{1, 2, 3};
+    vector<double> v(mas, mas+3);
+    int length = 3;
+    BOOST_CHECK_EQUAL(encode_vector(v), "3 1 2 3");
+}

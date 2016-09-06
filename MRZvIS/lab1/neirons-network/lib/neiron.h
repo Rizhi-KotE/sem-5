@@ -1,30 +1,29 @@
 #ifndef NEIRONCACHED_H
 #define NEIRONCACHED_H
 #include <nw-math.h>
-#include <simple_mas.h>
 
 template <typename T>
 struct neiron
 {
-    simple_mas<T> in_signals;
-    simple_mas<T> weights;
+    vector<T> in_signals;
+    vector<T> weights;
 
     bool is_out_signal_calcuated;
     T out_signal_value;
     T porog;
-    T (*sinaptic_function)(simple_mas<T>, simple_mas<T>);
+    T (*sinaptic_function)(vector<T>, vector<T>);
     T (*activation_function)(T , T);
     T (*neiron_function)(neiron);
 };
 
 template<typename T>
-void set_signals(neiron<T> &n, simple_mas<T> mas){
+void set_signals(neiron<T> &n, vector<T> mas){
     n.in_signals = mas;
     n.is_out_signal_calcuated = false;
 }
 
 template<typename T>
-void set_weights(neiron<T> &n, simple_mas<T> mas){
+void set_weights(neiron<T> &n, vector<T> mas){
     n.weights = mas;
     n.is_out_signal_calcuated = false;
 }
@@ -46,7 +45,7 @@ int neiron_function(neiron<T> &n){
 }
 
 template<typename T>
-T sinaptic_function(simple_mas<T> s, simple_mas<T> w){
+T sinaptic_function(vector<T> s, vector<T> w){
     return scalar_composition(s, w);
 }
 
