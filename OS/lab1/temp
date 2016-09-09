@@ -1,0 +1,24 @@
+top - 23:44:03 up  6:18,  3 users,  load average: 1,00, 0,97, 0,68
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4,9 us,  2,0 sy,  0,1 ni, 91,7 id,  1,3 wa,  0,0 hi,  0,1 si,  0,0 st
+КиБ Mem:   3794700 total,  3740356 used,    54344 free,   147656 buffers
+КиБ Swap:  4095696 total,    78040 used,  4017656 free.  1392132 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+12538 rizhi-k+  20   0 4648984 527800  59516 S   0,0 13,9   1:06.71 java
+
+top - 23:44:04 up  6:18,  3 users,  load average: 1,00, 0,97, 0,68
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4,5 us,  2,2 sy,  0,0 ni, 92,0 id,  1,2 wa,  0,0 hi,  0,0 si,  0,0 st
+КиБ Mem:   3794700 total,  3740356 used,    54344 free,   147656 buffers
+КиБ Swap:  4095696 total,    78040 used,  4017656 free.  1392132 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+12538 rizhi-k+  20   0 4648984 527800  59516 S   0,0 13,9   1:06.71 java
+
+top - 23:44:05 up  6:18,  3 users,  load average: 1,00, 0,97, 0,68
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 14,8 us,  2,6 sy,  0,0 ni, 78,5 id,  1,0 wa,  0,0 hi,  3,1 si,  0,0 st
+КиБ Mem:   3794700 total,  3740356 used,    54344 free,   147656 buffers
+КиБ Swap:  4095696 total,    78040 used,  4017656 free.  1392132 cached Mem
+
