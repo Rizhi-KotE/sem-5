@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.range;
 
 public class MatrixTileGrider {
@@ -33,6 +34,13 @@ public class MatrixTileGrider {
         return (int) Math.round((double) nehvataet / tilesAmount);
     }
 
+    public Matrix[] getTiles(){
+        Point[] grid = getTileGrid();
+        return stream(grid)
+                .map(point -> matrix.getMatrix(point.x, point.x + tileHeights - 1, point.y, point.y + tileWidth - 1))
+                .toArray(Matrix[]::new);
+    }
+
     private static int calcNehvataet(int size, int tileSize) {
         return (size % tileSize) == 0 ? 0 : tileSize - size % tileSize;
     }
@@ -55,8 +63,8 @@ public class MatrixTileGrider {
     }
 
     private Point[] get2DGrid(int[] horizontalGrid, int[] verticalGrid) {
-        return Arrays.stream(horizontalGrid)
-                .mapToObj(i -> Arrays.stream(verticalGrid)
+        return stream(horizontalGrid)
+                .mapToObj(i -> stream(verticalGrid)
                         .mapToObj(j -> new Point(i, j))
                         .toArray())
                 .flatMap(Arrays::stream)

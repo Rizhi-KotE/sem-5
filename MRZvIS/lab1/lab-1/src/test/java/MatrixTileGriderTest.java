@@ -60,6 +60,7 @@ public class MatrixTileGriderTest {
     @Test
     public void getTileGridTest1() throws Exception {
         Matrix matrix = new Matrix(5, 3);
+
         MatrixTileGrider grider = new MatrixTileGrider();
         grider.setMatrix(matrix);
         grider.setTileHeights(3);
@@ -70,6 +71,7 @@ public class MatrixTileGriderTest {
                 new Point(2, 0), new Point(2, 1)
         };
         Point[] out = grider.getTileGrid();
+        Matrix[] matrices = grider.getTiles();
         assertArrayEquals(out, result);
     }
 
