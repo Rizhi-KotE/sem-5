@@ -6,11 +6,35 @@ import java.awt.image.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-public class NeironsUtils {
+public class PerformImageDataUtils {
+
+
+    public static Color[][] getPixelsFromImage(BufferedImage image) {
+        Color[][] colors = new Color[image.getHeight()][image.getWidth()];
+
+        for (int column = 0; column < image.getWidth(); column++) {
+            for (int row = 0; row < image.getHeight(); row++) {
+                colors[row][column] = new Color(image.getRGB(column, row));
+            }
+        }
+
+        return colors;
+    }
+
+
+    public static BufferedImage collectImageFromLineVector(Color[] colors, int width, int height) {
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+        IntStream.range(0, width * height).forEach(value -> {
+            int column = value % width;
+            int row = value / width;
+
+            image.setRGB(column, row, colors[value].getRGB());
+        });
+        return image;
+    }
 
     public static int[] intRGBtoIntArray(int rgb) {
         Color color = new Color(rgb);
@@ -23,32 +47,32 @@ public class NeironsUtils {
         return IntStream.range(0, buffer.length).map(i -> 120 + buffer[i]).toArray();
     }
 
-    public static BufferedImage componentsArrayToImage(int[] componentsArray, int width, int height) {
-        int[] rgbArray = componentsArrayToRGBArray(componentsArray, main.RGB_COMPONENTS);
-        BufferedImage image = new BufferedImage(width / main.RGB_COMPONENTS, height, BufferedImage.TYPE_INT_ARGB);
-        WritableRaster raster = image.getRaster();
-        raster.setPixels(0, 0, width / main.RGB_COMPONENTS - 1, height - 1, componentsArray);
-        return image;
-    }
-
     public static int[] componentsArrayToRGBArray(int[] array, int componentsSize) {
         IntStream stream = IntStream.range(0, array.length / componentsSize)
                 .map(operand -> IntStream
                         .range(0, componentsSize)
                         .reduce(0, (left, right) ->
-                                left |= array[operand * componentsSize + right] << right * 8
+                                left |= array[operand * componentsSize + right] << (2 - right) * 8
                         ));
         return stream.toArray();
     }
 
+    public static double intComponentToDoubleComponent(int component) {
+        return 2. * (double) component / 255. - 1.;
+    }
+
+    public static int doubleComponentToIntComponent(double component) {
+        return (int) Math.round((component + 1.) * 255. / 2.);
+    }
+
     public static double[] mapRgbIntArrayToDouble(int[] arr) {
         return Arrays
-                .stream(arr).mapToDouble(value -> 2. * value / 255. - 1).toArray();
+                .stream(arr).mapToDouble(value -> intComponentToDoubleComponent(value)).toArray();
     }
 
     public static int[] mapRgbDoubeArrayToInt(double[] arr) {
         return Arrays
-                .stream(arr).mapToInt(value -> (int) ((value + 1.) * 255. / 2.)).toArray();
+                .stream(arr).mapToInt(value -> doubleComponentToIntComponent(value)).toArray();
     }
 
     public static double[] matrixToArray(double[][] matrix) {
@@ -98,5 +122,24 @@ public class NeironsUtils {
 
     public static Point[] generateTileGrid(int imageHeight, int imageWidth, int tileHeight, int tileWidth, int offset) {
         return null;
+    }
+
+    public static int[] colorToIntComponentsArray(Color color) {
+        int[] arr = {color.getRed(), color.getGreen(), color.getBlue()};
+        return arr;
+    }
+
+    public static Matrix colorArrayToLineVector(Color[] colorVector) {
+        double[] array = Arrays.stream(colorVector).flatMapToInt(color -> Arrays.stream(colorToIntComponentsArray(color)))
+                .mapToDouble(value -> intComponentToDoubleComponent(value)).toArray();
+        return new Matrix(array, 1);
+    }
+
+    public static Color[] lineVectorToColorArray(Matrix colorVector) {
+        int[] array = Arrays.stream(colorVector.getArray()).flatMapToDouble(Arrays::stream)
+                .mapToInt(PerformImageDataUtils::doubleComponentToIntComponent)
+                .toArray();
+        int[] collectedIntArray = componentsArrayToRGBArray(array, 3);
+        return Arrays.stream(collectedIntArray).mapToObj(Color::new).toArray(Color[]::new);
     }
 }

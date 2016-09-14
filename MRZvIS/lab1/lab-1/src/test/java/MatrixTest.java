@@ -1,5 +1,4 @@
 import Jama.Matrix;
-import javafx.scene.control.SplitPane;
 import org.junit.Test;
 
 import java.awt.*;
@@ -16,14 +15,14 @@ public class MatrixTest {
 
     @Test
     public void intArrayToMatrixTest() {
-        double[][] out = NeironsUtils.arrayToMatrix(testArrayResult, 2);
+        double[][] out = PerformImageDataUtils.arrayToMatrix(testArrayResult, 2);
         assertArrayEquals(testMatrix, out);
     }
 
     @Test
     public void intRGBtoIntArrayTest() {
         Color color = new Color(125, 234, 255);
-        int[] colorArray = NeironsUtils.intRGBtoIntArray(color.getRGB());
+        int[] colorArray = PerformImageDataUtils.intRGBtoIntArray(color.getRGB());
         int[] resut = {125, 234, 255};
         assertArrayEquals(colorArray, resut);
     }
@@ -34,7 +33,7 @@ public class MatrixTest {
         Color color = new Color(1, 2, 3);
         int rgb = color.getRGB();
         int[] result = {rgb, rgb, rgb, rgb};
-        int[] out = NeironsUtils.componentsArrayToRGBArray(sample, 3);
+        int[] out = PerformImageDataUtils.componentsArrayToRGBArray(sample, 3);
         assertArrayEquals(out, result);
     }
 
@@ -49,7 +48,7 @@ public class MatrixTest {
     public void mapIntRgbArrayToDouble() {
         int arr[] = {65};
         double result[] = {-1 * 0.490196078};
-        double out[] = NeironsUtils.mapRgbIntArrayToDouble(arr);
+        double out[] = PerformImageDataUtils.mapRgbIntArrayToDouble(arr);
         assertArrayEquals(out, result, 0.000001);
     }
 
@@ -57,21 +56,21 @@ public class MatrixTest {
     public void mapRgbDoubleArrayToInt() {
         double arr[] = {-1 * 0.490196078};
         int result[] = {65};
-        int out[] = NeironsUtils.mapRgbDoubeArrayToInt(arr);
+        int out[] = PerformImageDataUtils.mapRgbDoubeArrayToInt(arr);
         assertArrayEquals(out, result);
     }
 
     @Test
     public void mapArrayToMatrix() {
         initArrayAndMatrix(10, 12);
-        double[][] outMatrix = NeironsUtils.arrayToMatrix(array, 10);
+        double[][] outMatrix = PerformImageDataUtils.arrayToMatrix(array, 10);
         assertArrayEquals(matrix, outMatrix);
     }
 
     @Test
     public void mapMatrixToArray() {
         initArrayAndMatrix(10, 12);
-        double[] outArray = NeironsUtils.matrixToArray(matrix);
+        double[] outArray = PerformImageDataUtils.matrixToArray(matrix);
         assertArrayEquals(array, outArray, 0);
     }
 
@@ -87,7 +86,14 @@ public class MatrixTest {
 
     @Test
     public void collectTilesTest() {
+        initArrayAndMatrix(12, 12);
+        initTiles(12, 12, 3, 1);
+        MatrixTileGrider grider = new MatrixTileGrider();
 
+        Matrix[] matrices = Arrays.stream(tiles).map(Matrix::new).toArray(Matrix[]::new);
+        Matrix outTiles = grider.collectMatrix(12,12, 3, 1, 0, matrices);
+        double[][] outMatrix = outTiles.getArray();
+        assertArrayEquals(matrix, outMatrix);
     }
 
     double[] array;
@@ -107,22 +113,21 @@ public class MatrixTest {
         int numberOfTiles = width * height / (tileHeight * tileWidth);
         int tilesColumns = width / tileWidth;
         int tilesRows = height / tileHeight;
-        tiles = IntStream.range(0, numberOfTiles).mapToObj(tileNumber -> {
-            double[][] tile = new double[tileHeight][tileWidth];
-            IntStream.range(0, tileWidth * tileHeight).forEach(cellInTile ->
-            {
-                int rowOfTiles = tileNumber % tilesRows;
-                int columnOfTiles = tileNumber % tilesColumns;
-                int tileRow = cellInTile % tileHeight;
-                int tileColumn = cellInTile / tileHeight;
-                int matrixRow = rowOfTiles * tileHeight + cellInTile % tileHeight;
-                int matrixColumn = columnOfTiles * tileHeight + cellInTile / tileHeight;
+        tiles = new double[numberOfTiles][tileHeight][tileWidth];
+        IntStream.range(0, width * height).forEach(num -> {
+            int matrixColumn = num % width;
+            int matrixRow = num / width;
 
-                double matrixValue = matrix[matrixRow][matrixColumn];
-                tile[tileRow][tileColumn] = matrixValue;
+            int numberOfTileRow = matrixRow / tileHeight;
+            int numberOfTileColumn = matrixColumn / tileWidth;
 
-            });
-            return tile;
-        }).toArray(double[][][]::new);
+            int tileNumberInArray = numberOfTileRow * tilesColumns + numberOfTileColumn;
+
+            int tileRow = matrixRow % tileHeight;
+            int tileColumn = matrixColumn % tileWidth;
+
+            tiles[tileNumberInArray][tileRow][tileColumn] = matrix[matrixRow][matrixColumn];
+        });
+
     }
 }

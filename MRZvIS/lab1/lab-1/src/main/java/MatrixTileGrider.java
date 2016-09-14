@@ -1,6 +1,7 @@
 import Jama.Matrix;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -39,6 +40,16 @@ public class MatrixTileGrider {
                 .toArray(Matrix[]::new);
     }
 
+    public BufferedImage[] getTiles(BufferedImage image, int tileWidth, int tileHeights, int offset) {
+        int height = image.getHeight();
+        int width = image.getWidth();
+        Point[] grid = getTileGrid(width, height, tileWidth, tileHeights, offset);
+        return stream(grid)
+                .map(point -> image
+                        .getSubimage(point.x, point.y, tileWidth, tileHeights))
+                .toArray(BufferedImage[]::new);
+    }
+
     private static int calcNehvataet(int size, int tileSize) {
         return (size % tileSize) == 0 ? 0 : tileSize - size % tileSize;
     }
@@ -67,6 +78,18 @@ public class MatrixTileGrider {
                         .toArray())
                 .flatMap(Arrays::stream)
                 .toArray(Point[]::new);
+    }
+
+    public BufferedImage collectMatrix(int width, int height, int tileWidth, int tileHeights, int offset, BufferedImage[] images) {
+        Point[] grid = getTileGrid(width, height, tileWidth, tileHeights, offset);
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = image.createGraphics();
+        IntStream.range(0, images.length).forEach(i -> {
+            Point point = grid[i];
+            BufferedImage subimage = images[i];
+            g2d.drawImage(subimage, point.x, point.y, tileWidth, tileHeights, null);
+        });
+        return image;
     }
 
     public Matrix collectMatrix(int width, int height, int tileWidth, int tileHeights, int offset, Matrix[] matrices) {
