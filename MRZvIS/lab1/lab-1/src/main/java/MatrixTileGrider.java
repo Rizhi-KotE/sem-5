@@ -10,11 +10,6 @@ import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.range;
 
 public class MatrixTileGrider {
-    private Matrix matrix;
-
-    int tileWidth;
-    int tileHeights;
-    int offset;
 
     public static int[] get1DGrid(int size, int tileSize, int offset) {
         int nehvataet = calcNehvataet(size, tileSize);
@@ -34,10 +29,13 @@ public class MatrixTileGrider {
         return (int) Math.round((double) nehvataet / tilesAmount);
     }
 
-    public Matrix[] getTiles(){
-        Point[] grid = getTileGrid();
+    public Matrix[] getTiles(Matrix matrix, int tileWidth, int tileHeights, int offset) {
+        int height = matrix.getRowDimension();
+        int width = matrix.getColumnDimension();
+        Point[] grid = getTileGrid(width, height, tileWidth, tileHeights, offset);
         return stream(grid)
-                .map(point -> matrix.getMatrix(point.x, point.x + tileHeights - 1, point.y, point.y + tileWidth - 1))
+                .map(point -> matrix
+                        .getMatrix(point.y, point.y + tileHeights - 1, point.x, point.x + tileWidth - 1))
                 .toArray(Matrix[]::new);
     }
 
@@ -56,52 +54,29 @@ public class MatrixTileGrider {
         return nomer * tileSize;
     }
 
-    Point[] getTileGrid() {
-        int[] horizontalGrid = get1DGrid(matrix.getColumnDimension(), getTileWidth(), offset);
-        int[] verticalGrid = get1DGrid(matrix.getRowDimension(), getTileHeights(), offset);
-        return get2DGrid(verticalGrid, horizontalGrid);
+    Point[] getTileGrid(int width, int height, int tileWidth, int tileHeights, int offset) {
+        int[] horizontalGrid = get1DGrid(width, tileWidth, offset);
+        int[] verticalGrid = get1DGrid(height, tileHeights, offset);
+        return get2DGrid(horizontalGrid, verticalGrid);
     }
 
     private Point[] get2DGrid(int[] horizontalGrid, int[] verticalGrid) {
-        return stream(horizontalGrid)
-                .mapToObj(i -> stream(verticalGrid)
-                        .mapToObj(j -> new Point(i, j))
+        return stream(verticalGrid)
+                .mapToObj(j -> stream(horizontalGrid)
+                        .mapToObj(i -> new Point(i, j))
                         .toArray())
                 .flatMap(Arrays::stream)
                 .toArray(Point[]::new);
     }
 
-    public int getOffset() {
-        return offset;
-    }
-
-    public void setOffset(int offset) {
-        this.offset = offset;
-    }
-
-    public int getTileHeights() {
-
-        return tileHeights;
-    }
-
-    public void setTileHeights(int tileHeights) {
-        this.tileHeights = tileHeights;
-    }
-
-    public int getTileWidth() {
-
-        return tileWidth;
-    }
-
-    public void setTileWidth(int tileWidth) {
-        this.tileWidth = tileWidth;
-    }
-
-    public Matrix getMatrix() {
-        return matrix;
-    }
-
-    public void setMatrix(Matrix matrix) {
-        this.matrix = matrix;
+    public Matrix collectMatrix(int width, int height, int tileWidth, int tileHeights, int offset, Matrix[] matrices) {
+        Point[] grid = getTileGrid(width, height, tileWidth, tileHeights, offset);
+        Matrix outMatrix = new Matrix(height, width);
+        IntStream.range(0, matrices.length).forEach(i -> {
+            Point point = grid[i];
+            Matrix matrix = matrices[i];
+            outMatrix.setMatrix(point.y, point.y + tileHeights - 1, point.x, point.x + tileWidth - 1, matrix);
+        });
+        return outMatrix;
     }
 }

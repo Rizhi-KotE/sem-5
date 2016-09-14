@@ -1,26 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
-public class Window extends JFrame{
-    public Image image;
+public class Window extends JFrame {
 
-    public Image getImage() {
-        return image;
+
+    public Window() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
+    public void addImage(BufferedImage image) {
+        JPanel panel = new JPanel() {
 
-    public Window(){
-        JPanel panel = new JPanel(){
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ((Graphics2D)g).drawImage(image, 0, 0, null);
+                ((Graphics2D) g).drawImage(image, 0, 0, null);
             }
         };
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        panel.setMinimumSize(new Dimension(image.getWidth(), image.getHeight()));
+        panel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+        panel.setMaximumSize(new Dimension(image.getWidth(), image.getHeight()));
+        setMinimumSize(new Dimension(image.getWidth(), image.getHeight()));
+        setSize(new Dimension(image.getWidth(), image.getHeight()));
+        setMaximumSize(new Dimension(image.getWidth(), image.getHeight()));
         add(panel);
         pack();
     }

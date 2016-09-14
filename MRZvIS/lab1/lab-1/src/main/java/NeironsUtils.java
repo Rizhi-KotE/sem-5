@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class NeironsUtils {
 
@@ -18,14 +19,15 @@ public class NeironsUtils {
     }
 
     public static int[] imageToIntArray(BufferedImage image) {
-        int[] pixelsArray = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
-        return Arrays.stream(pixelsArray).mapToObj(value -> intRGBtoIntArray(value)).flatMapToInt(Arrays::stream).toArray();
+        byte[] buffer = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+        return IntStream.range(0, buffer.length).map(i -> 120 + buffer[i]).toArray();
     }
 
-    public static BufferedImage componentsArrayToImage(int[] componentsArray, int componentsSize, int width, int height) {
-        int[] rgbArray = componentsArrayToRGBArray(componentsArray, componentsSize);
-        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        image.getRaster().setPixels(0, 0, width, height, componentsArray);
+    public static BufferedImage componentsArrayToImage(int[] componentsArray, int width, int height) {
+        int[] rgbArray = componentsArrayToRGBArray(componentsArray, main.RGB_COMPONENTS);
+        BufferedImage image = new BufferedImage(width / main.RGB_COMPONENTS, height, BufferedImage.TYPE_INT_ARGB);
+        WritableRaster raster = image.getRaster();
+        raster.setPixels(0, 0, width / main.RGB_COMPONENTS - 1, height - 1, componentsArray);
         return image;
     }
 
@@ -40,11 +42,21 @@ public class NeironsUtils {
     }
 
     public static double[] mapRgbIntArrayToDouble(int[] arr) {
-        return Arrays.stream(arr).mapToDouble(value -> 2. * value / 255. - 1).toArray();
+        return Arrays
+                .stream(arr).mapToDouble(value -> 2. * value / 255. - 1).toArray();
     }
 
     public static int[] mapRgbDoubeArrayToInt(double[] arr) {
-        return Arrays.stream(arr).mapToInt(value -> (int) ((value + 1.) * 255. / 2.)).toArray();
+        return Arrays
+                .stream(arr).mapToInt(value -> (int) ((value + 1.) * 255. / 2.)).toArray();
+    }
+
+    public static double[] matrixToArray(double[][] matrix) {
+        return Arrays.stream(matrix).flatMapToDouble(Arrays::stream).toArray();
+    }
+
+    public static Matrix matrixToArray(Matrix matrix) {
+        return new Matrix(matrixToArray(matrix.getArray()), 1);
     }
 
     static public Matrix getImageMatrix(BufferedImage image) {
@@ -53,8 +65,16 @@ public class NeironsUtils {
         return new Matrix(convertedBuffer, image.getHeight());
     }
 
-    public static double[][] arrayToMatrix(double[] buffer, int height) {
-        return new Matrix(buffer, height).getArray();
+    public static double[][] arrayToMatrix(double[] buffer, int width) {
+        int height = buffer.length / width;
+        return IntStream.range(0, height)
+                .mapToObj(i -> IntStream.range(0, width).mapToDouble(j -> buffer[i * width + j])
+                        .toArray()).toArray(double[][]::new);
+    }
+
+    public static Matrix arrayToMatrix(Matrix buffer, int height) {
+        double array[] = Arrays.stream(buffer.getArray()).flatMapToDouble(Arrays::stream).toArray();
+        return new Matrix(arrayToMatrix(array, height));
     }
 
     public static void writeToFile(Matrix matrix, File file) {
@@ -76,7 +96,7 @@ public class NeironsUtils {
         return null;
     }
 
-    public static Point[] generateTileGrid(int imageHeight, int imageWidth, int tileHeight, int tileWidth, int offset){
+    public static Point[] generateTileGrid(int imageHeight, int imageWidth, int tileHeight, int tileWidth, int offset) {
         return null;
     }
 }
