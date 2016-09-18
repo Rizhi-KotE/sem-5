@@ -57,8 +57,10 @@ public class NeuronsTeacher {
         Matrix deltaXi = calculateDeltaXi(XHi, Xi);
 
 
-        network.setWH(calculateNewWH(network.getWH(), Yi, deltaXi));
-        network.setW(calculateNewW(network.getWH(), network.getW(), Xi, deltaXi));
+        Matrix newWH =calculateNewWH(network.getWH(), Yi, deltaXi);
+        Matrix newW =calculateNewW(network.getWH(), network.getW(), Xi, deltaXi);
+        network.setWH(newWH);
+        network.setW(newW);
 
         return calculateEq(deltaXi);
     }
@@ -84,13 +86,15 @@ public class NeuronsTeacher {
 
     private Matrix calculateNewWH(Matrix WH, Matrix Yi, Matrix deltaXi) {
         Matrix transposedYi = Yi.transpose();
-        return WH.minus(transposedYi.times(aH).times(deltaXi));
+        Matrix correction = transposedYi.times(deltaXi);
+        return WH.minus(correction);
     }
 
     private Matrix calculateNewW(Matrix WH, Matrix W, Matrix Xi, Matrix deltaXi) {
         Matrix transposedXi = Xi.transpose();
         Matrix transposedWh = WH.transpose();
-        return W.minus(transposedXi.times(aH).times(deltaXi).times(transposedWh));
+        Matrix correction = transposedXi.times(deltaXi).times(transposedWh).times(aH);
+        return W.minus(correction);
     }
 
 
