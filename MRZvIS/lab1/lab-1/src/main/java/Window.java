@@ -1,7 +1,6 @@
 import Jama.Matrix;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
@@ -10,8 +9,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.DoubleBuffer;
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -94,7 +91,7 @@ public class Window extends JFrame {
         teaching = new Thread(() -> {
             double E = 0;
             for (int i = 0; E > Double.valueOf(precisios.getText()); i++) {
-                E = teacher.stepOfTeaching();
+                E = teacher.runEpoch();
             }
             ObjectMapper mapper = new ObjectMapper();
             try {

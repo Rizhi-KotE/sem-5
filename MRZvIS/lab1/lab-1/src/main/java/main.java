@@ -5,27 +5,35 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.DoubleStream;
-import java.util.stream.Stream;
-
-import static java.util.OptionalDouble.empty;
+import java.util.concurrent.SynchronousQueue;
 
 public class main {
-    public static final int TILE_WIDTH = 8;
-    public static final int TILE_HEIGHT = 8;
+    public static final int TILE_WIDTH = 3;
+    public static final int TILE_HEIGHT = 3;
     public static final String TEST_IMAGE_JPG = "test_image.jpg";
     public static final int N = TILE_WIDTH * TILE_HEIGHT * 3;
-    public static final int P = 170;
+    public static final int P = 20;
     public static final String CURRECT_NETWORK = "Network-" + N + "-" + P + ".json";
     public static final String DECODED_IMAGE_0_0001_JPG = "decodedImage-0.0001.jpg";
-    public static final int OFFSET = 5;
+    public static final int OFFSET = 1;
     public static ColorModel COLOR_MODEL;
+
+    public static int stepsToFail;
+
+    public static int getStepsToFail() {
+        return stepsToFail;
+    }
+
+    public static void setStepsToFail(int steps) {
+        stepsToFail = steps;
+    }
 
     public static void saveNetwork(File file, NeuronsNetwork network) {
         double[][][] matrices = {network.getW().getArray(), network.getWH().getArray()};
@@ -64,41 +72,70 @@ public class main {
     public static void main(String[] args) throws Exception {
         Matrix[] matrices = getSamples(TILE_WIDTH, TILE_HEIGHT, new File(TEST_IMAGE_JPG));
 
-        NeuronsNetwork network = loadNetwork(new File(CURRECT_NETWORK));
-        if (network.getW() == null) {
-            network = initNetwork(N, P);
+        double step = 0.000001;
+        double E = 0.01;
+
+
+        String[] images = {"test_image.jpg",
+                "xcril-small.jpg"};
+
+        for (int size = 3; size < 10; size++) {
+            int N = size * size * 3;
+            System.out.println("Size: " + size);
+            for (int P = (int) (N * 0.7); P < N * 1.2; P++) {
+                System.out.println("P: " + P);
+                for (int imageNum = 0; imageNum < 2; imageNum++) {
+                    System.out.println("Image: " + images[imageNum]);
+                    String currentNetwork = "Network-" + imageNum + "-" + N + "-" + P + ".json";
+                    Thread teachingThread = new TeachingThread(N, P, size, size, images[imageNum], currentNetwork, step, E);
+                    teachingThread.run();
+                }
+            }
         }
 
-        //Matrix[] in = Arrays.asList(matrices).subList(0, 2).toArray(new Matrix[2]);
-//        teach(matrices, network, 0.0000001, 0.008);
-        double[][] list = teachWithGraphics(matrices, network, 0.0000001, 0.008);
 
-//        decodeEncode(new File("/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/lab-1/network.json"));
-        saveNetwork(new File(CURRECT_NETWORK), network);
-        savePlot(new File(CURRECT_NETWORK+".plot"),list);
     }
+
 
     public static void savePlot(File file, double[][] list) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(file, list);
     }
 
-    public static double[][] teachWithGraphics(Matrix[] matrices, NeuronsNetwork network, double step, double accuracy) {
+    public static void teachWithGraphics(
+            Matrix[] matrices,
+            NeuronsNetwork network,
+            double step,
+            double accuracy,
+            ResultTeaching resultTeaching,
+            List<double[]> plot) {
         int N = network.getW().getColumnDimension();
         int p = network.getW().getRowDimension();
 
         NeuronsTeacher teacher = new NeuronsTeacher(matrices, N, p, step, accuracy);
         teacher.setNetwork(network);
-        List<double[]> list = new ArrayList<>();
-        double E = accuracy + 1;
-        for (int i = 0; E > accuracy; i++) {
-            E = teacher.stepOfTeaching();
-            if (i % 100 == 100 - 1) {
-                list.add(new double[]{i, E});
+        double E = accuracy * matrices.length + 1;
+        long timeStrat = System.currentTimeMillis();
+        int i = 0;
+        System.out.println("Start. Expected E: " + accuracy * matrices.length);
+        try {
+            for (i = 0; E > accuracy * matrices.length; i++) {
+                E = teacher.runEpoch();
+                plot.add(new double[]{i, E});
+                resultTeaching.setE(E);
+                resultTeaching.setTime(System.currentTimeMillis() - timeStrat);
+                resultTeaching.setEpochNumber(i);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            long timeEnd = System.currentTimeMillis();
+            resultTeaching.setE(E);
+            resultTeaching.setTime(timeEnd - timeStrat);
+            resultTeaching.setEpochNumber(i);
+            network = teacher.getBestNetwork();
+            System.out.print("Finish. E: " + teacher.getBestE());
         }
-        System.out.print("Finish. E: " + E);
-        return list.toArray(new double[list.size()][2]);
     }
 
     public static Matrix[] getSamples(int tileWidth, int tileHeight, File... files) throws IOException {
@@ -137,7 +174,7 @@ public class main {
 //        window2.addImage(decodedImage);
     }
 
-    public static void teach(Matrix[] matrices, NeuronsNetwork network, double step, double accuracy) throws IOException, InterruptedException {
+    public static void teach(Matrix[] matrices, NeuronsNetwork network, double step, double accuracy) {
 
         int N = network.getW().getColumnDimension();
         int p = network.getW().getRowDimension();
@@ -146,7 +183,7 @@ public class main {
         teacher.setNetwork(network);
         double E = accuracy + 1;
         for (int i = 0; E > accuracy; i++) {
-            E = teacher.stepOfTeaching();
+            E = teacher.runEpoch();
         }
         System.out.print("Finish. E: " + E);
     }
@@ -157,6 +194,15 @@ public class main {
         try {
             System.out.println(mapper.writeValueAsString(matrices));
         } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveObject(File file, Object object) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(file, object);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

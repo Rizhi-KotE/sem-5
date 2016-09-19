@@ -2,6 +2,7 @@ import Jama.Matrix;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Teach {
     public static void main(String[] args) throws IOException {
@@ -17,9 +18,14 @@ public class Teach {
 
         NeuronsNetwork network = main.initNetwork(N, p);
 
-        double[][] list = main.teachWithGraphics(matrices, network, step, accuracy);
+        ResultTeaching result = new ResultTeaching(0, 0, 0, N, p, matrices.length, accuracy, step);
 
-        main.saveNetwork(new File("network-" + N + "-" + p + ".json"), network);
-        main.savePlot(new File("network-" + N + "-" + p + ".plot"), list);
+
+        List<double[]> list = null;
+        main.teachWithGraphics(matrices, network, step, accuracy, result, list);
+
+        main.saveNetwork(new File("network-" + N + "-" + p + "-" + accuracy + ".json"), network);
+        main.savePlot(new File("network-" + N + "-" + p + "-" + accuracy + ".plot"), list.toArray(new double[list.size()][2]));
+        main.saveObject(new File("resulr-" + N + "-" + p + "-" + accuracy + ".result"), result);
     }
 }

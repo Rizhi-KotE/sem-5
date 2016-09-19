@@ -1,13 +1,11 @@
 import Jama.Matrix;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by toli444 on 13.9.16.
  */
 public class NeuronsTeacher {
-    private Matrix[] arrayOfXi;
     private int L; //Число векторов Xi
     private int N; //Длина вектора Xi
     private int p; //Заданное пользователем значение
@@ -15,10 +13,16 @@ public class NeuronsTeacher {
     private double e;
     private NeuronsNetwork network;
     private Iterator<Matrix> matrixIterator;
-
+    private final List<Matrix> listOfArrayXi;
+    private Matrix bestWh;
+    private Matrix bestW;
+    private int failStep;
+    private double bestE = Double.MAX_VALUE;
+    private boolean hasProgress;
 
     public NeuronsTeacher(Matrix[] ArrayOfXi, int N, int p, double aH, double e) {
-        this.arrayOfXi = ArrayOfXi;
+        listOfArrayXi = new ArrayList<>(ArrayOfXi.length);
+        listOfArrayXi.addAll(Arrays.asList(ArrayOfXi));
         this.L = ArrayOfXi.length;
         this.N = N;
         this.p = p;
@@ -29,19 +33,48 @@ public class NeuronsTeacher {
     public void runTeaching() {
         double E;
         do {
-            E = stepOfTeaching();
+            E = runEpoch();
         } while (E > e);
 
         System.out.println("Finished");
     }
 
-    public double stepOfTeaching() {
-        return nextStep();
+    public double runEpoch() throws NumberFormatException {
+        Collections.shuffle(listOfArrayXi);
+        double E = 0;
+        hasProgress = false;
+        try {
+            for (Matrix matrix : listOfArrayXi) {
+
+                E += subStep(matrix);
+                if (Double.isNaN(network.getW().getArray()[0][0])) {
+                    throw new NumberFormatException("bad matrix");
+                }
+                failStep++;
+            }
+        } finally {
+            if (bestE > E) {
+                hasProgress = true;
+                failStep = 0;
+                bestE = E;
+                bestW = network.getW();
+                bestWh = network.getWH();
+                System.out.println("Best E: " + bestE);
+            }
+            return E;
+        }
+    }
+
+    public NeuronsNetwork getBestNetwork() {
+        NeuronsNetwork network = new NeuronsNetwork();
+        network.setW(bestW);
+        network.setWH(bestWh);
+        return network;
     }
 
     public double nextStep() {
         if (matrixIterator == null) {
-            matrixIterator = Arrays.asList(arrayOfXi).iterator();
+            matrixIterator = listOfArrayXi.iterator();
         }
         if (matrixIterator.hasNext()) {
             return subStep(matrixIterator.next());
@@ -57,8 +90,8 @@ public class NeuronsTeacher {
         Matrix deltaXi = calculateDeltaXi(XHi, Xi);
 
 
-        Matrix newWH =calculateNewWH(network.getWH(), Yi, deltaXi);
-        Matrix newW =calculateNewW(network.getWH(), network.getW(), Xi, deltaXi);
+        Matrix newWH = calculateNewWH(network.getWH(), Yi, deltaXi);
+        Matrix newW = calculateNewW(network.getWH(), network.getW(), Xi, deltaXi);
         network.setWH(newWH);
         network.setW(newW);
 
@@ -108,5 +141,98 @@ public class NeuronsTeacher {
 
     public void setNetwork(NeuronsNetwork network) {
         this.network = network;
+    }
+
+    public int getL() {
+        return L;
+    }
+
+    public void setL(int l) {
+        L = l;
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public void setN(int n) {
+        N = n;
+    }
+
+    public int getP() {
+        return p;
+    }
+
+    public void setP(int p) {
+        this.p = p;
+    }
+
+    public double getaH() {
+        return aH;
+    }
+
+    public void setaH(double aH) {
+        this.aH = aH;
+    }
+
+    public double getE() {
+        return e;
+    }
+
+    public void setE(double e) {
+        this.e = e;
+    }
+
+    public Iterator<Matrix> getMatrixIterator() {
+        return matrixIterator;
+    }
+
+    public void setMatrixIterator(Iterator<Matrix> matrixIterator) {
+        this.matrixIterator = matrixIterator;
+    }
+
+    public List<Matrix> getListOfArrayXi() {
+        return listOfArrayXi;
+    }
+
+    public Matrix getBestWh() {
+        return bestWh;
+    }
+
+    public void setBestWh(Matrix bestWh) {
+        this.bestWh = bestWh;
+    }
+
+
+    public boolean isHasProgress() {
+        return hasProgress;
+    }
+
+    public void setHasProgress(boolean hasProgress) {
+        this.hasProgress = hasProgress;
+    }
+
+    public Matrix getBestW() {
+        return bestW;
+    }
+
+    public void setBestW(Matrix bestW) {
+        this.bestW = bestW;
+    }
+
+    public int getFailStep() {
+        return failStep;
+    }
+
+    public void setFailStep(int failStep) {
+        this.failStep = failStep;
+    }
+
+    public double getBestE() {
+        return bestE;
+    }
+
+    public void setBestE(double bestE) {
+        this.bestE = bestE;
     }
 }
