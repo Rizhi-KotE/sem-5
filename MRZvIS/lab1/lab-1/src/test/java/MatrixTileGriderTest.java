@@ -1,4 +1,5 @@
 import Jama.Matrix;
+import image_utils.MatrixTileGrider;
 import org.junit.Test;
 
 import java.awt.*;

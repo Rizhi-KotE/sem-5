@@ -1,4 +1,7 @@
 import Jama.Matrix;
+import image_utils.ImagePerformerAndRepaer;
+import image_utils.ImageTileDivider;
+import image_utils.PerformImageDataUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +13,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.*;
 
 public class ColectAndDivideImageTest {
     BufferedImage image;
@@ -30,7 +33,7 @@ public class ColectAndDivideImageTest {
     }
 
     @Test
-    public void performAndRepairImageTest(){
+    public void performAndRepairImageTest() {
         Matrix performedImageLineVector = ImagePerformerAndRepaer.performImageToLineVector(image);
         BufferedImage resultImage =
                 ImagePerformerAndRepaer.repairImageFromLineVector(performedImageLineVector, image.getWidth(), image.getHeight());
@@ -38,7 +41,7 @@ public class ColectAndDivideImageTest {
     }
 
     @Test
-    public void divideAndCollectImageTest(){
+    public void divideAndCollectImageTest() {
         Matrix[] lineVectorsOfImageTiles = ImageTileDivider.divideOnTiles(image, 5, 1, 0);
         BufferedImage resultImage = ImageTileDivider.collectTilesToImage(lineVectorsOfImageTiles, image.getWidth(),
                 image.getHeight(), 5, 1, 0);
@@ -55,13 +58,16 @@ public class ColectAndDivideImageTest {
     }
 
     @Test
-    public void intToDoubleAndBackTest(){
+    public void intToDoubleAndBackTest() {
         int[] original = new int[256];
         int[] out = new int[256];
-        IntStream.range(0,256).forEach(value -> {
-            original[value] = value;
-            out[value] = PerformImageDataUtils
-                    .doubleComponentToIntComponent(PerformImageDataUtils.intComponentToDoubleComponent(value));
+        double[] performed_value = new double[256];
+
+        IntStream.range(0, 255).forEach(i -> {
+            original[i] = i;
+
+            performed_value[i] = PerformImageDataUtils.intComponentToDoubleComponent(i);
+            out[i] = PerformImageDataUtils.doubleComponentToIntComponent(performed_value[i]);
         });
         assertArrayEquals(original, out);
     }

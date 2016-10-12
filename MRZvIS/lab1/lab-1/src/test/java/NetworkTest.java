@@ -1,4 +1,5 @@
 import Jama.Matrix;
+import network.NeuronsNetwork;
 import org.junit.Before;
 import org.junit.Test;
 
