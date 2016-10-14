@@ -2,7 +2,7 @@ package mains;
 
 import Jama.Matrix;
 import image_utils.ImageTileDivider;
-import network.NeuronsNetwork;
+import teaching.NeuronsNetwork;
 import image_utils.SaveUtils;
 
 import javax.imageio.ImageIO;
@@ -24,8 +24,8 @@ public class WorkWithImage {
         NeuronsNetwork network = SaveUtils.loadNetwork(new File(networkName));
 
         Matrix[] matrices = divider.divideOnTiles(image, tileWidth, tileHeight, 1);
-        Matrix[] encoded = Arrays.stream(matrices).map(matrix -> network.zip(matrix)).toArray(Matrix[]::new);
-        Matrix[] decoded = Arrays.stream(encoded).map(matrix -> network.unzip(matrix)).toArray(Matrix[]::new);
+        Matrix[] encoded = Arrays.stream(matrices).map(matrix -> network.pack(matrix)).toArray(Matrix[]::new);
+        Matrix[] decoded = Arrays.stream(encoded).map(matrix -> network.extract(matrix)).toArray(Matrix[]::new);
 
         BufferedImage decodedImage = divider.collectTilesToImage(decoded, image.getWidth(), image.getHeight(), tileWidth, tileHeight, 1);
 

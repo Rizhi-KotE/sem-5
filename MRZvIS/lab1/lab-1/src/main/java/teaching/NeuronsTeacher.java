@@ -1,9 +1,10 @@
-package network;
+package teaching;
 
 import Jama.Matrix;
+import dto.ResultTeaching;
 import lombok.Data;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,13 @@ public class NeuronsTeacher {
     private Matrix bestW;
     private double bestE = Double.MAX_VALUE;
 
-    public void runTeaching() throws NumberFormatException{
+    private List<double[]> plot = new ArrayList<>();
+    double epochNumber;
+
+    long timeStart;
+
+    public void runTeaching() throws NumberFormatException {
+        beforeFirstEpoch();
         double E = e + 1;
         do {
             beforeNextEpoch(E);
@@ -34,19 +41,21 @@ public class NeuronsTeacher {
         System.out.println("Finished");
     }
 
+    protected void beforeFirstEpoch() {
+        System.out.print("Expected error: " + e);
+        bestE = checkError();
+        System.out.println("First error: " + bestE);
+    }
+
     protected void beforeNextEpoch(double e) {
-        if (bestE > e) {
-            bestW = network.getW();
-            bestWh = network.getWH();
-            System.out.println("Best E: " + bestE);
-        }
+
     }
 
     private double checkError() {
         double e = 0;
         for (Matrix xi : getListOfArrayXi()) {
-            Matrix Yi = network.zip(xi);
-            Matrix XHi = network.unzip(Yi);
+            Matrix Yi = network.pack(xi);
+            Matrix XHi = network.extract(Yi);
             Matrix deltaXi = calculateDeltaXi(XHi, xi);
 
             e += deltaXi.times(deltaXi.transpose()).get(0, 0);
@@ -55,16 +64,19 @@ public class NeuronsTeacher {
     }
 
     public void teachEpoch() throws NumberFormatException {
-        Collections.shuffle(listOfArrayXi);
+        //Collections.shuffle(listOfArrayXi);
+        int times = 0;
         try {
             for (Matrix matrix : listOfArrayXi) {
 
                 subStep(matrix);
+                times++;
                 if (Double.isNaN(network.getW().getArray()[0][0])) {
                     throw new NumberFormatException("bad matrix");
                 }
             }
         } catch (Exception e) {
+            System.out.println(times);
             network.setW(bestW);
             network.setWH(bestWh);
             throw e;
@@ -74,6 +86,15 @@ public class NeuronsTeacher {
     }
 
     protected void afterEpoch(double e) {
+        System.out.println("Current E: " + e);
+        if (e < bestE) {
+            bestE = e;
+            bestW = network.getW();
+            bestWh = network.getWH();
+            System.out.println("Best E: " + bestE);
+        }
+        plot.add(new double[]{getEpochNumber(), e});
+        epochNumber++;
     }
 
     public NeuronsNetwork getBestNetwork() {
@@ -84,8 +105,8 @@ public class NeuronsTeacher {
     }
 
     public void subStep(Matrix Xi) {
-        Matrix Yi = network.zip(Xi);
-        Matrix XHi = network.unzip(Yi);
+        Matrix Yi = network.pack(Xi);
+        Matrix XHi = network.extract(Yi);
         Matrix deltaXi = calculateDeltaXi(XHi, Xi);
 
 
@@ -101,7 +122,7 @@ public class NeuronsTeacher {
 
     private Matrix calculateNewWH(Matrix WH, Matrix Yi, Matrix deltaXi) {
         Matrix transposedYi = Yi.transpose();
-        Matrix correction = transposedYi.times(deltaXi);
+        Matrix correction = transposedYi.times(deltaXi).times(step);
         return WH.minus(correction);
     }
 
@@ -114,5 +135,10 @@ public class NeuronsTeacher {
 
     private Matrix calculateDeltaXi(Matrix XHi, Matrix Xi) {
         return XHi.minus(Xi);
+    }
+
+
+    public ResultTeaching getResultTeaching() {
+        return new ResultTeaching(getBestE(), (int) epochNumber, 0, getN(), getP(), getL(), getE(), getStep());
     }
 }

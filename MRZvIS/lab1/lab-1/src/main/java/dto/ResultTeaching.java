@@ -1,4 +1,4 @@
-package network;
+package dto;
 
 import lombok.Data;
 

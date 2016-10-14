@@ -1,4 +1,4 @@
-package network;
+package teaching;
 
 import Jama.Matrix;
 
@@ -27,12 +27,12 @@ public class NeuronsNetwork {
         W = w;
     }
 
-    public Matrix zip(Matrix Xi) {
+    public Matrix pack(Matrix Xi) {
         return Xi.times(W);
     }
 
-    public Matrix unzip(Matrix Yi) {
-        Matrix WH = W.transpose();
+    public Matrix extract(Matrix Yi) {
+//        Matrix WH = W.transpose();
         return Yi.times(WH);
     }
 

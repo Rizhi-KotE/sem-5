@@ -1,19 +1,14 @@
 package mains;
 
 import Jama.Matrix;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import image_utils.ImageTileDivider;
-import image_utils.SaveUtils;
-import network.*;
+import teaching.*;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 public class main {
@@ -22,13 +17,13 @@ public class main {
     public static final String TEST_IMAGE_JPG = "test_image.jpg";
     public static final int N = 300;
     public static final int P = 290;
-    public static final String CURRECT_NETWORK = "network-300-290.json";
+    public static final String CURRECT_NETWORK = "teaching-300-290.json";
     public static final String DECODED_IMAGE_0_0001_JPG = "decodedImage-0.0001.jpg";
     public static final int OFFSET = 1;
 
     public static NeuronsNetwork initNetwork(int N, int p) {
         Matrix W = Matrix.random(N, p);
-        W = W.times(2.).minus(new Matrix(N, p, 1.)).times(0.00025);
+        W = W.times(2.).minus(new Matrix(N, p, 1.)).times(0.000025);
         Matrix WH = W.transpose();
         NeuronsNetwork network = new NeuronsNetwork();
         network.setW(W);
@@ -38,17 +33,38 @@ public class main {
 
 
     public static void main(String[] args) throws Exception {
-        double step = 0.000001;
-        double E = 0.01;
+        String teacher_type = args[7];
+        NeuronsTeacher teacher;
+        switch (teacher_type) {
+            case "linear":
+                teacher = new NeuronsTeacher();
+                break;
+            case "normalize":
+                teacher = new NormalizeNeuronsTeacher();
+                break;
+            default:
+                teacher = null;
+                System.err.println("unresolved type");
+                System.exit(1);
+        }
 
-        double[] arg = new ObjectMapper().readValue(new File("input.json"), double[].class);
+        String imageName = args[0];
+        String networkName = args[1];
+        int tileWidth = Integer.valueOf(args[2]);
+        int tileHeight = Integer.valueOf(args[3]);
+        int n = Integer.valueOf(args[4]);
+        double step = Double.valueOf(args[5]);
+        double E = Double.valueOf(args[6]);
 
-        Thread thread = new TeachingThread((int) arg[0], (int) arg[1], (int) arg[2], (int) arg[3], TEST_IMAGE_JPG, CURRECT_NETWORK, arg[4], arg[5]);
+        int p = tileWidth * tileHeight * 3;
+
+        TeachingThread thread = new TeachingThread(n, p, tileWidth, tileHeight, imageName, networkName, step, E);
+        thread.setTeacher(teacher);
         thread.start();
         Scanner reader = new Scanner(System.in);
         while (true) {
             String command = reader.nextLine();
-            if("stop".equals(command)){
+            if ("stop".equals(command)) {
                 thread.interrupt();
                 break;
             }

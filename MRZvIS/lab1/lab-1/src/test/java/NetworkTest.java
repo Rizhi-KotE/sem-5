@@ -1,5 +1,5 @@
 import Jama.Matrix;
-import network.NeuronsNetwork;
+import teaching.NeuronsNetwork;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,14 +27,14 @@ public class NetworkTest {
     @Test
     public void zipTest() {
         Matrix x = new Matrix(expectedX);
-        Matrix outYi = network.zip(x);
+        Matrix outYi = network.pack(x);
         assertArrayEquals(expectedY, outYi.getArray());
     }
 
     @Test
     public void unzipTest() {
         Matrix x = new Matrix(expectedX);
-        Matrix outYi = network.zip(x);
+        Matrix outYi = network.pack(x);
         assertArrayEquals(expectedY, outYi.getArray());
     }
 }

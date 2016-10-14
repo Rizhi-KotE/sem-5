@@ -2,7 +2,7 @@ package image_utils;
 
 import Jama.Matrix;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import network.NeuronsNetwork;
+import teaching.NeuronsNetwork;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class SaveUtils {
             network.setW(new Matrix(matrices[0]));
             network.setWH(new Matrix(matrices[1]));
         } catch (IOException e) {
-            System.err.print("has no network");
+            System.err.print("has no teaching");
         }
         return network;
     }
