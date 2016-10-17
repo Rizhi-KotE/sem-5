@@ -139,6 +139,6 @@ public class NeuronsTeacher {
 
 
     public ResultTeaching getResultTeaching() {
-        return new ResultTeaching(getBestE(), (int) epochNumber, 0, getN(), getP(), getL(), getE(), getStep());
+        return new ResultTeaching(getBestE(), (int) epochNumber, 0, getN(), getP(), getListOfArrayXi().size(), getE(), getStep());
     }
 }

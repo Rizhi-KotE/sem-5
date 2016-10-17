@@ -3,6 +3,7 @@ package teaching;
 import Jama.Matrix;
 import dto.ResultTeaching;
 import image_utils.SaveUtils;
+import lombok.Data;
 import mains.main;
 
 import java.io.File;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+@Data
 public class TeachingThread extends Thread {
 
     private int n;
@@ -37,17 +39,21 @@ public class TeachingThread extends Thread {
         this.e = e;
     }
 
-    public void setTeacher(NeuronsTeacher teacher){
+    public void setTeacher(NeuronsTeacher teacher) {
         this.teacher = teacher;
-        try {
-            matrices = main.getSamples(tileWidth, tileHeight, new File(image));
-        } catch (IOException e) {
-            this.interrupt();
+        if (matrices == null) {
+            try {
+                matrices = main.getSamples(tileWidth, tileHeight, new File(image));
+            } catch (IOException e) {
+                this.interrupt();
+            }
         }
 
-        network = SaveUtils.loadNetwork(new File(currentNetwork));
-        if (network.getW() == null) {
-            network = main.initNetwork(p, n);
+        if (teacher.getNetwork() == null) {
+            network = SaveUtils.loadNetwork(new File(currentNetwork));
+            if (network.getW() == null) {
+                network = main.initNetwork(p, n);
+            }
         }
 
         teacher.setN(n);
@@ -67,7 +73,7 @@ public class TeachingThread extends Thread {
             interrupt();
         } finally {
             saveResults(network, teacher.getPlot(), teacher.getResultTeaching());
-            System.exit(0);
+            stop();
         }
     }
 
@@ -81,8 +87,8 @@ public class TeachingThread extends Thread {
                 e1.printStackTrace();
             }
             SaveUtils.saveObject(new File(currentNetwork + "-" + e + ".result"), resultTeaching);
-        }finally {
-            System.exit(0);
+        } finally {
+
         }
     }
 

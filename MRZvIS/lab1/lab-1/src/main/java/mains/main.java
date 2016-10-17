@@ -23,7 +23,7 @@ public class main {
 
     public static NeuronsNetwork initNetwork(int N, int p) {
         Matrix W = Matrix.random(N, p);
-        W = W.times(2.).minus(new Matrix(N, p, 1.)).times(0.000025);
+        W = W.times(2.).minus(new Matrix(N, p, 1.)).times(0.25);
         Matrix WH = W.transpose();
         NeuronsNetwork network = new NeuronsNetwork();
         network.setW(W);
