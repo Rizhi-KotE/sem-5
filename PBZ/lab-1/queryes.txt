@@ -1,41 +1,40 @@
-27) 
-select contractor_id from 
-    (select *, avg(amount) as avg_amount from details_amount_contractor_project GROUP by project_id)
-where amount > avg_amount and detail_id = "Д1"
-16)
-select sum_amount from 
-    (select contractor_id, sum(amount) as sum_amount from
-    details_amount_contractor_project group by contractor_id)
-where contractor_id = "П1"
-24)
-select id from contractors where status > 
-    (select status from contractors where id = "П1")
-9)
-select detail_id from details_amount_contractor_project 
-where contractor_id in 
-    (select id from contractors where city = "Лондон")
-22)
-select project_id from details_amount_contractor_project 
-where contractor_id = "П1"
-6)
-select contractor_id, detail_id, project_id from 
-    details_amount_contractor_project 
+use PBZ;
+select provider_id from 
+    (select *, avg(count) as avg_count from dependencies GROUP by project_id) as T
+where count > avg_count and detail_id = "D1"
+;
+select sum_count from 
+    (select provider_id, sum(count) as sum_count from
+    dependencies group by provider_id) as T
+where provider_id = "P1"
+;
+select provider_id from providers where status > 
+    (select status from providers where provider_id = "P1")
+;
+select detail_id from dependencies 
+where provider_id in 
+    (select provider_id from providers where city = "ЛонDон")
+;
+select project_id from dependencies 
+where provider_id = "P1"
+;
+select provider_id, detail_id, project_id from 
+    dependencies 
     where 
-    (select city from contractors where id = contractor_id) in
-    (select city from details where id = detail_id) in
-    (select city from projects where id = project_id)
-10)
+    (select city from providers as T where dependencies.provider_id = T.provider_id) and
+    (select city from details as E where dependencies.detail_id = E.detail_id)  and
+    (select city from projects as D where dependencies.project_id = D.project_id);
 select detail_id from 
-    details_amount_contractor_project 
+    dependencies 
     where 
-    contractor_id in (select id from contractors where city = "Лондон") and
-    project_id in (select id from projects where city = "Лондон")
-35)
-select first.contractor_id, second.detail_id from details_amount_contractor_project as first, details_amount_contractor_project as second
-    except select contractor_id, detail_id from details_amount_contractor_project
-15)
-select count(project_id) from details_amount_contractor_project where contractor_id ="П1" group by contractor_id 
-30)
-select detail_id from details_amount_contractor_project
+    provider_id in (select provider_id from providers  where city = "ЛонDон")  and
+    project_id in (select project_id from projects where city = "ЛонDон")
+;
+select first.provider_id, second.detail_id from dependencies as first, dependencies as second
+    left outer join dependencies using (provider_id, detail_id)
+;
+select count(project_id) from dependencies where provider_id ="P1" group by provider_id 
+;
+select detail_id from dependencies
     where project_id in 
-    (select id from projects where city = "Лондон")
+    (select project_id from projects where city = "ЛонDон")
