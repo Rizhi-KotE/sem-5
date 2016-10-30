@@ -4,9 +4,9 @@
 
 class Buffer {
     unsigned int maxSize = 50;
+    unsigned int size = 0;
     char **buffer;
-    char size = 0;
-    char *filename = "buffer.tmp";
+    char *filename = "/home/rizhi-kote/Student/sem-5/OS/lab4/lib/buffer.tmp";
 
     void resize();
 public:

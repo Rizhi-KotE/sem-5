@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.h
+netinet/in.h
+-
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+cstring
+-
+csignal
+-
+Buffer.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/main.cpp
+cstdio
+-
+signal.h
+-
+Server.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.h
+

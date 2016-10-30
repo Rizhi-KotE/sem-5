@@ -4,74 +4,98 @@
 
 int Server::runServerSocket(uint port) {
     int err = listen(serverSocket, 3);
-    timeval timeout;
-    timeout.tv_usec = 0;
+    timespec timeout;
+    timeout.tv_nsec = 0;
+    sigset_t newset;
+    sigemptyset(&newset);
+    sigaddset(&newset, SIGINT);
     while (true) {
-        timeout.tv_sec = 60;
+        timeout.tv_sec = 1;
         fd_set readenSocks = set;
-        fd_set expSocket = set;
-        printf("[%d]: idle\n", pthread_self());
-        int activity = select(max_fd, &readenSocks, NULL, &set, &timeout);
+        sprintf(message, "[%d]: idle\n\0", pthread_self());
+        buffer.append(message, strlen(message));
+        int activity = pselect(max_fd, &readenSocks, NULL, NULL, &timeout, &newset);
         if (activity < 0) {
             printf("error: %s", errno);
         }
-        if (FD_ISSET(serverSocket, &readenSocks)) {
-            sockaddr_in cli_addr;
-            unsigned int clen = sizeof(cli_addr);
-            int newsock = accept(serverSocket, (sockaddr *) &cli_addr, &clen);
-            if (newsock < 0) {
-                sprintf(message, "[%d]: accept failed\n", pthread_self());
-                buffer.append(message, strlen(message));
-                printf(message);
-            }
-            for (int i = 0; i < 10; i++)
-                if (sockets[i] == 0) {
-                    sockets[i] = newsock;
-                    break;
-                }
-            FD_SET(newsock, &set);
-        }
+        if (FD_ISSET(serverSocket, &readenSocks)) acceptSocket();
+
         for (int i = 0; i < 10; i++)
             if (sockets[i] != 0 && FD_ISSET(sockets[i], &readenSocks))
                 runSocketHandler(sockets[i]);
+
         if (FD_ISSET(STDIN_FILENO, &readenSocks)) {
-            read(STDIN_FILENO, message, BUF_SIZE);
-            if (strcmp(message, "stop") == 0) {
+            int readenSize = read(STDIN_FILENO, message, BUF_SIZE);
+            message[readenSize] = '\0';
+            if (readenSize < 0) {
+                continue;
+            }
+            if (strcmp(message, "stop\n") == 0) {
+                buffer.backup();
                 break;
             }
+        }
+        if (*signInt) {
+            buffer.backup();
+            break;
         }
     }
     return 0;
 }
 
-int Server::runSocketHandler(int socket) {
-    unsigned int messageSize;
-    if (socket < 0) {
-        sprintf(message, "[%d]: accept failed\n", pthread_self());
+void Server::acceptSocket() {
+    sockaddr_in cli_addr;
+    unsigned int clen = sizeof(cli_addr);
+    int newsock = accept(serverSocket, (sockaddr *) &cli_addr, &clen);
+    if (newsock < 0) {
+        sprintf(message, "[%d]: accept failed\n\0", pthread_self());
         buffer.append(message, strlen(message));
         printf(message);
-        return socket;
+    } else {
+        sockaddr_in addr;
+        unsigned int sockLen;
+        getsockname(sockLen, (sockaddr *) &addr, &sockLen);
+        sprintf(message, "[%d]: accept new client %s\n\0", pthread_self(), inet_ntoa(addr.sin_addr));
+        buffer.append(message, strlen(message));
     }
-    sockaddr_in addr;
-    unsigned int sockLen;
-    getsockname(sockLen, (sockaddr *) &addr, &sockLen);
-    sprintf(message, "[%d]: accept new client %s\n", pthread_self(), inet_ntoa(addr.sin_addr));
-    buffer.append(message, strlen(message));
-    printf(message);
-    messageSize = read(socket, message, BUF_SIZE);
-    message[messageSize++] = '\0';
-    write(socket, message, messageSize);
+    for (int i = 0; i < 10; i++)
+        if (sockets[i] == 0) {
+            sockets[i] = newsock;
+            break;
+        }
+    if (max_fd < newsock + 1) {
+        max_fd = newsock + 1;
+    }
+    FD_SET(newsock, &set);
+}
 
+int Server::runSocketHandler(int socket) {
+    unsigned int messageSize;
+    messageSize = read(socket, message, BUF_SIZE);
+    if (messageSize == 0) {
+        sockaddr_in addr;
+        unsigned int sockLen;
+        getsockname(sockLen, (sockaddr *) &addr, &sockLen);
+        for (int i = 0; i < 10; i++) if (sockets[i] == socket) sockets[i] = 0;
+        FD_CLR(socket, &set);
+        sprintf(message, "[%d]: client %s disconnected\n\0", pthread_self(), inet_ntoa(addr.sin_addr));
+        buffer.append(message, strlen(message));
+        close(socket);
+    } else {
+        buffer.append(message, messageSize);
+        write(socket, message, messageSize);
+    }
+    return 0;
 }
 
 Server::~Server() {
-    printf("destruct server");
+    printf("destruct server\n");
     close(serverSocket);
 }
 
-Server::Server(uint port, Buffer &buffer) {
-    this->buffer = buffer;
+Server::Server(uint port, sig_atomic_t *signInt) {
     this->port = port;
+    this->signInt = signInt;
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket < 0) {
         printf("socket() failed: %d\n", errno);

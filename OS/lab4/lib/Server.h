@@ -14,6 +14,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <cstring>
+#include <csignal>
 #include "Buffer.h"
 
 class Server {
@@ -26,13 +27,17 @@ class Server {
     int sockets[10];
     uint max_fd;
 public:
-    Server(uint port, Buffer &buffer);
+    Server(uint port, sig_atomic_t *signInt);
 
     int runServerSocket(uint port);
 
     int runSocketHandler(int sock);
 
     ~Server();
+
+    void acceptSocket();
+
+    sig_atomic_t *signInt;
 };
 
 #endif //LAB4_SERVER_H
