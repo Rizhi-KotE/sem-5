@@ -136,6 +136,30 @@ Buffer.cpp.s:
 	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Buffer.cpp.s
 .PHONY : Buffer.cpp.s
 
+Configs.o: Configs.cpp.o
+.PHONY : Configs.o
+
+# target to build an object file
+Configs.cpp.o:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.o
+.PHONY : Configs.cpp.o
+
+Configs.i: Configs.cpp.i
+.PHONY : Configs.i
+
+# target to preprocess a source file
+Configs.cpp.i:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.i
+.PHONY : Configs.cpp.i
+
+Configs.s: Configs.cpp.s
+.PHONY : Configs.s
+
+# target to generate assembly for a file
+Configs.cpp.s:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.s
+.PHONY : Configs.cpp.s
+
 Server.o: Server.cpp.o
 .PHONY : Server.o
 
@@ -196,6 +220,9 @@ help:
 	@echo "... Buffer.o"
 	@echo "... Buffer.i"
 	@echo "... Buffer.s"
+	@echo "... Configs.o"
+	@echo "... Configs.i"
+	@echo "... Configs.s"
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"

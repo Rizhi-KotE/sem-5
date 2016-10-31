@@ -12,20 +12,16 @@ void sigIntHandler(int signal) {
 }
 
 int main(int argc, char **argv) {
+    printf(argv[0]);
     if (argc < 2) {
         fprintf(stderr, "usage: %s <port_number>\n", argv[0]);
         return EXIT_FAILURE;
     }
     struct sigaction sa;
-    sigset_t newset;
-    sigemptyset(&newset);
-//    sigaddset(&newset, SIGINT);
-    sigprocmask(SIG_BLOCK, &newset, 0);
     sa.sa_handler = sigIntHandler;
     sigaction(SIGINT, &sa, 0);
     uint port = atoi(argv[1]);
     Server server(port, &signInt);
-    server.runServerSocket(port);
-    printf("error %d, %s\n", errno, strerror(errno));
+    server.runServerSocket();
     return 0;
 }

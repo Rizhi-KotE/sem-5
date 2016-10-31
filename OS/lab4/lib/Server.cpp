@@ -1,9 +1,11 @@
 #include <pthread.h>
 #include "Server.h"
+#include "Configs.h"
 #include <arpa/inet.h>
+#include <fcntl.h>
 
-int Server::runServerSocket(uint port) {
-    int err = listen(serverSocket, 3);
+int Server::runServerSocket() {
+    int err = listen(serverSocket, maxSocketAmount);
     timespec timeout;
     timeout.tv_nsec = 0;
     sigset_t newset;
@@ -20,24 +22,23 @@ int Server::runServerSocket(uint port) {
         }
         if (FD_ISSET(serverSocket, &readenSocks)) acceptSocket();
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < maxSocketAmount; i++)
             if (sockets[i] != 0 && FD_ISSET(sockets[i], &readenSocks))
                 runSocketHandler(sockets[i]);
 
         if (FD_ISSET(STDIN_FILENO, &readenSocks)) {
-            int readenSize = read(STDIN_FILENO, message, BUF_SIZE);
+            int readenSize = read(STDIN_FILENO, message, message_size);
             message[readenSize] = '\0';
             if (readenSize < 0) {
                 continue;
             }
             if (strcmp(message, "stop\n") == 0) {
-                buffer.backup();
                 break;
             }
         }
         if (*signInt) {
             buffer.backup();
-            break;
+            *signInt = 0;
         }
     }
     return 0;
@@ -46,37 +47,47 @@ int Server::runServerSocket(uint port) {
 void Server::acceptSocket() {
     sockaddr_in cli_addr;
     unsigned int clen = sizeof(cli_addr);
-    int newsock = accept(serverSocket, (sockaddr *) &cli_addr, &clen);
-    if (newsock < 0) {
-        sprintf(message, "[%d]: accept failed\n\0", pthread_self());
-        buffer.append(message, strlen(message));
-        printf(message);
-    } else {
-        sockaddr_in addr;
-        unsigned int sockLen;
-        getsockname(sockLen, (sockaddr *) &addr, &sockLen);
-        sprintf(message, "[%d]: accept new client %s\n\0", pthread_self(), inet_ntoa(addr.sin_addr));
-        buffer.append(message, strlen(message));
-    }
-    for (int i = 0; i < 10; i++)
-        if (sockets[i] == 0) {
-            sockets[i] = newsock;
+    bool nextStep = true;
+    while (nextStep) {
+        nextStep = false;
+        int newsock = accept(serverSocket, (sockaddr *) &cli_addr, &clen);
+        if (errno == EWOULDBLOCK) {
+            errno = 0;
             break;
+        } else {
+            nextStep = true;
         }
-    if (max_fd < newsock + 1) {
-        max_fd = newsock + 1;
+        if (newsock < 0) {
+            sprintf(message, "[%d]: accept failed\n\0", pthread_self());
+            buffer.append(message, strlen(message));
+            printf(message);
+        } else {
+            sockaddr_in addr;
+            unsigned int sockLen;
+            getsockname(newsock, (sockaddr *) &addr, &sockLen);
+            sprintf(message, "[%d]: accept new client %s\n\0", pthread_self(), inet_ntoa(addr.sin_addr));
+            buffer.append(message, strlen(message));
+        }
+        for (int i = 0; i < maxSocketAmount; i++)
+            if (sockets[i] == 0) {
+                sockets[i] = newsock;
+                break;
+            }
+        if (max_fd < newsock + 1) {
+            max_fd = newsock + 1;
+        }
+        FD_SET(newsock, &set);
     }
-    FD_SET(newsock, &set);
 }
 
 int Server::runSocketHandler(int socket) {
     unsigned int messageSize;
-    messageSize = read(socket, message, BUF_SIZE);
+    messageSize = read(socket, message, message_size);
     if (messageSize == 0) {
         sockaddr_in addr;
         unsigned int sockLen;
-        getsockname(sockLen, (sockaddr *) &addr, &sockLen);
-        for (int i = 0; i < 10; i++) if (sockets[i] == socket) sockets[i] = 0;
+        getsockname(socket, (sockaddr *) &addr, &sockLen);
+        for (int i = 0; i < maxSocketAmount; i++) if (sockets[i] == socket) sockets[i] = 0;
         FD_CLR(socket, &set);
         sprintf(message, "[%d]: client %s disconnected\n\0", pthread_self(), inet_ntoa(addr.sin_addr));
         buffer.append(message, strlen(message));
@@ -89,14 +100,18 @@ int Server::runSocketHandler(int socket) {
 }
 
 Server::~Server() {
-    printf("destruct server\n");
     close(serverSocket);
 }
 
 Server::Server(uint port, sig_atomic_t *signInt) {
+    configure();
+    sockets = new int[maxSocketAmount];
+    message = new char[message_size + 1];
+    memset(message, 0, message_size + 1);
     this->port = port;
     this->signInt = signInt;
     serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    fcntl(serverSocket, F_SETFL, SOCK_NONBLOCK);
     if (serverSocket < 0) {
         printf("socket() failed: %d\n", errno);
         throw EXIT_FAILURE;
@@ -114,5 +129,10 @@ Server::Server(uint port, sig_atomic_t *signInt) {
     FD_SET(STDIN_FILENO, &set);
     max_fd = serverSocket + 1;
     memset(sockets, 0, sizeof(sockets));
+}
+
+void Server::configure() {
+    message_size = Configs::get(BUFFER_SIZE_KEY) ? atoi(Configs::get(BUFFER_SIZE_KEY)) : 256;
+    maxSocketAmount = Configs::get(MAX_SOCKETS_AMOUNT) ? atoi(Configs::get(MAX_SOCKETS_AMOUNT)) : 5;
 }
 

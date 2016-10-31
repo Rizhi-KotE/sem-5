@@ -1,0 +1,4 @@
+max_sockets_amount = 5
+buffer_size = 256
+dump_file = ./buffer.tmp
+verbose = 1

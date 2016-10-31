@@ -118,11 +118,35 @@ lib/CMakeFiles/server.dir/Buffer.cpp.o.provides: lib/CMakeFiles/server.dir/Buffe
 
 lib/CMakeFiles/server.dir/Buffer.cpp.o.provides.build: lib/CMakeFiles/server.dir/Buffer.cpp.o
 
+lib/CMakeFiles/server.dir/Configs.cpp.o: lib/CMakeFiles/server.dir/flags.make
+lib/CMakeFiles/server.dir/Configs.cpp.o: lib/Configs.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/CMakeFiles/server.dir/Configs.cpp.o"
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4/lib && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/server.dir/Configs.cpp.o -c /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.cpp
+
+lib/CMakeFiles/server.dir/Configs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/Configs.cpp.i"
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4/lib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.cpp > CMakeFiles/server.dir/Configs.cpp.i
+
+lib/CMakeFiles/server.dir/Configs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Configs.cpp.s"
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4/lib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.cpp -o CMakeFiles/server.dir/Configs.cpp.s
+
+lib/CMakeFiles/server.dir/Configs.cpp.o.requires:
+.PHONY : lib/CMakeFiles/server.dir/Configs.cpp.o.requires
+
+lib/CMakeFiles/server.dir/Configs.cpp.o.provides: lib/CMakeFiles/server.dir/Configs.cpp.o.requires
+	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.o.provides.build
+.PHONY : lib/CMakeFiles/server.dir/Configs.cpp.o.provides
+
+lib/CMakeFiles/server.dir/Configs.cpp.o.provides.build: lib/CMakeFiles/server.dir/Configs.cpp.o
+
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/main.cpp.o" \
 "CMakeFiles/server.dir/Server.cpp.o" \
-"CMakeFiles/server.dir/Buffer.cpp.o"
+"CMakeFiles/server.dir/Buffer.cpp.o" \
+"CMakeFiles/server.dir/Configs.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
@@ -130,6 +154,7 @@ server_EXTERNAL_OBJECTS =
 lib/server: lib/CMakeFiles/server.dir/main.cpp.o
 lib/server: lib/CMakeFiles/server.dir/Server.cpp.o
 lib/server: lib/CMakeFiles/server.dir/Buffer.cpp.o
+lib/server: lib/CMakeFiles/server.dir/Configs.cpp.o
 lib/server: lib/CMakeFiles/server.dir/build.make
 lib/server: lib/CMakeFiles/server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable server"
@@ -142,6 +167,7 @@ lib/CMakeFiles/server.dir/build: lib/server
 lib/CMakeFiles/server.dir/requires: lib/CMakeFiles/server.dir/main.cpp.o.requires
 lib/CMakeFiles/server.dir/requires: lib/CMakeFiles/server.dir/Server.cpp.o.requires
 lib/CMakeFiles/server.dir/requires: lib/CMakeFiles/server.dir/Buffer.cpp.o.requires
+lib/CMakeFiles/server.dir/requires: lib/CMakeFiles/server.dir/Configs.cpp.o.requires
 .PHONY : lib/CMakeFiles/server.dir/requires
 
 lib/CMakeFiles/server.dir/clean:

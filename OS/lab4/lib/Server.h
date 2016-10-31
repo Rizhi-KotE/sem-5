@@ -6,6 +6,9 @@
 #define LAB4_SERVER_H
 
 
+static const char *const MAX_SOCKETS_AMOUNT = "max_sockets_amount";
+static const char * BUFFER_SIZE_KEY = "buffer_size";
+
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,18 +21,19 @@
 #include "Buffer.h"
 
 class Server {
-    static const int BUF_SIZE = 256;
-    char message[BUF_SIZE + 1];
+    int message_size;
+    char *message;
+    int *sockets;
     int serverSocket;
     uint port;
     Buffer buffer;
     fd_set set;
-    int sockets[10];
     uint max_fd;
+    int maxSocketAmount;
 public:
     Server(uint port, sig_atomic_t *signInt);
 
-    int runServerSocket(uint port);
+    int runServerSocket();
 
     int runSocketHandler(int sock);
 
@@ -38,6 +42,8 @@ public:
     void acceptSocket();
 
     sig_atomic_t *signInt;
+
+    void configure();
 };
 
 #endif //LAB4_SERVER_H

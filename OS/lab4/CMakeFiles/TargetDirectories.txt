@@ -1,2 +1,2 @@
-/home/rizhi-kote/Student/sem-5/OS/lab4/client/CMakeFiles/client.cpp.dir
+/home/rizhi-kote/Student/sem-5/OS/lab4/client/CMakeFiles/client.dir
 /home/rizhi-kote/Student/sem-5/OS/lab4/lib/CMakeFiles/server.dir

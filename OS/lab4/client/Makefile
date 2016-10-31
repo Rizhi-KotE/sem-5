@@ -99,25 +99,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-client/CMakeFiles/client.cpp.dir/rule:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 client/CMakeFiles/client.cpp.dir/rule
-.PHONY : client/CMakeFiles/client.cpp.dir/rule
+client/CMakeFiles/client.dir/rule:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 client/CMakeFiles/client.dir/rule
+.PHONY : client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-client.cpp: client/CMakeFiles/client.cpp.dir/rule
-.PHONY : client.cpp
+client: client/CMakeFiles/client.dir/rule
+.PHONY : client
 
 # fast build rule for target.
-client.cpp/fast:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/build
-.PHONY : client.cpp/fast
+client/fast:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 client.o: client.cpp.o
 .PHONY : client.o
 
 # target to build an object file
 client.cpp.o:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/client.cpp.o
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.cpp.o
 .PHONY : client.cpp.o
 
 client.i: client.cpp.i
@@ -125,7 +125,7 @@ client.i: client.cpp.i
 
 # target to preprocess a source file
 client.cpp.i:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/client.cpp.i
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.cpp.i
 .PHONY : client.cpp.i
 
 client.s: client.cpp.s
@@ -133,7 +133,7 @@ client.s: client.cpp.s
 
 # target to generate assembly for a file
 client.cpp.s:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/client.cpp.s
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/client.cpp.s
 .PHONY : client.cpp.s
 
 # Help Target
@@ -142,7 +142,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... client.cpp"
+	@echo "... client"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client.o"

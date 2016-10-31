@@ -2,13 +2,19 @@
 #define PROJECT_BUFFER_H
 
 
+static const int FIRST_BUF_SIZE = 50;
+
+static const int BUFFER_SIZE = 256;
+static const char * DUMP_FILE_KEY = "dump_file";
+
 class Buffer {
     unsigned int maxSize = 50;
     unsigned int size = 0;
     char **buffer;
-    char *filename = "/home/rizhi-kote/Student/sem-5/OS/lab4/lib/buffer.tmp";
+    const char *filename;
 
     void resize();
+    bool verbose;
 public:
     Buffer();
 
@@ -17,6 +23,8 @@ public:
     int backup();
 
     ~Buffer();
+
+    void configure();
 };
 
 

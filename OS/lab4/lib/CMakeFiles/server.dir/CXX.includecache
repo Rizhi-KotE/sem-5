@@ -6,7 +6,41 @@
 
 #IncludeRegexTransform: 
 
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.cpp
+cstring
+-
+Buffer.h
 /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+Configs.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
+fcntl.h
+-
+unistd.h
+-
+cstdio
+-
+cstdlib
+-
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
+map
+-
+string
+-
+
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.cpp
+pthread.h
+-
+Server.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.h
+Configs.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
+arpa/inet.h
+-
+fcntl.h
+-
 
 /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.h
 netinet/in.h

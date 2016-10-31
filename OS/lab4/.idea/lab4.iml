@@ -6,8 +6,10 @@
       <sourceFolder url="file://$MODULE_DIR$/lib/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/Buffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/Configs.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/Server.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib/Server.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lib/Configs.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/client/client.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/client/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />

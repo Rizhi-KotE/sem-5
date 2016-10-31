@@ -112,17 +112,17 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
-# Target rules for targets named client.cpp
+# Target rules for targets named client
 
 # Build rule for target.
-client.cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client.cpp
-.PHONY : client.cpp
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
 
 # fast build rule for target.
-client.cpp/fast:
-	$(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/build
-.PHONY : client.cpp/fast
+client/fast:
+	$(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 # Help Target
 help:
@@ -133,7 +133,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... server"
-	@echo "... client.cpp"
+	@echo "... client"
 .PHONY : help
 
 

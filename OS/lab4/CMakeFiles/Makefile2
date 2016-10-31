@@ -74,7 +74,7 @@ lib/preinstall:
 lib/CMakeFiles/server.dir/all:
 	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/depend
 	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles  2 3 4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles  2 3 4 5
 	@echo "Built target server"
 .PHONY : lib/CMakeFiles/server.dir/all
 
@@ -84,7 +84,7 @@ all: lib/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 lib/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 0
 .PHONY : lib/CMakeFiles/server.dir/rule
@@ -106,11 +106,11 @@ clean: lib/CMakeFiles/server.dir/clean
 # Directory level rules for directory client
 
 # Convenience name for "all" pass in the directory.
-client/all: client/CMakeFiles/client.cpp.dir/all
+client/all: client/CMakeFiles/client.dir/all
 .PHONY : client/all
 
 # Convenience name for "clean" pass in the directory.
-client/clean: client/CMakeFiles/client.cpp.dir/clean
+client/clean: client/CMakeFiles/client.dir/clean
 .PHONY : client/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -118,38 +118,38 @@ client/preinstall:
 .PHONY : client/preinstall
 
 #=============================================================================
-# Target rules for target client/CMakeFiles/client.cpp.dir
+# Target rules for target client/CMakeFiles/client.dir
 
 # All Build rule for target.
-client/CMakeFiles/client.cpp.dir/all:
-	$(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/depend
-	$(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/build
+client/CMakeFiles/client.dir/all:
+	$(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/depend
+	$(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles  1
-	@echo "Built target client.cpp"
-.PHONY : client/CMakeFiles/client.cpp.dir/all
+	@echo "Built target client"
+.PHONY : client/CMakeFiles/client.dir/all
 
 # Include target in all.
-all: client/CMakeFiles/client.cpp.dir/all
+all: client/CMakeFiles/client.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-client/CMakeFiles/client.cpp.dir/rule: cmake_check_build_system
+client/CMakeFiles/client.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 client/CMakeFiles/client.cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 client/CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 0
-.PHONY : client/CMakeFiles/client.cpp.dir/rule
+.PHONY : client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-client.cpp: client/CMakeFiles/client.cpp.dir/rule
-.PHONY : client.cpp
+client: client/CMakeFiles/client.dir/rule
+.PHONY : client
 
 # clean rule for target.
-client/CMakeFiles/client.cpp.dir/clean:
-	$(MAKE) -f client/CMakeFiles/client.cpp.dir/build.make client/CMakeFiles/client.cpp.dir/clean
-.PHONY : client/CMakeFiles/client.cpp.dir/clean
+client/CMakeFiles/client.dir/clean:
+	$(MAKE) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/clean
+.PHONY : client/CMakeFiles/client.dir/clean
 
 # clean rule for target.
-clean: client/CMakeFiles/client.cpp.dir/clean
+clean: client/CMakeFiles/client.dir/clean
 .PHONY : clean
 
 #=============================================================================

@@ -4,8 +4,13 @@
 lib/CMakeFiles/server.dir/Buffer.cpp.o
  /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.cpp
  /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+ /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
+lib/CMakeFiles/server.dir/Configs.cpp.o
+ /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.cpp
+ /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
 lib/CMakeFiles/server.dir/Server.cpp.o
  /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+ /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
  /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.cpp
  /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Server.h
 lib/CMakeFiles/server.dir/main.cpp.o
