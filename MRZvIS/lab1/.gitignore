@@ -1,0 +1,13 @@
+*json
+*jpg
+*plot
+*jar
+plot*
+*.idea*
+*.grudle*
+*.jpg
+*.json
+*.result
+*.rb
+*.txt
+statistic/

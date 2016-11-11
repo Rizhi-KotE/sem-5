@@ -5,7 +5,6 @@
 #include <fcntl.h>
 
 int Server::runServerSocket() {
-    int err = listen(serverSocket, maxSocketAmount);
     timespec timeout;
     timeout.tv_nsec = 0;
     sigset_t newset;
@@ -124,6 +123,7 @@ Server::Server(uint port, sig_atomic_t *signInt) {
         printf("bind() failed: %d\n", errno);
         throw EXIT_FAILURE;
     }
+    int err = listen(serverSocket, maxSocketAmount);
     FD_ZERO(&set);
     FD_SET(serverSocket, &set);
     FD_SET(STDIN_FILENO, &set);

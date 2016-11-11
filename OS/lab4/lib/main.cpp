@@ -12,7 +12,6 @@ void sigIntHandler(int signal) {
 }
 
 int main(int argc, char **argv) {
-    printf(argv[0]);
     if (argc < 2) {
         fprintf(stderr, "usage: %s <port_number>\n", argv[0]);
         return EXIT_FAILURE;

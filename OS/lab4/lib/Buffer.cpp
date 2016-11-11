@@ -9,10 +9,12 @@
 #include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
+#include <errno.h>
 
 Buffer::Buffer() {
     configure();
-    buffer = new char *[FIRST_BUF_SIZE];
+    maxSize = FIRST_BUF_SIZE;
+    buffer = new char *[maxSize];
 }
 
 void Buffer::append(char const *string, unsigned int length) {
@@ -36,11 +38,12 @@ Buffer::~Buffer() {
 int Buffer::backup() {
     int file = open(filename, O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
-    if (file == -1) {
+    if (file == -1) {//  проверка на открытие файла
+        printf(strerror(errno));
         return file;
     }
     for (int i = 0; i < size; i++) {
-        for (int j = 0; buffer[i][j]; write(file, &buffer[i][j++], 1));
+        write(file, buffer[i], strlen(buffer[i]));
         delete[] buffer[i];
     }
     size = 0;
@@ -50,20 +53,20 @@ int Buffer::backup() {
     size_t readen = readlink(filepath, filepath, BUFFER_SIZE);
     filepath[readen] = '\0';
     printf("[backup] file: %s\n", filepath);
-//    printf("[backup] file: %s\n", filepath);
-
     int err = close(file);
     return err;
 }
 
 void Buffer::resize() {
+    printf("resize\n");
     char **newBuffer = new char *[maxSize * 2];
+    memset(newBuffer, 0, sizeof(char **) * maxSize * 2);
+    memcpy(newBuffer, buffer, sizeof(char **) * maxSize);
     maxSize *= 2;
-    memcpy(newBuffer, buffer, sizeof(buffer));
     buffer = newBuffer;
 }
 
 void Buffer::configure() {
     filename = Configs::get(DUMP_FILE_KEY) ? Configs::get(DUMP_FILE_KEY) : "./buffer.tmp";
-    verbose = Configs::get("verbose") ? atoi(Configs::get("verbose")) : 0;
+    verbose = Configs::get("verbose") ? atoi(Configs::get("verbose")) : 1;
 }
