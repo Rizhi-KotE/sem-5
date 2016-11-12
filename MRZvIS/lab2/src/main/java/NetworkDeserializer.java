@@ -44,6 +44,6 @@ public class NetworkDeserializer extends StdDeserializer<JordansNetworkWithTange
                 e.printStackTrace();
             }
         });
-        return null;
+        return jordansNetworkWithTangens;
     }
 }

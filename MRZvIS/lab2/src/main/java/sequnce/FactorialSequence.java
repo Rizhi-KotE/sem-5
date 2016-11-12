@@ -1,3 +1,5 @@
+package sequnce;
+
 import java.util.stream.DoubleStream;
 
 public class FactorialSequence implements Sequence {
@@ -11,6 +13,6 @@ public class FactorialSequence implements Sequence {
 
     @Override
     public DoubleStream getSequence(int length) {
-        return null;
+        return DoubleStream.generate(this::getNext).limit(length);
     }
 }

@@ -1,34 +1,24 @@
-
-
 import Jama.Matrix;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.Getter;
 
 @JsonSerialize(using = NetworkSerializer.class)
 @JsonDeserialize(using = NetworkDeserializer.class)
-public class JordansNetworkWithTangens {
-    private Matrix firstW;
-
-    private Matrix secondW;
-
-    private Matrix context;
-
+public class JordansNetworkWithTangens implements RecurentNetwork {
     private final int inputSize;
-
     private final int outputLayerSize;
-
     private final int contextSize;
-
     private final int hiddenLayerSize;
-
+    protected Matrix firstW;
+    protected Matrix secondW;
+    private Matrix context;
     private ActivationFunction function = new TangensFunction();
     private Matrix secondActivationOutput;
     private Matrix secondSynapticOutput;
     private Matrix firstActivationOutput;
     private Matrix firstSynapticOutput;
     private Matrix input;
-
+    private boolean contextFreeze;
 
     public JordansNetworkWithTangens(int inputSize) {
         this.inputSize = inputSize;
@@ -36,6 +26,14 @@ public class JordansNetworkWithTangens {
         hiddenLayerSize = inputSize;
         contextSize = outputLayerSize;
         initWeights();
+    }
+
+    public void freezeContext() {
+        contextFreeze = true;
+    }
+
+    public void unfreezeContext() {
+        contextFreeze = false;
     }
 
     private void initWeights() {
@@ -76,7 +74,8 @@ public class JordansNetworkWithTangens {
     * */
     public Matrix straightPropagation(Matrix vector) {
         if (vector.getColumnDimension() != inputSize + contextSize) {
-            throw new IllegalArgumentException("{{<vectorp><lace to context signals>}}");
+            throw new IllegalArgumentException("{{<vectorp><place to context signals>}}, expected " +
+                    (inputSize + contextSize) + " size, result " + vector.getColumnDimension());
         }
         vector.setMatrix(0, 0, inputSize, inputSize + contextSize - 1, context);
         input = vector.copy();
@@ -84,29 +83,35 @@ public class JordansNetworkWithTangens {
         firstActivationOutput = applyFunction(firstSynapticOutput);
         secondSynapticOutput = firstActivationOutput.times(secondW);
         secondActivationOutput = applyFunction(secondSynapticOutput);
-        context = secondActivationOutput.copy();
+        if (!contextFreeze) context = secondActivationOutput.copy();
         return secondActivationOutput;
     }
 
     public void backPropagate(Matrix outputDifference, double teachingStep) {
-        Matrix outputTangensSquare = secondActivationOutput.arrayTimesEquals(secondActivationOutput);
-        Matrix outputTangensDerivate = new Matrix(1, outputLayerSize, 1.).minusEquals(outputTangensSquare);
-        Matrix outputLayerCorrection = outputDifference
-                .times(outputTangensDerivate)
-                .times(firstActivationOutput)
-                .times(teachingStep)
-                .transpose();
-        Matrix hiddenTangensSquare = firstActivationOutput.arrayTimesEquals(firstActivationOutput);
-        Matrix hiddenTangensDerivate = new Matrix(1, hiddenLayerSize, 1.).minusEquals(hiddenTangensSquare);
-        Matrix hiddenDifference = outputDifference
-                .times(outputTangensDerivate)
+        Matrix secondActivationDerivation = new Matrix(1, outputLayerSize, 1.)
+                .minus(secondActivationOutput.arrayTimes(secondActivationOutput));
+
+        Matrix hiddenLayerDifference = outputDifference
+                .arrayTimesEquals(secondActivationDerivation)
                 .times(secondW.transpose());
-        secondW = secondW.plusEquals(outputLayerCorrection);
-        Matrix hiddenLayerCorrection = hiddenDifference
-                .arrayTimesEquals(hiddenTangensDerivate)
+        Matrix firstActivationDerivation = new Matrix(1, hiddenLayerSize, 1.)
+                .minus(firstActivationOutput.arrayTimes(firstActivationOutput));
+
+        Matrix firstWeightsCorrection = input
                 .transpose()
-                .times(input)
+                .times(hiddenLayerDifference.arrayTimes(firstActivationDerivation))
                 .times(teachingStep);
-        firstW = firstW.plus(hiddenLayerCorrection.transpose());
+        firstW = firstW.minusEquals(firstWeightsCorrection);
+
+        Matrix secondWeightsCorrection = firstActivationOutput
+                .transpose()
+                .times(outputDifference.arrayTimes(secondActivationDerivation))
+                .times(teachingStep);
+        secondW = secondW.minusEquals(secondWeightsCorrection);
+    }
+
+    @Override
+    public void resetContext() {
+        context = new Matrix(1, contextSize, 0);
     }
 }
