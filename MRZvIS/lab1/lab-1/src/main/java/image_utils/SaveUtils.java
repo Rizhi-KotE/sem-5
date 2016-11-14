@@ -18,19 +18,6 @@ public class SaveUtils {
         }
     }
 
-    public static NeuronsNetwork loadNetwork(File file) {
-        ObjectMapper mapper = new ObjectMapper();
-        NeuronsNetwork network = new NeuronsNetwork();
-        try {
-            double[][][] matrices = mapper.readValue(file, double[][][].class);
-            network.setW(new Matrix(matrices[0]));
-            network.setWH(new Matrix(matrices[1]));
-        } catch (IOException e) {
-            System.err.print("has no teaching");
-        }
-        return network;
-    }
-
     public static void savePlot(File file, double[][] list) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(file, list);

@@ -2,7 +2,7 @@ package teaching;
 
 import Jama.Matrix;
 import dto.ResultTeaching;
-import lombok.Data;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,26 @@ import java.util.List;
 /**
  * Created by toli444 on 13.9.16.
  */
-@Data
+@Getter
 public class NeuronsTeacher {
-    private int L; //Число векторов Xi
-    private int N; //Длина вектора Xi
-    private int p; //Заданное пользователем значение
-    private double step;
-    private double e;
-    protected NeuronsNetwork network;
-    private List<Matrix> listOfArrayXi;
+    protected final NeuronsNetwork network;
+    private final int L; //Число векторов Xi
+    private final int N; //Длина вектора Xi
+    private final int p; //Заданное пользователем значение
+    private final double step;
+    private final double e;
+    private final List<Matrix> listOfArrayXi;
+    private String image;
+
+    public NeuronsTeacher(int l, int n, int p, double step, double e, NeuronsNetwork network, List<Matrix> listOfArrayXi) {
+        L = l;
+        N = n;
+        this.p = p;
+        this.step = step;
+        this.e = e;
+        this.network = network;
+        this.listOfArrayXi = listOfArrayXi;
+    }
     private Matrix bestWh;
     private Matrix bestW;
     private double bestE = Double.MAX_VALUE;
@@ -53,7 +64,7 @@ public class NeuronsTeacher {
 
     private double checkError() {
         double e = 0;
-        for (Matrix xi : getListOfArrayXi()) {
+        for (Matrix xi : listOfArrayXi) {
             Matrix Yi = network.pack(xi);
             Matrix XHi = network.extract(Yi);
             Matrix deltaXi = calculateDeltaXi(XHi, xi);
@@ -93,12 +104,12 @@ public class NeuronsTeacher {
             bestWh = network.getWH();
             System.out.println("Best E: " + bestE);
         }
-        plot.add(new double[]{getEpochNumber(), e});
+        plot.add(new double[]{epochNumber, e});
         epochNumber++;
     }
 
     public NeuronsNetwork getBestNetwork() {
-        NeuronsNetwork network = new NeuronsNetwork();
+        NeuronsNetwork network = new NeuronsNetwork(N, p);
         network.setW(bestW);
         network.setWH(bestWh);
         return network;
@@ -139,6 +150,11 @@ public class NeuronsTeacher {
 
 
     public ResultTeaching getResultTeaching() {
-        return new ResultTeaching(getBestE(), (int) epochNumber, 0, getN(), getP(), getListOfArrayXi().size(), getE(), getStep());
+        ResultTeaching result = new ResultTeaching(bestE, (int) epochNumber, 0, N, p, listOfArrayXi.size(), e, step, image);
+        return result;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

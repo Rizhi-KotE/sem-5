@@ -1,6 +1,7 @@
 package mains;
 
 import Jama.Matrix;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import image_utils.ImageTileDivider;
 import teaching.NeuronsNetwork;
 import image_utils.SaveUtils;
@@ -21,7 +22,9 @@ public class WorkWithImage {
         BufferedImage image = ImageIO.read(new File(imageName));
         ImageTileDivider divider = new ImageTileDivider();
 
-        NeuronsNetwork network = SaveUtils.loadNetwork(new File(networkName));
+        ObjectMapper mapper = new ObjectMapper();
+
+        NeuronsNetwork network = mapper.readValue(new File(networkName), NeuronsNetwork.class);
 
         Matrix[] matrices = divider.divideOnTiles(image, tileWidth, tileHeight, 1);
         Matrix[] encoded = Arrays.stream(matrices).map(matrix -> network.pack(matrix)).toArray(Matrix[]::new);

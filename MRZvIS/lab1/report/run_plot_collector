@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "1" | java -jar /home/rizhi-kote/.m2/repository/rk/lab-1-pom/1.0-SNAPSHOT/lab-1-pom-1.0-SNAPSHOT.jar &&
+echo "2" | java -jar /home/rizhi-kote/.m2/repository/rk/lab-1-pom/1.0-SNAPSHOT/lab-1-pom-1.0-SNAPSHOT.jar &&
+echo "3" | java -jar /home/rizhi-kote/.m2/repository/rk/lab-1-pom/1.0-SNAPSHOT/lab-1-pom-1.0-SNAPSHOT.jar &&
+echo "4" | java -jar /home/rizhi-kote/.m2/repository/rk/lab-1-pom/1.0-SNAPSHOT/lab-1-pom-1.0-SNAPSHOT.jar

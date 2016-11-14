@@ -1,17 +1,20 @@
 package teaching;
 
 import Jama.Matrix;
-import lombok.Data;
 
-@Data
+import java.util.List;
+
 public class NormalizeNeuronsTeacher extends NeuronsTeacher {
 
+    public NormalizeNeuronsTeacher(int l, int n, int p, double step, double e, NeuronsNetwork network, List<Matrix> listOfArrayXi) {
+        super(l, n, p, step, e, network, listOfArrayXi);
+    }
 
     @Override
     public void correction(Matrix Xi, Matrix yi, Matrix deltaXi) {
         super.correction(Xi, yi, deltaXi);
-        normalize(getNetwork().getW());
-        normalize(getNetwork().getWH());
+        normalize(network.getW());
+        normalize(network.getWH());
 //        normalizeTransponce(getNetwork().getWH());
     }
 
@@ -35,8 +38,8 @@ public class NormalizeNeuronsTeacher extends NeuronsTeacher {
 
     @Override
     protected void beforeFirstEpoch() {
-        normalize(getNetwork().getW());
-        normalize(getNetwork().getWH());
+        normalize(network.getW());
+        normalize(network.getWH());
         super.beforeFirstEpoch();
     }
 
