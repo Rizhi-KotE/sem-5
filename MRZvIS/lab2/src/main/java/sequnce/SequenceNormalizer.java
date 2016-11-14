@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.DoubleStream;
 
 public class SequenceNormalizer {
-    private final DoubleStream stream;
+    protected final DoubleStream stream;
     private double max;
     private double min;
 

@@ -4,11 +4,14 @@ import java.util.function.IntToDoubleFunction;
 
 public class Fibonachi implements IntToDoubleFunction {
 
-    private long previos;
+    private long previos = 1;
+    private long previosPrevios = 0;
 
     @Override
     public double applyAsDouble(int value) {
-        double out = previos++ + value;
-        return out / Double.MAX_VALUE;
+        long result = previos + previosPrevios;
+        previosPrevios = previos;
+        previos = result;
+        return result;
     }
 }

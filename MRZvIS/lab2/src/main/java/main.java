@@ -28,65 +28,82 @@ public class main {
                 "3. Sin\n" +
                 "4. Fibonachi\n" +
                 "5. File");
-        int sequence = scanner.nextInt();
+        int sequenceType = scanner.nextInt();
 //        int sequence = 5;
-        int inputVectorSize = 20;
-        double step = 0.001;
+        System.out.println("input vector size");
+        int inputVectorSize = scanner.nextInt();
+        double step = 0.001 / inputVectorSize;
         double expectedError = 0.001;
-        int size = 200;
-        JordansNetworkWithTangens network = new JordansNetworkWithTangens(inputVectorSize);
+        int predictedLength = inputVectorSize * 2;
+        int size = 50;
+        size = size + predictedLength;
+        RecurentNetwork network = new JordansNetworkWithTangensNormalized(inputVectorSize);
         IntToDoubleFunction function;
-        switch (sequence) {
+        SequenceNormalizer sequenceNormalizer = null;
+        switch (sequenceType) {
             case 1:
-                Factorial factorial = new Factorial();
-                function = (x) -> 1. / factorial.applyAsDouble(x);
+                function = new Factorial();
                 expectedError = 0.0001;
                 step = 0.0001;
+                size = 40;
+                predictedLength = 10;
+                sequenceNormalizer = new SequenceNormalizer(IntStream.range(0, size).mapToDouble(function));
                 break;
             case 2:
                 function = (x) -> Math.cos(0.5 * x);
+                sequenceNormalizer = new SequenceNormalizer(IntStream.range(0, size).mapToDouble(function)) {
+                    @Override
+                    public double denormilize(double value) {
+                        return value;
+                    }
+
+                    @Override
+                    public DoubleStream normalize() {
+                        return stream;
+                    }
+                };
                 break;
             case 3:
                 function = (x) -> Math.sin(x);
+                sequenceNormalizer = new SequenceNormalizer(IntStream.range(0, size).mapToDouble(function)) {
+                    @Override
+                    public double denormilize(double value) {
+                        return value;
+                    }
+
+                    @Override
+                    public DoubleStream normalize() {
+                        return stream;
+                    }
+                };
                 break;
             case 4:
                 function = new Fibonachi();
+                size = 40;
+                predictedLength = 10;
+                expectedError /= 1_000_000.;
+                sequenceNormalizer = new SequenceNormalizer(IntStream.range(0, size).mapToDouble(function));
                 break;
             case 5:
-                FileSequnce fileSequnce = new FileSequnce(new File("/home/rizhi-kote/Student/sem-5/MRZvIS/lab2/src/main/resources/pogoda.sequnce"));
+                FileSequnce fileSequnce = new FileSequnce(new File("/home/rizhi-kote/Student/sem-5/MRZvIS/lab2/src/main/resources/repli/pogoda.sequnce"));
                 function = (x) -> fileSequnce.applyAsDouble(x) / 8;
                 size = 40;
                 break;
             default:
                 function = null;
+                sequenceNormalizer = null;
                 System.exit(1);
         }
-        SequenceNormalizer sequenceNormalizer = new SequenceNormalizer(IntStream.range(0, size).mapToDouble(function));
-        runNetworkWork(network, sequenceNormalizer.normalize(), size, inputVectorSize, step, expectedError);
-        List<Point.Double> prediction = new ArrayList<>();
-        Matrix predicate = sequence.get(sequence.size() - 1).getKey();
-        for (int i = 0; i < maxSize; i++) {
-            predicate.setMatrix(0, 0, 0, inputVectorSize - 1 - 1, predicate.getMatrix(0, 0, 1, inputVectorSize - 1));
-//            for (Pair<Matrix, Matrix> pair : sequence.subList(50, sequence.size())) {
-            result = network.straightPropagation(predicate).get(0, 0);
-            prediction.add(new Point2D.Double(i, sequenceNormalizer.denormilize(result)));
-            System.out.println(/*"Expected " + pair.getValue().get(0, 0) + */" ,result is " + result);
-        }
-//        }
-        writePlot(prediction, "prediction");
-    }
-
-    private static RecurentNetwork runNetworkWork(RecurentNetwork network, DoubleStream stream, int maxSize, int inputVectorSize,
-                                                  double step, double expectedError) {
-        TrainingSetGenerator generator = new TrainingSetGenerator(stream);
+        TrainingSetGenerator generator = new TrainingSetGenerator(sequenceNormalizer.normalize());
         List<Pair<Matrix, Matrix>> sequence = generator.createTrainingSet(inputVectorSize).collect(Collectors.toList());
-        List<Pair<Matrix, Matrix>> check = sequence;
+        List<Pair<Matrix, Matrix>> teachingSequence = sequence.subList(0, sequence.size() - predictedLength);
+        List<Pair<Matrix, Matrix>> predictedSequence = new ArrayList<>(sequence.subList(sequence.size() - predictedLength, sequence.size()));
         LinkedList<Point.Double> points = new LinkedList<>();
-        int maxIterations = 20000;
+        int maxIterations = 1_000_000;
         double result;
         for (int iteration = 0; iteration < maxIterations; iteration++) {
             network.resetContext();
-            for (Pair<Matrix, Matrix> pair : check) {
+            for (Pair<Matrix, Matrix> pair : teachingSequence) {
 
                 Matrix matrix = network.straightPropagation(pair.getKey());
                 Matrix delta = matrix.minus(pair.getValue());
@@ -95,7 +112,7 @@ public class main {
 
             double error = 0;
             network.resetContext();
-            for (Pair<Matrix, Matrix> pair : check) {
+            for (Pair<Matrix, Matrix> pair : teachingSequence) {
 
                 result = network.straightPropagation(pair.getKey()).get(0, 0);
                 double expected = pair.getValue().get(0, 0);
@@ -105,8 +122,36 @@ public class main {
             System.out.println(error + " " + iteration);
             if (error < expectedError) break;
         }
-        writePlot(points, "plot");
-        return network;
+        writePlot(points, "e_to_iterations");
+
+//        network.resetContext();
+        Matrix lastResult = teachingSequence.get(teachingSequence.size() - 1).getValue();
+        List<Point.Double> prediction = new ArrayList();
+        for (Pair<Matrix, Matrix> pair : teachingSequence) {
+            lastResult = network.straightPropagation(pair.getKey());
+            prediction.add(new Point2D.Double(pair.getValue().get(0, 0), lastResult.get(0, 0)));
+        }
+        Matrix futureVector = teachingSequence.get(teachingSequence.size() - 1).getKey();
+        for (int i = 0; i < predictedLength; i++) {
+            futureVector.setMatrix(0, 0, 0, inputVectorSize - 1 - 1, futureVector.getMatrix(0, 0, 1, inputVectorSize - 1));
+            futureVector.setMatrix(0, 0, inputVectorSize - 1, inputVectorSize - 1, lastResult);
+            lastResult = network.straightPropagation(futureVector);
+            Point2D.Double point = new Point2D.Double(sequenceNormalizer.denormilize(predictedSequence.get(i).getValue().get(0, 0)), sequenceNormalizer.denormilize(lastResult.get(0, 0)));
+            prediction.add(point);
+            System.out.println(point);
+        }
+//        Iterator<Pair<Matrix, Matrix>> iterator = predictedSequence.iterator();
+//        for (int i = 0; i < size && iterator.hasNext(); i++) {
+//            Pair<Matrix, Matrix> next = iterator.next();
+////            predicate.setMatrix(0, 0, 0, inputVectorSize - 1 - 1, predicate.getMatrix(0, 0, 1, inputVectorSize - 1));
+//            result = network.straightPropagation(next.getKey()).get(0, 0);
+//            prediction.add(new Point2D.Double(sequenceNormalizer.denormilize(next.getValue().get(0, 0)),
+//                    sequenceNormalizer.denormilize(result)));
+//            System.out.println("Expected " + sequenceNormalizer.denormilize(next.getValue().get(0, 0)) +
+//                    " ,result is " + sequenceNormalizer.denormilize(result));
+//        }
+//        }
+        writePlot(prediction, "prediction");
     }
 
     private static void writePlot(List<Point.Double> points, String fileName) {

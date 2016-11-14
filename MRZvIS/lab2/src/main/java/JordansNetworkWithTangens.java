@@ -37,13 +37,13 @@ public class JordansNetworkWithTangens implements RecurentNetwork {
     }
 
     private void initWeights() {
-        firstW = Matrix.random(inputSize + contextSize, inputSize)
+        firstW = Matrix.random(inputSize + contextSize + 1, inputSize + 1)
                 .times(2.)
-                .minus(new Matrix(inputSize + contextSize, inputSize, 1.))
+                .minus(new Matrix(inputSize + contextSize + 1, inputSize + 1, 1.))
                 .times(0.25);
-        secondW = Matrix.random(inputSize, outputLayerSize)
+        secondW = Matrix.random(inputSize + 1, outputLayerSize)
                 .times(2.)
-                .minus(new Matrix(inputSize, outputLayerSize, 1.))
+                .minus(new Matrix(inputSize + 1, outputLayerSize, 1.))
                 .times(0.25);
         context = new Matrix(contextSize, 1);
     }
@@ -73,14 +73,16 @@ public class JordansNetworkWithTangens implements RecurentNetwork {
     * in: {{<vectorp><lace to context signals>}}>
     * */
     public Matrix straightPropagation(Matrix vector) {
-        if (vector.getColumnDimension() != inputSize + contextSize) {
-            throw new IllegalArgumentException("{{<vectorp><place to context signals>}}, expected " +
-                    (inputSize + contextSize) + " size, result " + vector.getColumnDimension());
+        if (vector.getColumnDimension() != inputSize + contextSize + 1) {
+            throw new IllegalArgumentException("{{<vector><place to threshold><place to context signals>}}, " +
+                    "expected size " + (inputSize + contextSize) + ", result is " + vector.getColumnDimension());
         }
-        vector.setMatrix(0, 0, inputSize, inputSize + contextSize - 1, context);
+        vector.set(0, inputSize, 1.);
+        vector.setMatrix(0, 0, inputSize + 1, inputSize + 1 + contextSize - 1, context);
         input = vector.copy();
         firstSynapticOutput = input.times(firstW);
         firstActivationOutput = applyFunction(firstSynapticOutput);
+        firstActivationOutput.set(0, hiddenLayerSize, 1.);
         secondSynapticOutput = firstActivationOutput.times(secondW);
         secondActivationOutput = applyFunction(secondSynapticOutput);
         if (!contextFreeze) context = secondActivationOutput.copy();
@@ -94,7 +96,7 @@ public class JordansNetworkWithTangens implements RecurentNetwork {
         Matrix hiddenLayerDifference = outputDifference
                 .arrayTimesEquals(secondActivationDerivation)
                 .times(secondW.transpose());
-        Matrix firstActivationDerivation = new Matrix(1, hiddenLayerSize, 1.)
+        Matrix firstActivationDerivation = new Matrix(1, hiddenLayerSize + 1, 1.)
                 .minus(firstActivationOutput.arrayTimes(firstActivationOutput));
 
         Matrix firstWeightsCorrection = input
