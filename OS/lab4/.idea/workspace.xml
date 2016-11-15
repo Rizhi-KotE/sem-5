@@ -15,7 +15,165 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="690d3bc3-e956-4398-ae09-e33411bf1e68" name="Default" comment="" />
+    <list default="true" id="690d3bc3-e956-4398-ae09-e33411bf1e68" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/report/lab3.odt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/A.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/N.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/P.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/S.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/Z.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/empty.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/main/resources/inverse/stripes.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/target/classes/teaching/TeachingThread.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/target/test-classes/NetworkTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/delta.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/network.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot0.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot1.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot10.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot11.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot12.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot13.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot14.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot2.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot3.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot4.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot5.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot6.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot7.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot8.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/plot9.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/pogoda.sequnce" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction10.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction11.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction12.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction13.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction6.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction7.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction8.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction9.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/cat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/cos" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/cos.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/cos.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/cos_prediction_src.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/factorial.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/factorial.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/factorial_prediction_src.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/prediction.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/prediction.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/sin.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/sin.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/sin_prediction_src.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/delta.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/network.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot0.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot1.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot10.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot11.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot12.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot13.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot2.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot3.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot4.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot5.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot6.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot7.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot8.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/plot9.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/pogoda.sequnce" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction10.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction11.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction12.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction6.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction7.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction8.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction9.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/sequnce/Fibonachi.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Buffer.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Buffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/progress.marks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/Buffer.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/CXX.includecache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/DependInfo.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/Server.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/build.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/cmake_clean.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/depend.internal" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/depend.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/flags.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/link.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/main.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeFiles/server.dir/progress.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/CMakeLists.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Configs.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Configs.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Server.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Server.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/buffer.tmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/cmake_install.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/configs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/server" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/webapp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/target/test-classes/MatrixTest.class" afterPath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/target/test-classes/MatrixTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/report/lab2.odt" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/report/lab2.odt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/main.class" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/sequnce/FactorialSequence.class" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/sequnce/FactorialSequence.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/sequnce/InverceSequence.class" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/sequnce/InverceSequence.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client" afterPath="$PROJECT_DIR$/client/client" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/main/java/mains/CalCompressionRatio.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/main/java/mains/CalCompressionRatio.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/main/java/mains/WorkWithImage.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/main/java/mains/WorkWithImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/test/java/MatrixTest.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab1/lab-1/src/test/java/MatrixTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/LinearSequnce.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/LinearSequnce.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/main.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/CosinSequence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/CosinSequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/Factorial.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/Factorial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FactorialSequence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FactorialSequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FibonachiSequence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FibonachiSequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FileSequnce.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/FileSequnce.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/InverceSequence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/InverceSequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/PowerSecuence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/PowerSecuence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/Sequence.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/Sequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/SequenceNormalizer.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/SequenceNormalizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/TrainingSetGenerator.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/java/sequnce/TrainingSetGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction0.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction0.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction1.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction1.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction2.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction2.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction3.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction3.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction4.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction4.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction5.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/prediction5.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.html" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.sequnce" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/repli/pogoda.sequnce" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/add_delta_column.rb" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/add_delta_column.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/plot.gnuplot" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/main/resources/scripts/plot.gnuplot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/src/test/java/JordansNetworkTests.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/src/test/java/JordansNetworkTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction0.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction0.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction1.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction1.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction2.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction2.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction3.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction3.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction4.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction4.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction5.data" afterPath="$PROJECT_DIR$/../../MRZvIS/lab2/target/classes/prediction5.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../MRZvIS/lab3/src/test/java/HemmingNetworkTest.java" afterPath="$PROJECT_DIR$/../../MRZvIS/lab3/src/test/java/HemmingNetworkTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeCache.txt" afterPath="$PROJECT_DIR$/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client.cpp" afterPath="$PROJECT_DIR$/client/client.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake_install.cmake" />
+    </list>
+    <list id="737b6164-02a2-4898-94c2-5da22e3f4ec8" name="OS lab4" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/lab4.iml" afterPath="$PROJECT_DIR$/.idea/lab4.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="lab4.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,75 +192,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Server.cpp">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/Server.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Server.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/client.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Buffer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Buffer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/main.cpp">
+        <entry file="file://$PROJECT_DIR$/server/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#1#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Buffer.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/Buffer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-              <folding>
-                <element signature="e#45#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fcntl.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/fcntl.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="138" column="64" selection-start-line="138" selection-start-column="64" selection-end-line="138" selection-end-column="64" />
+            <state relative-caret-position="176">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Buffer.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Buffer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Configs.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Configs.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#45#65#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -117,17 +270,21 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Server.h" />
         <option value="$PROJECT_DIR$/Server.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/lib/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/client/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/lib/Server.h" />
         <option value="$PROJECT_DIR$/lib/Configs.h" />
-        <option value="$PROJECT_DIR$/lib/Configs.cpp" />
         <option value="$PROJECT_DIR$/lib/main.cpp" />
-        <option value="$PROJECT_DIR$/lib/Server.cpp" />
-        <option value="$PROJECT_DIR$/client/client.cpp" />
         <option value="$PROJECT_DIR$/lib/Buffer.h" />
+        <option value="$PROJECT_DIR$/lib/constants.h" />
+        <option value="$PROJECT_DIR$/lib/Server.h" />
         <option value="$PROJECT_DIR$/lib/Buffer.cpp" />
+        <option value="$PROJECT_DIR$/lib/Server.cpp" />
+        <option value="$PROJECT_DIR$/lib/Configs.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/server/Buffer.cpp" />
+        <option value="$PROJECT_DIR$/client/client.cpp" />
+        <option value="$PROJECT_DIR$/server/Server.h" />
+        <option value="$PROJECT_DIR$/server/Server.cpp" />
       </list>
     </option>
   </component>
@@ -160,7 +317,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -213,7 +370,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab4" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,6 +603,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="690d3bc3-e956-4398-ae09-e33411bf1e68" name="Default" comment="" />
+      <changelist id="737b6164-02a2-4898-94c2-5da22e3f4ec8" name="OS lab4" comment="" />
       <created>1477737305636</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -444,11 +616,21 @@
       <workItem from="1477908044226" duration="14797000" />
       <workItem from="1477933491589" duration="4208000" />
       <workItem from="1478063527990" duration="4791000" />
+      <workItem from="1479232872466" duration="4230000" />
+      <workItem from="1479250255350" duration="2412000" />
     </task>
+    <task id="LOCAL-00001" summary="OS lab4: add std objects">
+      <created>1479237106259</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1479237106259</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70208000" />
+    <option name="totallyTimeSpent" value="76850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="-3" width="1322" height="771" extended-state="6" />
@@ -456,15 +638,15 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1580938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33802816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33773863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39207047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48311308" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -505,123 +687,59 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OS lab4: add std objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="OS lab4: add std objects" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/lib/Buffer.cpp</url>
-          <line>38</line>
+          <line>27</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/lib/Buffer.cpp</url>
-          <line>61</line>
-          <option name="timeStamp" value="59" />
+          <url>file://$PROJECT_DIR$/lib/Server.cpp</url>
+          <line>111</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/lib/Server.cpp</url>
+          <line>27</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/lib/main.cpp</url>
+          <line>22</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/server/Server.cpp</url>
+          <line>126</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/server/Server.cpp</url>
+          <line>46</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/server/Server.cpp</url>
+          <line>110</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="68" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="buffer[i]" language="ObjectiveC" />
-        <watch expression="buffer[3]" language="ObjectiveC" />
-        <watch expression="buffer" language="ObjectiveC" />
-        <watch expression="size" language="ObjectiveC" />
-        <watch expression="maxSize" language="ObjectiveC" />
-        <watch expression="maxSize * 2" language="ObjectiveC" />
-        <watch expression="sizeof(buffer)" language="ObjectiveC" />
-        <watch expression="maxSize * 2" language="ObjectiveC" />
-        <watch expression="sizeof(char **) * maxSize * 2" language="ObjectiveC" />
+        <watch expression="string to_boffer(message)" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Buffer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/bits/sigset.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/signal.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Buffer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -758,13 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/x86_64-linux-gnu/bits/sigset.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -814,14 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/stdlib.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -833,9 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding>
-            <element signature="e#98#112#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,79 +950,172 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/sys/select.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="117" column="11" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/client.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Configs.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#45#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/include/fcntl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="2070">
           <caret line="138" column="64" selection-start-line="138" selection-start-column="64" selection-end-line="138" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/sys/select.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Server.cpp">
+    <entry file="file:///usr/include/c++/4.8/bits/shared_ptr.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/shared_ptr_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="537" column="6" selection-start-line="537" selection-start-column="6" selection-end-line="537" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/stl_iterator_base_types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="117" column="11" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Buffer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#52#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/basic_string.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="212" column="4" selection-start-line="212" selection-start-column="4" selection-end-line="212" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/4.8/bits/stringfwd.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/constants.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="e#345#368#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#1#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Buffer.h">
+    <entry file="file://$PROJECT_DIR$/lib/Buffer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="e#45#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Configs.cpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Buffer.cpp">
+    <entry file="file://$PROJECT_DIR$/server/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding>
-            <element signature="e#45#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Buffer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

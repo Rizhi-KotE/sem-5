@@ -1,4 +1,4 @@
-# Install script for directory: /home/rizhi-kote/Student/sem-5/OS/lab4/lib
+# Install script for directory: /home/rizhi-kote/Student/sem-5/OS/lab4/server
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles /home/rizhi-kote/Student/sem-5/OS/lab4/lib/CMakeFiles/progress.marks
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 lib/all
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles /home/rizhi-kote/Student/sem-5/OS/lab4/server/CMakeFiles/progress.marks
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 server/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 server/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,12 +85,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -99,17 +99,17 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-lib/CMakeFiles/server.dir/rule:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/server.dir/rule
-.PHONY : lib/CMakeFiles/server.dir/rule
+server/CMakeFiles/server.dir/rule:
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f CMakeFiles/Makefile2 server/CMakeFiles/server.dir/rule
+.PHONY : server/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-server: lib/CMakeFiles/server.dir/rule
+server: server/CMakeFiles/server.dir/rule
 .PHONY : server
 
 # fast build rule for target.
 server/fast:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/build
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
 Buffer.o: Buffer.cpp.o
@@ -117,7 +117,7 @@ Buffer.o: Buffer.cpp.o
 
 # target to build an object file
 Buffer.cpp.o:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Buffer.cpp.o
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Buffer.cpp.o
 .PHONY : Buffer.cpp.o
 
 Buffer.i: Buffer.cpp.i
@@ -125,7 +125,7 @@ Buffer.i: Buffer.cpp.i
 
 # target to preprocess a source file
 Buffer.cpp.i:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Buffer.cpp.i
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Buffer.cpp.i
 .PHONY : Buffer.cpp.i
 
 Buffer.s: Buffer.cpp.s
@@ -133,7 +133,7 @@ Buffer.s: Buffer.cpp.s
 
 # target to generate assembly for a file
 Buffer.cpp.s:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Buffer.cpp.s
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Buffer.cpp.s
 .PHONY : Buffer.cpp.s
 
 Configs.o: Configs.cpp.o
@@ -141,7 +141,7 @@ Configs.o: Configs.cpp.o
 
 # target to build an object file
 Configs.cpp.o:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.o
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Configs.cpp.o
 .PHONY : Configs.cpp.o
 
 Configs.i: Configs.cpp.i
@@ -149,7 +149,7 @@ Configs.i: Configs.cpp.i
 
 # target to preprocess a source file
 Configs.cpp.i:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.i
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Configs.cpp.i
 .PHONY : Configs.cpp.i
 
 Configs.s: Configs.cpp.s
@@ -157,7 +157,7 @@ Configs.s: Configs.cpp.s
 
 # target to generate assembly for a file
 Configs.cpp.s:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Configs.cpp.s
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Configs.cpp.s
 .PHONY : Configs.cpp.s
 
 Server.o: Server.cpp.o
@@ -165,7 +165,7 @@ Server.o: Server.cpp.o
 
 # target to build an object file
 Server.cpp.o:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Server.cpp.o
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Server.cpp.o
 .PHONY : Server.cpp.o
 
 Server.i: Server.cpp.i
@@ -173,7 +173,7 @@ Server.i: Server.cpp.i
 
 # target to preprocess a source file
 Server.cpp.i:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Server.cpp.i
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Server.cpp.i
 .PHONY : Server.cpp.i
 
 Server.s: Server.cpp.s
@@ -181,7 +181,7 @@ Server.s: Server.cpp.s
 
 # target to generate assembly for a file
 Server.cpp.s:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/Server.cpp.s
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
 main.o: main.cpp.o
@@ -189,7 +189,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/main.cpp.o
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -197,7 +197,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/main.cpp.i
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -205,7 +205,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/main.cpp.s
+	cd /home/rizhi-kote/Student/sem-5/OS/lab4 && $(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target

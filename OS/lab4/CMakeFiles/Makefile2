@@ -53,53 +53,53 @@ CMAKE_SOURCE_DIR = /home/rizhi-kote/Student/sem-5/OS/lab4
 CMAKE_BINARY_DIR = /home/rizhi-kote/Student/sem-5/OS/lab4
 
 #=============================================================================
-# Directory level rules for directory lib
+# Directory level rules for directory server
 
 # Convenience name for "all" pass in the directory.
-lib/all: lib/CMakeFiles/server.dir/all
-.PHONY : lib/all
+server/all: server/CMakeFiles/server.dir/all
+.PHONY : server/all
 
 # Convenience name for "clean" pass in the directory.
-lib/clean: lib/CMakeFiles/server.dir/clean
-.PHONY : lib/clean
+server/clean: server/CMakeFiles/server.dir/clean
+.PHONY : server/clean
 
 # Convenience name for "preinstall" pass in the directory.
-lib/preinstall:
-.PHONY : lib/preinstall
+server/preinstall:
+.PHONY : server/preinstall
 
 #=============================================================================
-# Target rules for target lib/CMakeFiles/server.dir
+# Target rules for target server/CMakeFiles/server.dir
 
 # All Build rule for target.
-lib/CMakeFiles/server.dir/all:
-	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/depend
-	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/build
+server/CMakeFiles/server.dir/all:
+	$(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/depend
+	$(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles  2 3 4 5
 	@echo "Built target server"
-.PHONY : lib/CMakeFiles/server.dir/all
+.PHONY : server/CMakeFiles/server.dir/all
 
 # Include target in all.
-all: lib/CMakeFiles/server.dir/all
+all: server/CMakeFiles/server.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-lib/CMakeFiles/server.dir/rule: cmake_check_build_system
+server/CMakeFiles/server.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/server.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 server/CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rizhi-kote/Student/sem-5/OS/lab4/CMakeFiles 0
-.PHONY : lib/CMakeFiles/server.dir/rule
+.PHONY : server/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-server: lib/CMakeFiles/server.dir/rule
+server: server/CMakeFiles/server.dir/rule
 .PHONY : server
 
 # clean rule for target.
-lib/CMakeFiles/server.dir/clean:
-	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/clean
-.PHONY : lib/CMakeFiles/server.dir/clean
+server/CMakeFiles/server.dir/clean:
+	$(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/clean
+.PHONY : server/CMakeFiles/server.dir/clean
 
 # clean rule for target.
-clean: lib/CMakeFiles/server.dir/clean
+clean: server/CMakeFiles/server.dir/clean
 .PHONY : clean
 
 #=============================================================================

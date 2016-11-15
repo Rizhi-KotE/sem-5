@@ -183,10 +183,10 @@ client_BINARY_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/client
 client_SOURCE_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/client
 
 //Value Computed by CMake
-server_BINARY_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/lib
+server_BINARY_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/server
 
 //Value Computed by CMake
-server_SOURCE_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/lib
+server_SOURCE_DIR:STATIC=/home/rizhi-kote/Student/sem-5/OS/lab4/server
 
 
 ########################

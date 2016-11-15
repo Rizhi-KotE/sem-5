@@ -21,7 +21,6 @@ void Buffer::append(string &str) {
     if (verbose) {
         write(STDOUT_FILENO, str.c_str(), str.size());
     }
-    size++;
 }
 
 Buffer::~Buffer() {

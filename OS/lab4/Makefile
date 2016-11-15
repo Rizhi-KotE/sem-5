@@ -108,7 +108,7 @@ server: cmake_check_build_system
 
 # fast build rule for target.
 server/fast:
-	$(MAKE) -f lib/CMakeFiles/server.dir/build.make lib/CMakeFiles/server.dir/build
+	$(MAKE) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
 #=============================================================================

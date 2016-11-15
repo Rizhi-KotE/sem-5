@@ -38,7 +38,7 @@ void Server::performReadFromServerSocket(fd_set &readenSocks) {
 }
 
 void Server::permormReadableSockets(fd_set &readenSocks) {
-    for (int i = 0; i < maxSocketAmount; i++)
+    for (int i = 0; i < sockets.size(); i++)
         if (sockets[i] != 0 && FD_ISSET(sockets[i], &readenSocks))
             runSocketHandler(sockets[i]);
 }
@@ -58,7 +58,7 @@ void Server::acceptSocket() {
         }
         if (newsock < 0) {
             sprintf(message, ACCEPT_FAILED_MESSAGE, pthread_self());
-            string to_buffer;
+            string to_buffer(message);
             buffer.append(to_buffer);
         } else {
             sockaddr_in addr;
@@ -66,14 +66,10 @@ void Server::acceptSocket() {
             getsockname(newsock, (sockaddr *) &addr, &sockLen);
 
             sprintf(message, ACCEPT_CLIENT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr));
-            string to_buffer;
+            string to_buffer(message);
             buffer.append(to_buffer);
         }
-        for (int i = 0; i < maxSocketAmount; i++)
-            if (sockets[i] == 0) {
-                sockets[i] = newsock;
-                break;
-            }
+        sockets.push_back(newsock);
         if (max_fd < newsock + 1) {
             max_fd = newsock + 1;
         }
@@ -86,9 +82,14 @@ int Server::runSocketHandler(int socket) {
     messageSize = read(socket, message, message_size);
     if (messageSize == 0) {
         sockaddr_in addr;
+        memset(&addr, 0, sizeof(addr));
         unsigned int sockLen;
         getsockname(socket, (sockaddr *) &addr, &sockLen);
-        for (int i = 0; i < maxSocketAmount; i++) if (sockets[i] == socket) sockets[i] = 0;
+        for (vector<int>::iterator it = sockets.begin(); it < sockets.end(); it++)
+            if (*it == socket) {
+                sockets.erase(it);
+                break;
+            }
         FD_CLR(socket, &set);
         sprintf(message, DISCONNECT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr));
         string to_buffer(message);
@@ -130,16 +131,15 @@ void Server::serverSocketCreate() {
 
 Server::Server(uint port, sig_atomic_t *signInt) {
     configure();
-    sockets = new int[maxSocketAmount];
     message = new char[message_size + 1];
     memset(message, 0, message_size + 1);
     FD_ZERO(&set);
-    memset(sockets, 0, sizeof(sockets));
     this->signInt = signInt;
+    this->port = port;
 }
 
 void Server::configure() {
     message_size = Configs::get(BUFFER_SIZE_KEY) ? atoi(Configs::get(BUFFER_SIZE_KEY)) : 256;
-    maxSocketAmount = Configs::get(MAX_SOCKETS_AMOUNT) ? atoi(Configs::get(MAX_SOCKETS_AMOUNT)) : 5;
+    maxSocketAmount = Configs::get(MAX_SOCKETS_AMOUNT) ? atoi(Configs::get(MAX_SOCKETS_AMOUNT)) : 15;
 }
 

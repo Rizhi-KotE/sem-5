@@ -27,7 +27,7 @@ using namespace std;
 class Server {
     int message_size;
     char *message;
-    int *sockets;
+    vector<int> sockets;
     int serverSocket;
     uint port;
     Buffer buffer;
