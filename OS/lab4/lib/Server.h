@@ -7,6 +7,8 @@
 
 
 static const char *const MAX_SOCKETS_AMOUNT = "max_sockets_amount";
+static const char *const ACCEPT_FAILED_MESSAGE = "[%lu]: accept failed\n";
+static const char *const IDLE_MESSAGE = "[%lu]: idle\n";
 static const char * BUFFER_SIZE_KEY = "buffer_size";
 
 #include <netinet/in.h>
@@ -16,9 +18,11 @@ static const char * BUFFER_SIZE_KEY = "buffer_size";
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <cstring>
+#include <string>
 #include <csignal>
 #include "Buffer.h"
+
+using namespace std;
 
 class Server {
     int message_size;
@@ -33,7 +37,7 @@ class Server {
 public:
     Server(uint port, sig_atomic_t *signInt);
 
-    int runServerSocket();
+    int runServer();
 
     int runSocketHandler(int sock);
 
@@ -44,6 +48,12 @@ public:
     sig_atomic_t *signInt;
 
     void configure();
+
+    void serverSocketCreate();
+
+    void permormReadableSockets(fd_set &readenSocks);
+
+    void performReadFromServerSocket(fd_set &readenSocks);
 };
 
 #endif //LAB4_SERVER_H

@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++11    CMakeFiles/client.dir/client.cpp.o  -o client -rdynamic 
+/usr/bin/c++    -std=c++11 -std=c++11    CMakeFiles/client.dir/client.cpp.o  -o client -rdynamic 

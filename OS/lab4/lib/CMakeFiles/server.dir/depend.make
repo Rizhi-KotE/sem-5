@@ -4,6 +4,7 @@
 lib/CMakeFiles/server.dir/Buffer.cpp.o: lib/Buffer.cpp
 lib/CMakeFiles/server.dir/Buffer.cpp.o: lib/Buffer.h
 lib/CMakeFiles/server.dir/Buffer.cpp.o: lib/Configs.h
+lib/CMakeFiles/server.dir/Buffer.cpp.o: lib/constants.h
 
 lib/CMakeFiles/server.dir/Configs.cpp.o: lib/Configs.cpp
 lib/CMakeFiles/server.dir/Configs.cpp.o: lib/Configs.h
@@ -12,6 +13,7 @@ lib/CMakeFiles/server.dir/Server.cpp.o: lib/Buffer.h
 lib/CMakeFiles/server.dir/Server.cpp.o: lib/Configs.h
 lib/CMakeFiles/server.dir/Server.cpp.o: lib/Server.cpp
 lib/CMakeFiles/server.dir/Server.cpp.o: lib/Server.h
+lib/CMakeFiles/server.dir/Server.cpp.o: lib/constants.h
 
 lib/CMakeFiles/server.dir/main.cpp.o: lib/Buffer.h
 lib/CMakeFiles/server.dir/main.cpp.o: lib/Server.h

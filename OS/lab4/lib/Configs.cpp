@@ -17,7 +17,6 @@ Configs::Configs() {
     value = new char[256];
     FILE *file = fopen("./configs.txt", "r");
     if (!file) {
-        printf("file is not open");
         return;
     }
     while (file && fscanf(file, "%s = %s", key, value) >= 0) {

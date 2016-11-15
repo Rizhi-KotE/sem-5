@@ -21,6 +21,6 @@ int main(int argc, char **argv) {
     sigaction(SIGINT, &sa, 0);
     uint port = atoi(argv[1]);
     Server server(port, &signInt);
-    server.runServerSocket();
+    server.runServer();
     return 0;
 }

@@ -5,6 +5,7 @@
 #include <cstring>
 #include "Buffer.h"
 #include "Configs.h"
+#include "constants.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <cstdio>
@@ -13,57 +14,38 @@
 
 Buffer::Buffer() {
     configure();
-    maxSize = FIRST_BUF_SIZE;
-    buffer = new char *[maxSize];
 }
 
-void Buffer::append(char const *string, unsigned int length) {
-    if (size >= maxSize) {
-        resize();
-    }
-    char *newString = new char[length];
-    memcpy(newString, string, length);
-    buffer[size] = newString;
+void Buffer::append(string &str) {
+    buffer.push_back(str);
     if (verbose) {
-        write(STDOUT_FILENO, newString, length);
+        write(STDOUT_FILENO, str.c_str(), str.size());
     }
     size++;
 }
 
 Buffer::~Buffer() {
     backup();
-    delete[] buffer;
 }
 
 int Buffer::backup() {
     int file = open(filename, O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (file == -1) {//  проверка на открытие файла
-        printf(strerror(errno));
         return file;
     }
-    for (int i = 0; i < size; i++) {
-        write(file, buffer[i], strlen(buffer[i]));
-        delete[] buffer[i];
+    for (vector<string>::iterator it = buffer.begin(); it != buffer.end(); it++) {
+        write(file, (*it).c_str(), (*it).size());
     }
-    size = 0;
+    buffer.clear();
 
     char filepath[BUFFER_SIZE + 1];
-    sprintf(filepath, "/proc/self/fd/%d", file);
+    sprintf(filepath, PROC_SELF, file);
     size_t readen = readlink(filepath, filepath, BUFFER_SIZE);
     filepath[readen] = '\0';
-    printf("[backup] file: %s\n", filepath);
+    printf(BACKUP_MESSAGE, filepath);
     int err = close(file);
     return err;
-}
-
-void Buffer::resize() {
-    printf("resize\n");
-    char **newBuffer = new char *[maxSize * 2];
-    memset(newBuffer, 0, sizeof(char **) * maxSize * 2);
-    memcpy(newBuffer, buffer, sizeof(char **) * maxSize);
-    maxSize *= 2;
-    buffer = newBuffer;
 }
 
 void Buffer::configure() {

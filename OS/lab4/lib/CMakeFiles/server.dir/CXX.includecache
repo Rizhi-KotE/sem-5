@@ -6,25 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.cpp
-cstring
--
-Buffer.h
-/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
+/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.cpp
 Configs.h
 /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
-fcntl.h
--
-unistd.h
--
 cstdio
 -
-cstdlib
--
-errno.h
--
-
-/home/rizhi-kote/Student/sem-5/OS/lab4/lib/Buffer.h
 
 /home/rizhi-kote/Student/sem-5/OS/lab4/lib/Configs.h
 map

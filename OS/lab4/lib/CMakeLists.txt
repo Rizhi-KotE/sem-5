@@ -2,5 +2,5 @@ project(server)
 
 set(CMAKE_BUILD_TYPE Debug)
 
-set(SOURCE_FILES main.cpp Server.cpp Server.h Buffer.cpp Buffer.h Configs.cpp Configs.h)
+set(SOURCE_FILES main.cpp Server.cpp Server.h Buffer.cpp Buffer.h Configs.cpp Configs.h constants.h)
 add_executable(server ${SOURCE_FILES})
