@@ -6,11 +6,6 @@
 #define LAB4_SERVER_H
 
 
-static const char *const MAX_SOCKETS_AMOUNT = "max_sockets_amount";
-static const char *const ACCEPT_FAILED_MESSAGE = "[%lu]: accept failed\n";
-static const char *const IDLE_MESSAGE = "[%lu]: idle\n";
-static const char * BUFFER_SIZE_KEY = "buffer_size";
-
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>

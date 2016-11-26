@@ -16,7 +16,8 @@ int Server::runServer() {
     while (true) {
         timeout.tv_sec = 1;
         fd_set readenSocks = set;
-        sprintf(message, IDLE_MESSAGE, pthread_self());
+        int messageSize = sprintf(message, IDLE_MESSAGE, pthread_self());
+        message[messageSize] = '\0';
         string to_buffer(message);
         buffer.append(to_buffer);
         int activity = pselect(max_fd, &readenSocks, NULL, NULL, &timeout, &newset);
@@ -57,15 +58,14 @@ void Server::acceptSocket() {
             nextStep = true;
         }
         if (newsock < 0) {
-            sprintf(message, ACCEPT_FAILED_MESSAGE, pthread_self());
+            int messageSize = sprintf(message, ACCEPT_FAILED_MESSAGE, pthread_self());
+            message[messageSize] = '\0';
             string to_buffer(message);
             buffer.append(to_buffer);
         } else {
-            sockaddr_in addr;
-            unsigned int sockLen;
-            getsockname(newsock, (sockaddr *) &addr, &sockLen);
-
-            sprintf(message, ACCEPT_CLIENT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr));
+            fcntl(newsock, F_SETFL, SOCK_NONBLOCK);
+            int messageSize = sprintf(message, ACCEPT_CLIENT_MESSAGE, pthread_self(), inet_ntoa(cli_addr.sin_addr));
+            message[messageSize] = '\0';
             string to_buffer(message);
             buffer.append(to_buffer);
         }
@@ -79,27 +79,35 @@ void Server::acceptSocket() {
 
 int Server::runSocketHandler(int socket) {
     unsigned int messageSize;
-    messageSize = read(socket, message, message_size);
+    char *clientMessage = new char[message_size];
+    messageSize = read(socket, clientMessage, message_size);
+    clientMessage[messageSize] = '\0';
+    sockaddr_in addr;
+    memset(&addr, 0, sizeof(addr));
+    unsigned int sockLen;
+    getsockname(socket, (sockaddr *) &addr, &sockLen);
     if (messageSize == 0) {
-        sockaddr_in addr;
-        memset(&addr, 0, sizeof(addr));
-        unsigned int sockLen;
-        getsockname(socket, (sockaddr *) &addr, &sockLen);
         for (vector<int>::iterator it = sockets.begin(); it < sockets.end(); it++)
             if (*it == socket) {
                 sockets.erase(it);
                 break;
             }
         FD_CLR(socket, &set);
-        sprintf(message, DISCONNECT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr));
+        int messageSize = sprintf(message, DISCONNECT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr));
+        message[messageSize] = '\0';
         string to_buffer(message);
         buffer.append(to_buffer);
         close(socket);
     } else {
+        char *message = new char[message_size * 2];
+        int messageSize = sprintf(message, CLIENT_MESSAGE, pthread_self(), inet_ntoa(addr.sin_addr), clientMessage);
+        message[messageSize] = '\0';
         string to_buffer(message);
         buffer.append(to_buffer);
-        write(socket, message, messageSize);
+        write(socket, clientMessage, messageSize);
+        delete [] message;
     }
+    delete[] clientMessage;
     return 0;
 }
 

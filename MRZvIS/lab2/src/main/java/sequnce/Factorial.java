@@ -1,18 +1,20 @@
 package sequnce;
 
-import java.util.function.IntToDoubleFunction;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
-public class Factorial implements IntToDoubleFunction {
+public class Factorial implements Sequence {
 
-    public static final int MAX_FACTORIAL_ARGUMENT = 170;
-    private static final double MAX_FACTORIAL_VALUE = 1.0567000022288868e302;
     private double previos = 1;
 
+    public Factorial(int length) {
+        this.length = length;
+    }
+
+    private final int length;
+
     @Override
-    public double applyAsDouble(int value) {
-        if (value < MAX_FACTORIAL_ARGUMENT) {
-            previos *= value == 0. ? 1. : value;
-        }
-        return previos;
+    public DoubleStream getSequence() {
+        return IntStream.range(0, length).mapToDouble(value -> previos *= value == 0. ? 1. : value);
     }
 }

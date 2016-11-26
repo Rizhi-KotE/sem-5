@@ -3,6 +3,8 @@ import Jama.Matrix;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Math.abs;
+
 public class HemmingNetwork {
     private final int inputSize;
     private final int layersSize;
@@ -11,6 +13,7 @@ public class HemmingNetwork {
 
     private final Matrix workingWeights;
     private final double t;
+    private int iterations;
 
     public HemmingNetwork(int inputSize, List<int[]> images) throws IllegalAccessException {
         this.inputSize = inputSize;
@@ -64,39 +67,6 @@ public class HemmingNetwork {
                 .toArray();
     }
 
-    private Matrix startWork(Matrix matrix) {
-        Matrix oldAxons = matrix.times(inputWeights);
-        oldAxons.plusEquals(new Matrix(1, layersSize, t));
-        oldAxons = activationFunction(oldAxons);
-        for (Matrix newAxons = null; newAxons == null || calcEnergy(newAxons, oldAxons) > 0.1;) {
-            if(newAxons != null) oldAxons = newAxons;
-            newAxons = oldAxons.copy();
-            Matrix correction = newAxons.times(workingWeights);
-            newAxons = newAxons.plusEquals(correction);
-            newAxons = activationFunction(newAxons);
-        }
-        return oldAxons;
-    }
-
-    private double calcEnergy(Matrix newAxons, Matrix oldAxons) {
-        double energy = 0;
-        for (int i = 0; i < newAxons.getColumnDimension(); i++) {
-            energy += Math.pow(newAxons.get(0, i) - oldAxons.get(0, i), 2);
-        }
-        return Math.sqrt(energy);
-    }
-
-    private boolean endWork(Matrix newAxons) {
-        double[] doubles = newAxons.getArray()[0];
-        double lastEquals = 0;
-        for (int i = 0; i < doubles.length; i++) {
-            if (doubles[i] <= 0) continue;
-            if (lastEquals == 0) lastEquals = doubles[i];
-            if (lastEquals != doubles[i]) return false;
-        }
-        return true;
-    }
-
     private Matrix activationFunction(Matrix signals) {
         double[][] array = signals.getArray();
         for (int i = 0; i < layersSize; i++) {
@@ -107,14 +77,31 @@ public class HemmingNetwork {
         return signals;
     }
 
-    private boolean axonsEquals(Matrix f, Matrix s) {
-        if (f == null || s == null) return false;
-        if (f.getRowDimension() != s.getRowDimension()) return false;
-        if (f.getRowDimension() != 1) return false;
-        if (f.getColumnDimension() != s.getColumnDimension()) return false;
-        for (int i = 0; i < f.getColumnDimension(); i++) {
-            if (f.get(0, i) != s.get(0, i)) return false;
+    private Matrix startWork(Matrix matrix) {
+        iterations = 0;
+        Matrix oldAxons = matrix.times(inputWeights);
+        oldAxons.plusEquals(new Matrix(1, layersSize, t));
+        oldAxons = activationFunction(oldAxons);
+        for (Matrix newAxons = null; newAxons == null || hemmingDistance(newAxons, oldAxons) != 0; ) {
+            iterations++;
+            if(newAxons != null) oldAxons = newAxons;
+            newAxons = oldAxons.copy();
+            Matrix correction = newAxons.times(workingWeights);
+            newAxons = newAxons.plusEquals(correction);
+            newAxons = activationFunction(newAxons);
         }
-        return true;
+        return oldAxons;
+    }
+
+    public int getIterations() {
+        return iterations;
+    }
+
+    private int hemmingDistance(Matrix newAxons, Matrix oldAxons) {
+        int distance = 0;
+        for (int i = 0; i < newAxons.getColumnDimension(); i++) {
+            if (abs(newAxons.get(0, i) - oldAxons.get(0, i)) < 0.000001) distance++;
+        }
+        return distance;
     }
 }

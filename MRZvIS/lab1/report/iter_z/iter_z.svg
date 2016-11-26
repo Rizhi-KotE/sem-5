@@ -95,7 +95,7 @@
 		<text>количество итераций</text>
 	</g>
 	<g transform="translate(323.4,471.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
-		<text>коэффициента сжатия</text>
+		<text>коэффициент сжатия</text>
 	</g>
 	<g transform="translate(323.4,31.6)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
 		<text>Зависимость количества итерация от коэффициента сжатия</text>

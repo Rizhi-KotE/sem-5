@@ -96,6 +96,7 @@ public class JordansNetworkWithTangens implements RecurentNetwork {
         Matrix hiddenLayerDifference = outputDifference
                 .arrayTimesEquals(secondActivationDerivation)
                 .times(secondW.transpose());
+
         Matrix firstActivationDerivation = new Matrix(1, hiddenLayerSize + 1, 1.)
                 .minus(firstActivationOutput.arrayTimes(firstActivationOutput));
 

@@ -1,1 +1,0 @@
-set terminal svg;set output  cos.svg plot.gnuplot

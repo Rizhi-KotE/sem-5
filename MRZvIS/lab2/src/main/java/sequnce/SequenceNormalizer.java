@@ -3,25 +3,30 @@ package sequnce;
 import java.util.Arrays;
 import java.util.stream.DoubleStream;
 
-public class SequenceNormalizer {
-    protected final DoubleStream stream;
+public class SequenceNormalizer implements Sequence {
+    protected final Sequence sequence;
     private double max;
     private double min;
 
-    public SequenceNormalizer(DoubleStream stream) {
-        this.stream = stream;
+    public SequenceNormalizer(Sequence sequence) {
+        this.sequence = sequence;
     }
 
-    public DoubleStream normalize() {
-        double[] doubles = stream.map(value -> {
-            max = Math.max(Math.abs(max), value);
+    public double restore(double value) {
+        return (min + (value + 1) * (max - min) / 2);
+    }
+
+    public double normalize(double value) {
+        return (2 * (value - min) / (max - min) - 1);
+    }
+
+    @Override
+    public DoubleStream getSequence() {
+        double[] doubles = sequence.getSequence().map(value -> {
+            max = Math.max(max, value);
+            min = Math.min(min, value);
             return value;
         }).toArray();
-        max *= 1.1;
-        return Arrays.stream(doubles).map(operand -> operand / max);
-    }
-
-    public double denormilize(double value) {
-        return value * max;
+        return Arrays.stream(doubles).map(this::normalize);
     }
 }

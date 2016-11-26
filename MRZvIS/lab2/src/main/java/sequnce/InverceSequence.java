@@ -11,7 +11,7 @@ public class InverceSequence implements Sequence {
     }
 
     @Override
-    public DoubleStream getSequence(int length) {
-        return sequence.getSequence(length).map(operand -> operand == 0 ? 0 : 1 / operand);
+    public DoubleStream getSequence() {
+        return sequence.getSequence().map(operand -> operand == 0 ? 0 : 1 / operand);
     }
 }

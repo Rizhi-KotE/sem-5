@@ -1,4 +1,4 @@
-max_sockets_amount = 5
+max_sockets_amount = 15
 buffer_size = 256
 dump_file = ./buffer.tmp
 verbose = 1

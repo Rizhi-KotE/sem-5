@@ -29,15 +29,15 @@ public class MatrixTest {
         assertArrayEquals(colorArray, resut);
     }
 
-    @Test
-    public void componentsArrayToRGBArrayTest() {
-        int[] sample = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-        Color color = new Color(1, 2, 3);
-        int rgb = color.getRGB();
-        int[] result = {rgb, rgb, rgb, rgb};
-        int[] out = PerformImageDataUtils.componentsArrayToRGBArray(sample, 3);
-        assertArrayEquals(out, result);
-    }
+//    @Test
+//    public void componentsArrayToRGBArrayTest() {
+//        int[] sample = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+//        Color color = new Color(1, 2, 3);
+//        int rgb = color.getRGB();
+//        int[] result = {rgb, rgb, rgb, rgb};
+//        int[] out = PerformImageDataUtils.componentsArrayToRGBArray(sample, 3);
+//        assertArrayEquals(out, result);
+//    }
 
     @Test
     public void to1DVectorTest() {

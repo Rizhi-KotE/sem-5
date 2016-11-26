@@ -1,13 +1,7 @@
-import Jama.Matrix;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.util.Pair;
 import org.junit.Test;
-import sequnce.TrainingSetGenerator;
+import sequnce.FibonachiSequence;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 public class JordansNetworkTests {
 //    @Test
@@ -25,4 +19,20 @@ public class JordansNetworkTests {
 //            network.backPropagate(delta, 1);
 //        }
 //    }
+
+    @Test
+    public void fibonachiSequence() throws Exception {
+        FibonachiSequence fibonachi = new FibonachiSequence(100);
+        double[] doubles = fibonachi.getSequence().toArray();
+        double a = new FibonachiSequence(100).getSequence().reduce(0, (left, right) -> left += right < Integer.MAX_VALUE ? 1 : 0);
+        String substring = Integer.toBinaryString((int) doubles[20]);
+        StringBuilder builder = new StringBuilder();
+        for (int i = substring.length(); i < 16; i++) builder.append("0");
+        builder.append(substring);
+        String substring1 = builder.toString();
+        double number[] = new double[16];
+        for (int i = 0; i < substring.length(); i++) {
+            number[i] = substring.charAt(i) == '1' ? 1 : 0;
+        }
+    }
 }

@@ -31,7 +31,7 @@ public class CalCompressionRatio {
         double E = 20;
         int N = tileWidth * tileHeight * 3;
         List<TeachingTask> solvers = new ArrayList<>();
-        for (int p = 28; p < N; p += 2) {
+        for (int p = 34; p < N; p += 2) {
             NeuronsNetwork neuronsNetwork = new NeuronsNetwork(N, p);
             NeuronsTeacher teacher = new NormalizeNeuronsTeacher(matrices.length, N, p, step, E, neuronsNetwork, Arrays.asList(matrices));
             TeachingTask task = new TeachingTask(teacher);
@@ -48,15 +48,15 @@ public class CalCompressionRatio {
     };
 
     private static final Supplier<List<TeachingTask>> iterationToPicturesTaskGenerator = () -> {
-        int tileWidth = 4;
-        int tileHeight = 4;
+        int tileWidth = 3;
+        int tileHeight = 3;
         String images[] = {
                 "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/hear.bmp",
                 "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/caleidoscop.bmp",
                 "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/checks.bmp",
                 "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/rizhi-kote.bmp"};
         double step = 0.001;
-        int p = 38;
+        int p = 25;
         int N = tileWidth * tileHeight * 3;
         double E = 20;
         List<TeachingTask> solvers = new ArrayList<>();
@@ -65,6 +65,7 @@ public class CalCompressionRatio {
                     .getSamples(tileWidth, tileHeight, new File(image));
             NeuronsNetwork neuronsNetwork = new NeuronsNetwork(N, p);
             NeuronsTeacher teacher = new NormalizeNeuronsTeacher(matrices.length, N, p, step, E, neuronsNetwork, Arrays.asList(matrices));
+            teacher.setImage(image);
             TeachingTask task = new TeachingTask(teacher);
             solvers.add(task);
         }
@@ -76,13 +77,13 @@ public class CalCompressionRatio {
             result -> new Pair<>(0., result.getImage() + result.getEpochNumber());
 
     private static final Supplier<List<TeachingTask>> expectedErrorTaskCreator = () -> {
-        int tileWidth = 4;
-        int tileHeight = 4;
+        int tileWidth = 8;
+        int tileHeight = 8;
         String image = "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/hear.bmp";
         Matrix[] matrices = main
                 .getSamples(tileWidth, tileHeight, new File(image));
         double step = 0.001;
-        int p = 38;
+        int p = 150;
         int N = tileWidth * tileHeight * 3;
         List<TeachingTask> solvers = new ArrayList<>();
         for (double E = 20; E < 100; E += 10) {
@@ -100,16 +101,16 @@ public class CalCompressionRatio {
             result -> new Pair<>(result.getE(), result.getEpochNumber());
 
     private static final Supplier<List<TeachingTask>> iterationToStepTaskCreator = () -> {
-        int tileWidth = 4;
-        int tileHeight = 4;
+        int tileWidth = 3;
+        int tileHeight = 3;
         String image = "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/images/hear.bmp";
         Matrix[] matrices = main
                 .getSamples(tileWidth, tileHeight, new File(image));
-        int p = 38;
+        int p = 20;
         int N = tileWidth * tileHeight * 3;
-        double E = 20;
+        double E = 25;
         List<TeachingTask> solvers = new ArrayList<>();
-        for (double step = 0.001; E < 0.01; E += 0.001) {
+        for (double step = 0.001; step <= 0.025; step += 0.001) {
             NeuronsNetwork neuronsNetwork = new NeuronsNetwork(N, p);
             NeuronsTeacher teacher = new NormalizeNeuronsTeacher(matrices.length, N, p, step, E, neuronsNetwork, Arrays.asList(matrices));
             teacher.setImage(image);
@@ -152,6 +153,10 @@ public class CalCompressionRatio {
                 filename = "/home/rizhi-kote/Student/sem-5/MRZvIS/lab1/report/iter_a/plot.data";
                 plotMapper = iterationToStepPlotMapper;
                 break;
+            case 5:{
+
+                System.exit(1);
+            }
             default:
                 System.exit(1);
         }
