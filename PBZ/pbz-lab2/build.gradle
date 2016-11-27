@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.1.RELEASE'
+        springBootVersion = '1.4.2.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -10,38 +10,25 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.moowork.node" version "0.12"
-    id "de.richsource.gradle.plugins.typescript" version "1.8.0"
-}
-
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
-
-jar {
-    baseName = 'pbz-lab2'
-    version = '0.0.1-SNAPSHOT'
-}
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
-
-dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.projectlombok:lombok')
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('com.h2database:h2')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+jar {
+    baseName = 'pbz-lab2'
+    version = '0.0.1-SNAPSHOT'
 }
 
-compileTypeScript {
-    source = file("./src/main/webapp/app*.ts")
-    outFile = file("${buildDir}/js/out.js")
-    declaration = true
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+//    compile("org.springframework.boot:spring-boot-devtools")
+    compile('com.h2database:h2')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

@@ -1,142 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="1c0ce803-7e8f-4bd1-be2c-8b3c5271fe59" name="Default" comment="MRZvIS lab2">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/lab-1/src/main/java/mains/WorkWithImage.java" afterPath="$PROJECT_DIR$/../lab1/lab-1/src/main/java/mains/WorkWithImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/LinearSequnce.java" afterPath="$PROJECT_DIR$/src/main/java/LinearSequnce.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/PowerSecuence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/PowerSecuence.java" />
-    </list>
+    <list id="1c0ce803-7e8f-4bd1-be2c-8b3c5271fe59" name="Default" comment="MRZvIS lab2" />
     <list default="true" id="2dcfbaad-6fab-4bc9-a6b1-90eabed27a31" name="New changelist" comment="New changelist">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lab1/lab-1/target/classes/teaching/TeachingThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lab1/lab-1/target/test-classes/NetworkTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lab1/report/lab2.odt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/delta.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/network.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot0.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot1.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot10.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot11.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot12.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot13.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot14.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot2.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot3.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot4.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot5.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot6.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot7.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot8.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/plot9.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pogoda.sequnce" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction10.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction11.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction12.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction13.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction7.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction8.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/prediction9.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/cat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/cos" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/cos.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/cos.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/cos_prediction_src.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/factorial.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/factorial.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/factorial_prediction_src.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/prediction.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/prediction.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/sin.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/sin.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/scripts/sin_prediction_src.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/delta.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/network.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot0.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot1.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot10.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot11.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot12.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot13.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot2.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot3.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot4.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot5.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot6.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot7.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot8.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/plot9.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pogoda.sequnce" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction10.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction11.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction12.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction6.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction7.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction8.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/prediction9.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sequnce/Fibonachi.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/webapp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/lab-1/target/test-classes/MatrixTest.class" afterPath="$PROJECT_DIR$/../lab1/lab-1/target/test-classes/MatrixTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/lab2.odt" afterPath="$PROJECT_DIR$/report/lab2.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main.class" afterPath="$PROJECT_DIR$/target/classes/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sequnce/FactorialSequence.class" afterPath="$PROJECT_DIR$/target/classes/sequnce/FactorialSequence.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sequnce/InverceSequence.class" afterPath="$PROJECT_DIR$/target/classes/sequnce/InverceSequence.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/report/lab3.odt" afterPath="$PROJECT_DIR$/../lab3/report/lab3.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/client/client" afterPath="$PROJECT_DIR$/../../OS/lab4/client/client" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/report/lab4.odt" afterPath="$PROJECT_DIR$/../../OS/lab4/report/lab4.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/server/server" afterPath="$PROJECT_DIR$/../../OS/lab4/server/server" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/lab-1/src/main/java/mains/CalCompressionRatio.java" afterPath="$PROJECT_DIR$/../lab1/lab-1/src/main/java/mains/CalCompressionRatio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/lab-1/src/test/java/MatrixTest.java" afterPath="$PROJECT_DIR$/../lab1/lab-1/src/test/java/MatrixTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/report/iter_a/fit.log" afterPath="$PROJECT_DIR$/../lab1/report/iter_a/fit.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/report/iter_a/iter_a.svg" afterPath="$PROJECT_DIR$/../lab1/report/iter_a/iter_a.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/report/iter_e/fit.log" afterPath="$PROJECT_DIR$/../lab1/report/iter_e/fit.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab1/report/iter_e/iter_e.svg" afterPath="$PROJECT_DIR$/../lab1/report/iter_e/iter_e.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/JordansNetworkWithTangens.java" afterPath="$PROJECT_DIR$/src/main/java/JordansNetworkWithTangens.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main.java" afterPath="$PROJECT_DIR$/src/main/java/main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/CosinSequence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/CosinSequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/Factorial.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/Factorial.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/FactorialSequence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/FactorialSequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/FibonachiSequence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/FibonachiSequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/FileSequnce.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/FileSequnce.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/InverceSequence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/InverceSequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/Sequence.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/Sequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/SequenceNormalizer.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/SequenceNormalizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sequnce/TrainingSetGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/sequnce/TrainingSetGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction0.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction0.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction1.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction1.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction2.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction2.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction3.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction3.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction4.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction4.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction5.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction5.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prediction6.data" afterPath="$PROJECT_DIR$/src/main/resources/prediction6.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/repli/pogoda.data" afterPath="$PROJECT_DIR$/src/main/resources/repli/pogoda.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/repli/pogoda.html" afterPath="$PROJECT_DIR$/src/main/resources/repli/pogoda.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/repli/pogoda.sequnce" afterPath="$PROJECT_DIR$/src/main/resources/repli/pogoda.sequnce" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/scripts/add_delta_column.rb" afterPath="$PROJECT_DIR$/src/main/resources/scripts/add_delta_column.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/scripts/plot.gnuplot" afterPath="$PROJECT_DIR$/src/main/resources/scripts/plot.gnuplot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/JordansNetworkTests.java" afterPath="$PROJECT_DIR$/src/test/java/JordansNetworkTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction0.data" afterPath="$PROJECT_DIR$/target/classes/prediction0.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction1.data" afterPath="$PROJECT_DIR$/target/classes/prediction1.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction2.data" afterPath="$PROJECT_DIR$/target/classes/prediction2.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction3.data" afterPath="$PROJECT_DIR$/target/classes/prediction3.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction4.data" afterPath="$PROJECT_DIR$/target/classes/prediction4.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prediction5.data" afterPath="$PROJECT_DIR$/target/classes/prediction5.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/java/HemmingNetwork.java" afterPath="$PROJECT_DIR$/../lab3/src/main/java/HemmingNetwork.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/A.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/A.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/N.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/N.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/P.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/P.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/S.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/S.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/Z.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/Z.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/empty.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/empty.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/stripes.txt" afterPath="$PROJECT_DIR$/../lab3/src/main/resources/inverse/stripes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/src/test/java/HemmingNetworkTest.java" afterPath="$PROJECT_DIR$/../lab3/src/test/java/HemmingNetworkTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../OS/lab4/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/client/client.cpp" afterPath="$PROJECT_DIR$/../../OS/lab4/client/client.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/server/Server.cpp" afterPath="$PROJECT_DIR$/../../OS/lab4/server/Server.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/server/Server.h" afterPath="$PROJECT_DIR$/../../OS/lab4/server/Server.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/server/configs.txt" afterPath="$PROJECT_DIR$/../../OS/lab4/server/configs.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../OS/lab4/server/constants.h" afterPath="$PROJECT_DIR$/../../OS/lab4/server/constants.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/controllers/CompanyController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Company.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/DangerRate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Measurement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Outlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Stvor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Substance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/repositories/CompanyRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/controllers/CompanyController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Company.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/DangerRate.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Measurement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Outlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Stvor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Substance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/repositories/CompanyRepository.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build.gradle" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build.gradle" />
     </list>
     <ignored path="lab2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -159,23 +42,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="e_to_iterations.data" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/e_to_iterations.data">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prediction0.data" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/prediction0.data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RecurentNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/RecurentNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -201,7 +67,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1380">
               <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1102#1103#0" expanded="false" />
+                <element signature="e#1138#1139#0" expanded="false" />
+                <element signature="e#1175#1176#0" expanded="false" />
+                <element signature="e#1212#1213#0" expanded="false" />
+                <element signature="e#4724#4725#0" expanded="false" />
+                <element signature="e#4779#4780#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,8 +86,11 @@
             <state relative-caret-position="225">
               <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding>
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#356#357#0" expanded="false" />
+                <element signature="e#416#417#0" expanded="false" />
+                <element signature="e#461#462#0" expanded="false" />
+                <element signature="e#521#522#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -240,7 +117,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#333#334#0" expanded="false" />
+                <element signature="e#369#370#0" expanded="false" />
+                <element signature="e#589#590#0" expanded="false" />
+                <element signature="e#659#660#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -260,7 +143,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#274#275#0" expanded="false" />
+                <element signature="e#314#315#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -310,9 +197,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="44" />
-    <option name="y" value="18" />
+    <option name="y" value="-3" />
     <option name="width" value="1322" />
-    <option name="height" value="750" />
+    <option name="height" value="771" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -339,8 +226,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -370,6 +258,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -407,7 +325,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1013,6 +930,7 @@
       <workItem from="1479891077424" duration="56000" />
       <workItem from="1480065213717" duration="1267000" />
       <workItem from="1480143279236" duration="36000" />
+      <workItem from="1480185676816" duration="108000" />
     </task>
     <task id="LOCAL-00001" summary="MRZvIS lab2">
       <created>1479161487804</created>
@@ -1025,11 +943,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22131000" />
+    <option name="totallyTimeSpent" value="22239000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="18" width="1322" height="750" extended-state="0" />
-    <editor active="true" />
+    <frame x="44" y="-3" width="1322" height="771" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1041,16 +959,16 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651515" sideWeight="0.41754916" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3181818" sideWeight="0.4614221" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3171806" sideWeight="0.4614221" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33661118" sideWeight="0.5824508" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1181,7 +1099,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1102#1103#0" expanded="false" />
+            <element signature="e#1138#1139#0" expanded="false" />
+            <element signature="e#1175#1176#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="false" />
+            <element signature="e#4724#4725#0" expanded="false" />
+            <element signature="e#4779#4780#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,7 +1116,7 @@
         <state relative-caret-position="525">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1421,29 +1347,26 @@
         <state relative-caret-position="1845">
           <caret line="151" column="31" selection-start-line="151" selection-start-column="31" selection-end-line="151" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/e_to_iterations.data">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/prediction0.data">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/e_to_iterations.data" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/prediction0.data" />
     <entry file="file://$PROJECT_DIR$/src/main/java/JordansNetworkWithTangens.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1102#1103#0" expanded="false" />
+            <element signature="e#1138#1139#0" expanded="false" />
+            <element signature="e#1175#1176#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="false" />
+            <element signature="e#4724#4725#0" expanded="false" />
+            <element signature="e#4779#4780#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1452,8 +1375,11 @@
         <state relative-caret-position="225">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding>
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#356#357#0" expanded="false" />
+            <element signature="e#416#417#0" expanded="false" />
+            <element signature="e#461#462#0" expanded="false" />
+            <element signature="e#521#522#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1476,7 +1402,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#333#334#0" expanded="false" />
+            <element signature="e#369#370#0" expanded="false" />
+            <element signature="e#589#590#0" expanded="false" />
+            <element signature="e#659#660#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1492,7 +1424,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+            <element signature="e#314#315#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
