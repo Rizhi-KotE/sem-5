@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
@@ -19,6 +20,10 @@ public class IndividualMPDsTest {
 
     @Autowired
     private IndividualMPDs mpDs;
+
+    @Autowired
+    private Outlets outlets;
+
     private Outlet outlet;
     private Substance substance;
     private Alignment alignment;
@@ -28,8 +33,7 @@ public class IndividualMPDsTest {
     @Before
     public void setUp() throws Exception {
         Random random = new Random();
-        outlet = new Outlet(
-                random.nextLong(), random.nextDouble(),
+        outlet = outlets.createNewOutlet(random.nextDouble(),
                 random.nextDouble(), random.nextDouble(),
                 random.nextDouble(), random.nextDouble(),
                 random.nextDouble());
@@ -41,6 +45,7 @@ public class IndividualMPDsTest {
     public void createMPD() throws Exception {
         IndividualMPD mpd = mpDs.createMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent);
         assertNotNull(mpd);
+        assertNotEquals(0, mpd.getId());
     }
 
     @Test

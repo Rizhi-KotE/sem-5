@@ -16,7 +16,9 @@ import java.util.Set;
 public class IndividualMPDs {
 
     @Value("#{FIND_ALL_INDIVIDUAL_MPD}")
-    public static String SELECT_FROM_INDIVIDUAL_MPD;
+    public static String SELECT_FROM_INDIVIDUAL_MPD = "SELECT * FROM individual_mpd as mpd, " +
+            "outlets as o" +
+            " where mpd.outlet_id=o.outlet_id";
 
     @Autowired
     private JdbcTemplate template;
@@ -36,7 +38,8 @@ public class IndividualMPDs {
         Alignment alignment = alignments.mapRow(rs, rowNum);
         double backgroundConcentration = rs.getDouble("background_concentration");
         double concentrationInEffluent = rs.getDouble("concentration_in_effluent");
-        return new IndividualMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent);
+        long id = rs.getLong("individual_mpd_id");
+        return new IndividualMPD((long) id, outlet, substance, alignment, backgroundConcentration, concentrationInEffluent);
     };
 
     public IndividualMPD createMPD(Outlet outlet,
@@ -53,8 +56,9 @@ public class IndividualMPDs {
                 .addValue("substance_id", substance.getId())
                 .addValue("background_concentration", backgroundConcentration)
                 .addValue("concentration_in_effluent", concentrationInEffluent);
-        insert.executeAndReturnKey(parameters);
-        return new IndividualMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent);
+        Number id = insert.executeAndReturnKey(parameters);
+         return new IndividualMPD((long)id, outlet, substance, alignment, backgroundConcentration,
+                concentrationInEffluent);
     }
 
     public Set<IndividualMPD> find(Outlet outlet) {

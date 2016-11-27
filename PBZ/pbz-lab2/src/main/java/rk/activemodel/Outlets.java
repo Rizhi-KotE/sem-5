@@ -19,7 +19,7 @@ public class Outlets {
     public Outlet createNewOutlet(double diameter, double flowRate, double waste, double angle, double depth, double distanceToCoast) {
         SimpleJdbcInsert insert = new SimpleJdbcInsert(template)
                 .withTableName("outlets")
-                .usingGeneratedKeyColumns("id");
+                .usingGeneratedKeyColumns("outlet_id");
         HashMap map = new HashMap();
         map.put("diameter", diameter);
         map.put("flow_rate", flowRate);
@@ -38,7 +38,8 @@ public class Outlets {
 
     public Outlet find(long idForFind) {
 
-        return template.queryForObject("SELECT * FROM outlets WHERE id = ?", new Object[]{idForFind}, outletRowMapper);
+        return template.queryForObject("SELECT * FROM outlets WHERE outlet_id = ?", new
+                Object[]{idForFind}, outletRowMapper);
     }
 
     public Outlet mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -46,7 +47,7 @@ public class Outlets {
     }
 
     public static RowMapper<Outlet> outletRowMapper = (rs, rowNum) -> {
-        long id = rs.getLong("id");
+        long id = rs.getLong("outlet_id");
         double diameter = rs.getDouble("diameter");
         double flowRate = rs.getDouble("flow_rate");
         double waste = rs.getDouble("waste");
