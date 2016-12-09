@@ -1,0 +1,5 @@
+<form xmlns:th="http://www.w3.org/1999/xhtml"
+      action="#" th:action="@{/company/create}" th:object="${dto}" method="post">
+    <input type="text" th:field="*{companyName}"/>
+    <input type="submit"/>
+</form>

@@ -3,7 +3,6 @@ package rk.activemodel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
@@ -15,21 +14,6 @@ public class Outlets {
 
     @Autowired
     private JdbcTemplate template;
-
-    public Outlet createNewOutlet(double diameter, double flowRate, double waste, double angle, double depth, double distanceToCoast) {
-        SimpleJdbcInsert insert = new SimpleJdbcInsert(template)
-                .withTableName("outlets")
-                .usingGeneratedKeyColumns("outlet_id");
-        HashMap map = new HashMap();
-        map.put("diameter", diameter);
-        map.put("flow_rate", flowRate);
-        map.put("waste", waste);
-        map.put("angle", angle);
-        map.put("depth", depth);
-        map.put("distance_to_coast", distanceToCoast);
-        Number id = insert.executeAndReturnKey(map);
-        return new Outlet((long) id, diameter, flowRate, waste, angle, depth, distanceToCoast);
-    }
 
     public Set<Outlet> find(){
         List<Outlet> outlets = template.query("SELECT * FROM outlets", outletRowMapper);
@@ -54,6 +38,13 @@ public class Outlets {
         double angle = rs.getDouble("angle");
         double depth = rs.getDouble("depth");
         double distanceToCoast = rs.getDouble("distance_to_coast");
-        return new Outlet(id, diameter, flowRate, waste, angle, depth, distanceToCoast);
+        double distanceOnWater = rs.getDouble("distance_on_water");
+        return new Outlet(id, diameter, flowRate, waste, angle, depth, distanceToCoast, distanceOnWater);
     };
+
+    public Set<Outlet> find(Company company) {
+        List<Outlet> query = template.query("SELECT * FROM outlets WHERE company_id = ?", new
+                Object[]{company.getId()}, outletRowMapper);
+        return new HashSet<>(query);
+    }
 }

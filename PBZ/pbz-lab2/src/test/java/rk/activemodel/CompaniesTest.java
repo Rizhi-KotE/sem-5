@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Set;
@@ -29,13 +28,13 @@ public class CompaniesTest {
 
     @Test
     public void createCompany() throws Exception{
-        Company company = companies.createCompany("company");
-        assertEquals("company", company.getName());
+        Company company = companies.createCompany("companyName");
+        assertEquals("companyName", company.getName());
     }
 
     @Test
     public void persistCompanyAndCheckItExist() throws Exception {
-        Company company = companies.createCompany("company");
+        Company company = companies.createCompany("companyName");
         Company loadedCompany = companies.findCompany(company.getId());
         assertEquals(company.getId(), loadedCompany.getId());
         assertEquals(company.getName(), loadedCompany.getName());
@@ -43,18 +42,31 @@ public class CompaniesTest {
 
     @Test
     public void findAllCompanies() throws Exception {
+        int currentSize = companies.find().size();
+
         Company company1 = companies.createCompany("company1");
         Company company2 = companies.createCompany("company2");
         Set<Company> loadedCompany = companies.find();
-        assertEquals(2, loadedCompany.size());
+        assertEquals(currentSize + 2, loadedCompany.size());
     }
 
     @Test
     public void removeCompany() throws Exception {
+        int currentSize = companies.find().size();
+
         Company company1 = companies.createCompany("company1");
         Company company2 = companies.createCompany("company2");
         companies.remove(company1.getId());
         Set<Company> loadedCompany = companies.find();
-        assertEquals(1, loadedCompany.size());
+        assertEquals(currentSize + 1, loadedCompany.size());
+    }
+
+    @Test
+    public void findByOutlet() throws Exception{
+        Company expect = companies.createCompany("companyName");
+        Outlet newOutlet = expect.createOutlet(0, 0, 0, 0, 0, 0, 0);
+        Company result = companies.findCompany(newOutlet);
+
+        assertEquals(expect, result);
     }
 }

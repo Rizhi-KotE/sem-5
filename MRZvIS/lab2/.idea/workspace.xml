@@ -3,23 +3,45 @@
   <component name="ChangeListManager">
     <list id="1c0ce803-7e8f-4bd1-be2c-8b3c5271fe59" name="Default" comment="MRZvIS lab2" />
     <list default="true" id="2dcfbaad-6fab-4bc9-a6b1-90eabed27a31" name="New changelist" comment="New changelist">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/controllers/CompanyController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Company.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/DangerRate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Measurement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Outlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Stvor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/model/Substance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/repositories/CompanyRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/controllers/CompanyController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Company.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/DangerRate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Measurement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Outlet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Stvor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/model/Substance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/repositories/CompanyRepository.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/CompanyController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/MPDsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/OutletsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/mpdDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/data.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/outlets.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/templates/companies.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/templates/company-info.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/templates/create_mpd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/AlignmentsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/SubstancesTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/resources/application.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/DataSourceSonfiguration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/OutletsTest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/IndividualMPD.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/MeasurementIndividualMPD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/.gradle/3.0/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/PbzLab2Application.class" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build/classes/main/rk/PbzLab2Application.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../SiMOIB/lab1.docx" afterPath="$PROJECT_DIR$/../../SiMOIB/lab1.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build.gradle" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/PbzLab2Application.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/PbzLab2Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Alignment.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Alignment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Alignments.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Alignments.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Companies.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Companies.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Company.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Company.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/IndividualMPDs.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/IndividualMPDs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Outlet.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Outlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Outlets.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Outlets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Substance.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Substance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Substances.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/java/rk/activemodel/Substances.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/schema.sql" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/main/resources/schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/CompaniesTest.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/CompaniesTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/CompanyTest.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/CompanyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/IndividualMPDTest.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/IndividualMPDTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/IndividualMPDsTest.java" afterPath="$PROJECT_DIR$/../../PBZ/pbz-lab2/src/test/java/rk/activemodel/IndividualMPDsTest.java" />
     </list>
     <ignored path="lab2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,15 +89,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1380">
               <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1102#1103#0" expanded="false" />
-                <element signature="e#1138#1139#0" expanded="false" />
-                <element signature="e#1175#1176#0" expanded="false" />
-                <element signature="e#1212#1213#0" expanded="false" />
-                <element signature="e#4724#4725#0" expanded="false" />
-                <element signature="e#4779#4780#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,15 +97,9 @@
       <file leaf-file-name="SequenceNormalizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sequnce/SequenceNormalizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="195">
               <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#356#357#0" expanded="false" />
-                <element signature="e#416#417#0" expanded="false" />
-                <element signature="e#461#462#0" expanded="false" />
-                <element signature="e#521#522#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,13 +125,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#333#334#0" expanded="false" />
-                <element signature="e#369#370#0" expanded="false" />
-                <element signature="e#589#590#0" expanded="false" />
-                <element signature="e#659#660#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,11 +145,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#274#275#0" expanded="false" />
-                <element signature="e#314#315#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,7 +210,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -225,107 +223,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
@@ -424,65 +322,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -492,9 +331,6 @@
       <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -613,15 +449,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="depsClasspath" value="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JRubyCucumberRunConfigurationType" factoryName="JRuby Cucumber">
@@ -931,6 +758,7 @@
       <workItem from="1480065213717" duration="1267000" />
       <workItem from="1480143279236" duration="36000" />
       <workItem from="1480185676816" duration="108000" />
+      <workItem from="1481014816948" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="MRZvIS lab2">
       <created>1479161487804</created>
@@ -943,7 +771,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22239000" />
+    <option name="totallyTimeSpent" value="22249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="-3" width="1322" height="771" extended-state="6" />
@@ -1099,15 +927,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1102#1103#0" expanded="false" />
-            <element signature="e#1138#1139#0" expanded="false" />
-            <element signature="e#1175#1176#0" expanded="false" />
-            <element signature="e#1212#1213#0" expanded="false" />
-            <element signature="e#4724#4725#0" expanded="false" />
-            <element signature="e#4779#4780#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,29 +1178,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1102#1103#0" expanded="false" />
-            <element signature="e#1138#1139#0" expanded="false" />
-            <element signature="e#1175#1176#0" expanded="false" />
-            <element signature="e#1212#1213#0" expanded="false" />
-            <element signature="e#4724#4725#0" expanded="false" />
-            <element signature="e#4779#4780#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sequnce/SequenceNormalizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="195">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#416#417#0" expanded="false" />
-            <element signature="e#461#462#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1402,13 +1208,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#333#334#0" expanded="false" />
-            <element signature="e#369#370#0" expanded="false" />
-            <element signature="e#589#590#0" expanded="false" />
-            <element signature="e#659#660#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,11 +1224,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#274#275#0" expanded="false" />
-            <element signature="e#314#315#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

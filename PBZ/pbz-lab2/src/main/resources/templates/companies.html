@@ -1,0 +1,22 @@
+<div class="companiesList"  xmlns:th="http://www.w3.org/1999/xhtml">
+    
+    <h2>Companies</h2>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="com : ${companies}">
+            <td th:text="${{com.id}}"></td>
+            <td>
+                <a th:href="@{/companyName/{id}(id = ${com.id})}" th:text="${{com.name}}"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button><a th:href="@{/company/create}">добавить компанию</a></button>
+</div>

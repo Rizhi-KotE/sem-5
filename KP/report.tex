@@ -1,0 +1,27 @@
+\input{preamble}
+
+\begin{document}
+
+\input{title} 
+
+\graphicspath{{img/}}
+
+\pagenumbering{arabic}
+\setcounter{page}{4}
+
+\input{table_of_contents}
+
+\input{content}
+
+% Если в тексте записки есть приложения, для добавления их в содержание, необходимо оставить слудеющую строку
+% Если приложений нет - данную строку добавляем в комментарий
+%\addcontentsline{toc}{section}{Список использованных источников}
+
+\nocite{*}
+\bibliography{bibliography}
+
+% Если в тексте записки есть приложения, для добавления их в содержание, необходимо оставить слудеющую строку
+% Если приложений нет - данную строку добавляем в комментарий
+%\include{sections/appendix}
+
+\end{document}

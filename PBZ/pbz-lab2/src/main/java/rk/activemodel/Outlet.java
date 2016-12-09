@@ -1,7 +1,5 @@
 package rk.activemodel;
 
-import org.springframework.jdbc.core.RowMapper;
-
 public class Outlet {
     private final long id;
     private final double diameter;
@@ -10,16 +8,43 @@ public class Outlet {
     private final double angle;
     private final double depth;
     private final double distanceToCoast;
+    private final double distance;
 
-    public Outlet(long outlet_id, double diameter, double flowRate, double waste, double angle, double depth, double distanceToCoast) {
+    public double getDiameter() {
+        return diameter;
+    }
+
+    public double getFlowRate() {
+        return flowRate;
+    }
+
+    public double getWaste(Substance substance) {
+        return waste;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public double getDepth() {
+        return depth;
+    }
+
+    public double getDistanceToCoast() {
+        return distanceToCoast;
+    }
+
+    public Outlet(long outlet_id, double diameter, double flowRate, double waste, double angle, double depth, double distanceToCoast, double distance) {
 
         id = outlet_id;
         this.diameter = diameter;
         this.flowRate = flowRate;
         this.waste = waste;
+
         this.angle = angle;
         this.depth = depth;
         this.distanceToCoast = distanceToCoast;
+        this.distance = distance;
     }
 
     public long getId() {
@@ -61,5 +86,9 @@ public class Outlet {
         temp = Double.doubleToLongBits(distanceToCoast);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+
+    public double getDistance() {
+        return distance;
     }
 }

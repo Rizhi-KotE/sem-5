@@ -21,7 +21,7 @@ public class Companies {
     private Outlets outlets;
     private RowMapper<Company> companyRowMapper = (rs, rowNum) -> {
         long id = rs.getLong("company_id");
-        String name = rs.getString("name");
+        String name = rs.getString("company_name");
         return getCompany(id, name);
     };
 
@@ -30,7 +30,7 @@ public class Companies {
                 .withTableName("companies")
                 .usingGeneratedKeyColumns("company_id");
         HashMap map = new HashMap();
-        map.put("name", name);
+        map.put("company_name", name);
         Number id = simpleJdbcInsert.executeAndReturnKey(map);
         return getCompany((long) id, name);
     }
@@ -38,7 +38,7 @@ public class Companies {
     public Company findCompany(long i) {
 
         Company company = template
-                .queryForObject("SELECT company_id, name FROM companies WHERE company_id = ?", new Object[]{i}, companyRowMapper);
+                .queryForObject("SELECT company_id, company_name FROM companies WHERE company_id = ?", new Object[]{i}, companyRowMapper);
         return company;
     }
 
@@ -56,5 +56,11 @@ public class Companies {
 
     public void remove(long id) {
         template.update("DELETE FROM companies WHERE company_id = ?", new Object[]{id});
+    }
+
+    public Company findCompany(Outlet outlet) {
+        return template.queryForObject("SELECT * FROM companies WHERE companies.company_id IN (SELECT company_id FROM outlets " +
+                "WHERE outlets.outlet_id = " +
+                "?) ", new Object[]{outlet.getId()}, companyRowMapper);
     }
 }

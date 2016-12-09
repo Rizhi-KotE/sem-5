@@ -1,6 +1,8 @@
 package rk.activemodel;
 
-public class IndividualMPD {
+import java.sql.Date;
+
+public class MeasurementIndividualMPD {
 
     private final double backgroundConcentration;
     private final double concentrationInEffluent;
@@ -9,18 +11,71 @@ public class IndividualMPD {
     private final Substance substance;
     private final Alignment alignment;
     private final long id;
+    private final double waste;
+    private final Date date;
 
-    IndividualMPD(long id, Outlet outlet,
-                  Substance substance,
-                  Alignment alignment,
-                  double backgroundConcentration,
-                  double concentrationInEffluent) {
+    MeasurementIndividualMPD(long id, Outlet outlet,
+                             Substance substance,
+                             Alignment alignment,
+                             double backgroundConcentration,
+                             double concentrationInEffluent, double waste,
+                             Date date) {
         this.id = id;
         this.outlet = outlet;
         this.substance = substance;
         this.alignment = alignment;
         this.backgroundConcentration = backgroundConcentration;
         this.concentrationInEffluent = concentrationInEffluent;
+        this.waste = waste;
+        this.date = date;
+    }
+
+    public double getDiameter() {
+        return outlet.getDiameter();
+    }
+
+    public double getFlowRate() {
+        return outlet.getFlowRate();
+    }
+
+    public double getWaste() {
+        return waste;
+    }
+
+    public double getAngle() {
+        return outlet.getAngle();
+    }
+
+    public double getDepth() {
+        return outlet.getDepth();
+    }
+
+    public double getDistanceToCoast() {
+        return outlet.getDistanceToCoast();
+    }
+
+    public double getDistanceToAlignment() {
+        return outlet.getDistance() - alignment.getDistance();
+    }
+
+    public double getBackgroundConcentration() {
+        return backgroundConcentration;
+    }
+
+    public double getConcentrationInEffluent() {
+        return concentrationInEffluent;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public double getNSC() {
+        return alignment.getNSC(substance);
+    }
+
+    public double getMPC() {
+        return alignment.getMPC(substance);
     }
 
     @Override
@@ -28,7 +83,7 @@ public class IndividualMPD {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        IndividualMPD mpd = (IndividualMPD) o;
+        MeasurementIndividualMPD mpd = (MeasurementIndividualMPD) o;
 
         if (Double.compare(mpd.backgroundConcentration, backgroundConcentration) != 0) return false;
         if (Double.compare(mpd.concentrationInEffluent, concentrationInEffluent) != 0) return false;
@@ -50,10 +105,6 @@ public class IndividualMPD {
         result = 31 * result + (substance != null ? substance.hashCode() : 0);
         result = 31 * result + (alignment != null ? alignment.hashCode() : 0);
         return result;
-    }
-
-    public double getValue(){
-        return  hashCode();
     }
 
     public long getId() {

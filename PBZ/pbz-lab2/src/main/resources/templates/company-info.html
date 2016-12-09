@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<div class="companiesList" xmlns:th="http://www.w3.org/1999/xhtml">
+    
+    <div class="companyInfoHeader">
+        <span id="id" th:text="${{companyName.id}}"></span>
+        <span id="name" th:text="${{companyName.name}}"></span>
+    </div>
+    
+    <h2>Outlets</h2>
+    
+    <style>
+        h1 {
+            color: red;
+        }
+        
+        table > input:checked{
+            display: none;
+        }
+        
+        .true{
+            visibility: hidden;
+        }
+        
+        .false{
+            
+        }
+        
+        p {
+            color: blue;
+        }
+    </style>
+    
+
+    
+    <table class="">
+        <input type="checkbox"/>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>DIAMETER</th>
+            <th>FLOW_RATE</th>
+            <th>ANGLE</th>
+            <th>DEPTH</th>
+            <th>DISTANCE_TO_COAST</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="out : ${outlets}">
+            <td th:text="${{out.id}}"></td>
+            <td th:text="${{out.diameter}}"></td>
+            <td th:text="${{out.flowRate}}"></td>
+            <td th:text="${{out.angle}}"></td>
+            <td th:text="${{out.depth}}"></td>
+            <td th:text="${{out.distanceToCoast}}"></td>
+            <td><button><a  th:href="@{/mpd/create}">добавить измерение</a></button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

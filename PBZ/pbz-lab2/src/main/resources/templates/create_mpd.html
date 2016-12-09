@@ -1,0 +1,24 @@
+<form xmlns:th="http://www.w3.org/1999/xhtml"
+      action="#" th:action="@{/mpd/create}" th:object="${dto}">
+    <select th:field="*{outletId}">
+        <option th:each="outlet : ${outlets}"
+                th:value="${outlet.id}"
+                th:text="#{{outlet.id}}"></option>
+    </select>
+    <select th:field="*{substanceId}">
+        <option th:each="substance : ${substances}"
+                th:value="${substance.id}"
+                th:text="#{{substance.name}}"></option>
+    </select>
+    <select th:field="*{alignmentId}">
+        <option th:each="alignment : ${alignments}"
+                th:value="${alignment.id}"
+                th:text="#{{substance.distanceOnWater}}"></option>
+    </select>
+    <input type="number" th:field="*{backgroundConcentration}"/>
+    <input type="number" th:field="*{concentrationEffluent}"/>
+    <input type="number" th:field="*{waste}"/>
+    <input type="date" th:field="*{date}"/>
+    <input type="submit"/>
+    
+</form>
