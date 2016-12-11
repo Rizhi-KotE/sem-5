@@ -28,7 +28,7 @@ public class Substance {
         return result;
     }
 
-    public String getSubstanceName() {
+    public String getName() {
 
         return substanceName;
     }

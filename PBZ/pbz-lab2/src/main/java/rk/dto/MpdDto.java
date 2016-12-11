@@ -6,7 +6,7 @@ import rk.activemodel.Substance;
 
 import java.sql.Date;
 
-public class mpdDto {
+public class MpdDto {
     public long outletId;
     public long substanceId;
     public long alignmentId;

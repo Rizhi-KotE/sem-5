@@ -1,22 +1,27 @@
-<div class="companiesList"  xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="companiesList" xmlns:th="http://www.w3.org/1999/xhtml">
     
-    <h2>Companies</h2>
+    <h2>Предприятия</h2>
     
     <table>
         <thead>
         <tr>
-            <th>ID</th>
-            <th>NAME</th>
+            <th>Номер</th>
+            <th>Название</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="com : ${companies}">
             <td th:text="${{com.id}}"></td>
             <td>
-                <a th:href="@{/companyName/{id}(id = ${com.id})}" th:text="${{com.name}}"></a>
+                <a th:href="@{/company/{id}(id = ${com.id})}" th:text="${{com.name}}"></a>
             </td>
         </tr>
         </tbody>
     </table>
     <button><a th:href="@{/company/create}">добавить компанию</a></button>
+    <div><a th:href="@{/mpd/groupedByOutlet}">Просмотр списка всех контролируемых веществ для каждого
+        выпуска с концентрациями этих веществ в сточных
+        водах</a></div>
+    <div><a th:href="@{/mpd/groupedByAlignmentAndThenOutlet}">Просмотр ПДК, фоновую концентрацию и КНК веществ по всем контрольным
+        створам для каждого выпуска</a></div>
 </div>

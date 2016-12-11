@@ -14,6 +14,7 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static rk.activemodel.WaterUsageType.SingleUsage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,7 +53,7 @@ public class IndividualMPDTest {
 
     @Before
     public void setUp() throws Exception {
-        Company company = companies.createCompany("companyName");
+        Company company = companies.createCompany("companyName", SingleUsage);
         outlet = company.createOutlet(diameter, flowRate, waste, angle, depth, distanceToCoast, distanceOnWater);
         alignment = alignments.createAlignment(outlet, alignmentDistanceOnWater);
         substance = substances.createSubstance("Substance");

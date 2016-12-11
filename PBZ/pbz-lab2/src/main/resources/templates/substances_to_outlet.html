@@ -1,0 +1,34 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:replace="company-info :: company-header"></div>
+    <table class="mpd">
+        <thead>
+        <tr>
+            <th>Выпуск №</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pair : ${map}">
+            <td th:text="${{pair.key.id}}"></td>
+            <td>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Вещество</th>
+                        <th>Концентрация</th>
+                        <th>Дата</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="mpd : ${pair.value}">
+                        <td th:text="${{mpd.substance.name}}"></td>
+                        <td th:text="${{mpd.concentrationInEffluent}}"></td>
+                        <td th:text="${{mpd.date}}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

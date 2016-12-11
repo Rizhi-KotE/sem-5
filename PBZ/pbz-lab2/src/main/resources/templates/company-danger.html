@@ -1,0 +1,47 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml">
+    
+    <div th:each="mpd : ${mpDs}">
+        <div th:text="${{mpd.key}}"></div>
+        <table class="mpd">
+            <input type="checkbox"/>
+            <thead>
+            <tr>
+                <th>Компания</th>
+                <th>Сток №</th>
+                <th>Вещество</th>
+                <th>Фоновая концентрация вещества в контрольном створе</th>
+                <th>Конкентрация вещества в сточных водах</th>
+                <th>Диаметр выпускного отверстия</th>
+                <th>Минимальная скорость течения воды</th>
+                <th>Расзод сточных вод</th>
+                <th>Угол истечения</th>
+                <th>Расстояние от выпуска до поверхности водоема</th>
+                <th>Растояние до берега</th>
+                <th>До ближайшей границы водопользования</th>
+                <th>Коэффициент неконсервативности (КНК) вещества</th>
+                <th>Предельно допустимая концентрация (ПДК) вещества в контрольном створе</th>
+                <th>Дата</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pair : ${mpd.value}" th:with="mpd = ${pair.value}">
+                <td th:text="${{mpd.outlet.company.name}}"></td>
+                <td th:text="${{mpd.outlet.id}}"></td>
+                <td th:text="${{mpd.substance.name}}"></td>
+                <td th:text="${{mpd.backgroundConcentration}}"></td>
+                <td th:text="${{mpd.concentrationInEffluent}}"></td>
+                <td th:text="${{mpd.diameter}}"></td>
+                <td th:text="${{mpd.flowRate}}"></td>
+                <td th:text="${{mpd.waste}}"></td>
+                <td th:text="${{mpd.angle}}"></td>
+                <td th:text="${{mpd.depth}}"></td>
+                <td th:text="${{mpd.distanceToCoast}}"></td>
+                <td th:text="${{mpd.distanceToAlignment}}"></td>
+                <td th:text="${{mpd.NSC}}"></td>
+                <td th:text="${{mpd.MPC}}"></td>
+                <td th:text="${{mpd.date}}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

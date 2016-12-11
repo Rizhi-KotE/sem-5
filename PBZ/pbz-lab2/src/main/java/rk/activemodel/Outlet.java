@@ -9,6 +9,31 @@ public class Outlet {
     private final double depth;
     private final double distanceToCoast;
     private final double distance;
+    private Company company;
+
+    public Outlet(Company company, long outlet_id, double diameter, double flowRate, double waste, double angle, double depth, double
+            distanceToCoast,
+                  double distance) {
+        this.company = company;
+
+        id = outlet_id;
+        this.diameter = diameter;
+        this.flowRate = flowRate;
+        this.waste = waste;
+
+        this.angle = angle;
+        this.depth = depth;
+        this.distanceToCoast = distanceToCoast;
+        this.distance = distance;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public double getWaste() {
+        return waste;
+    }
 
     public double getDiameter() {
         return diameter;
@@ -32,19 +57,6 @@ public class Outlet {
 
     public double getDistanceToCoast() {
         return distanceToCoast;
-    }
-
-    public Outlet(long outlet_id, double diameter, double flowRate, double waste, double angle, double depth, double distanceToCoast, double distance) {
-
-        id = outlet_id;
-        this.diameter = diameter;
-        this.flowRate = flowRate;
-        this.waste = waste;
-
-        this.angle = angle;
-        this.depth = depth;
-        this.distanceToCoast = distanceToCoast;
-        this.distance = distance;
     }
 
     public long getId() {

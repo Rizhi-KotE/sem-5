@@ -12,10 +12,12 @@ import java.util.Random;
 import java.util.Set;
 
 import static org.junit.Assert.*;
+import static rk.activemodel.WaterUsageType.SingleUsage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class IndividualMPDsTest {
+
 
     @Autowired
     private IndividualMPDs mpDs;
@@ -37,10 +39,11 @@ public class IndividualMPDsTest {
 
     @Autowired
     private Alignments alignments;
+    private Company company;
 
     @Before
     public void setUp() throws Exception {
-        Company company = companies.createCompany("companyName");
+        company = companies.createCompany("companyName", SingleUsage);
         Random random = new Random();
         outlet = company.createOutlet(random.nextDouble(),
                 random.nextDouble(), random.nextDouble(),
@@ -48,7 +51,7 @@ public class IndividualMPDsTest {
                 random.nextDouble(), random.nextDouble());
         substance = substances.createSubstance("substance");
         alignment = alignments.createAlignment(outlet, random.nextDouble());
-        date = new Date(random.nextLong());
+        date = new Date(1000l);
     }
 
     @Test
@@ -66,5 +69,32 @@ public class IndividualMPDsTest {
                 waste, date);
         Set<MeasurementIndividualMPD> mpdSet = mpDs.find(outlet);
         assertEquals(firstSeize + 1, mpdSet.size());
+    }
+
+    @Test
+    public void findByCompanyCheckOneOutlet() throws Exception {
+        int firstSeize = mpDs.find(company).size();
+        MeasurementIndividualMPD mpd = mpDs.createMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent,
+                waste, date);
+        Set<MeasurementIndividualMPD> mpdSet = mpDs.find(company);
+        assertEquals(firstSeize + 1, mpdSet.size());
+    }
+
+    @Test
+    public void findByTimeRange() throws Exception {
+        int firstSeize = mpDs.find(new Date(1), new Date(3)).size();
+        mpDs.createMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent,
+                waste, new Date(2));
+        mpDs.createMPD(outlet, substance, alignment, backgroundConcentration, concentrationInEffluent,
+                waste, new Date(2));
+        Set<MeasurementIndividualMPD> mpdSet = mpDs.find(new Date(1), new Date(3));
+        assertEquals(firstSeize + 2, mpdSet.size());
+    }
+
+    @Test
+    public void findByDangerLevel() throws Exception {
+
+        mpDs.findGroupedByDanger(company);
+        assertTrue(false);
     }
 }

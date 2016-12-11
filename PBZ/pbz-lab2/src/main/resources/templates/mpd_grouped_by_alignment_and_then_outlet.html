@@ -1,0 +1,51 @@
+<div xmlns:th="http://www.w3.org/1999/xhtml">
+    <table>
+        <thead>
+        <tr>
+            <th>Сброс №</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="firstPair : ${map}">
+            <td th:text="${firstPair.key.id}"></td>
+            <td>
+                <table class="mpd">
+                    <thead>
+                    <tr>
+                        <th>Выпуск №</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="pair : ${firstPair.value}">
+                        <td th:text="${{pair.key.id}}"></td>
+                        <td>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Вещество</th>
+                                    <th>Фоновую концентрацию</th>
+                                    <th>ПДК</th>
+                                    <th>КНК</th>
+                                    <th>Дата</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="mpd : ${pair.value}">
+                                    <td th:text="${{mpd.substance.name}}"></td>
+                                    <td th:text="${{mpd.backgroundConcentration}}"></td>
+                                    <td th:text="${{mpd.MPC}}"></td>
+                                    <td th:text="${{mpd.NSC}}"></td>
+                                    <td th:text="${{mpd.date}}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

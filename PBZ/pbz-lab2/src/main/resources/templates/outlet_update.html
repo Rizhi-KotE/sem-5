@@ -1,0 +1,34 @@
+<form xmlns:th="http://www.w3.org/1999/xhtml"
+      action="#" th:action="@{/outlet/}" th:object="${dto}" th:method="PUT">
+    <div>
+        <span>Диаметр</span>
+        <input type="number" th:field="*{diameter}"/>
+    </div>
+    <div>
+        <span>Скорость течения</span>
+        <input type="number" th:field="*{flowRate}"/>
+    </div>
+    <div>
+        <span>Расход сточных вод</span>
+        <input type="number" th:field="*{waste}"/>
+    </div>
+    <div>
+        <span>Угол истечения</span>
+        <input type="number" th:field="*{angle}"/>
+    </div>
+    <div>
+        <span>Растояние до поверхности водоема</span>
+        <input type="number" th:field="*{depth}"/>
+    </div>
+    <div>
+        <span>Растояние до берега</span>
+        <input type="number" th:field="*{distanceToCoast}"/>
+    </div>
+    <div>
+        <span>Растояние на воде</span>
+        <input type="number" th:field="*{distance}"/>
+    </div>
+    <input hidden="" type="number" th:field="*{companyId}"/>
+    <input hidden="" type="number" th:field="*{outletId}"/>
+    <input type="submit"/>
+</form>

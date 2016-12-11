@@ -3,17 +3,12 @@
     <select th:field="*{outletId}">
         <option th:each="outlet : ${outlets}"
                 th:value="${outlet.id}"
-                th:text="#{{outlet.id}}"></option>
+                th:text="${{outlet.id}}"></option>
     </select>
     <select th:field="*{substanceId}">
         <option th:each="substance : ${substances}"
                 th:value="${substance.id}"
-                th:text="#{{substance.name}}"></option>
-    </select>
-    <select th:field="*{alignmentId}">
-        <option th:each="alignment : ${alignments}"
-                th:value="${alignment.id}"
-                th:text="#{{substance.distanceOnWater}}"></option>
+                th:text="${{substance.name}}"></option>
     </select>
     <input type="number" th:field="*{backgroundConcentration}"/>
     <input type="number" th:field="*{concentrationEffluent}"/>

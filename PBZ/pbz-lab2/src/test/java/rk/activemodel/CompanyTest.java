@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Set;
 
 import static org.junit.Assert.*;
+import static rk.activemodel.WaterUsageType.SingleUsage;
 
 
 @RunWith(SpringRunner.class)
@@ -32,17 +33,17 @@ public class CompanyTest {
 
     @Test
     public void findAllOutlets() throws Exception {
-        Company comany1 = companies.createCompany("comany1");
-        Company company2 = companies.createCompany("company2");
-        comany1.createOutlet(0,0,0,0,0,0,0);
-        company2.createOutlet(0,0,0,0,0,0,0);
+        Company comany1 = companies.createCompany("comany1", SingleUsage);
+        Company company2 = companies.createCompany("company2", SingleUsage);
+        comany1.createOutlet(0, 0, 0, 0, 0, 0, 0);
+        company2.createOutlet(0, 0, 0, 0, 0, 0, 0);
         Set<Outlet> allOutlets = comany1.findAllOutlets();
         assertEquals(1, allOutlets.size());
     }
 
     @Before
     public void setUp() throws Exception {
-        company = companies.createCompany("companyName");
+        company = companies.createCompany("companyName", SingleUsage);
     }
 
     @Test

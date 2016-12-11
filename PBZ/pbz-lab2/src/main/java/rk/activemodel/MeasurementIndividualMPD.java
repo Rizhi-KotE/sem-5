@@ -30,6 +30,18 @@ public class MeasurementIndividualMPD {
         this.date = date;
     }
 
+    public Outlet getOutlet() {
+        return outlet;
+    }
+
+    public Substance getSubstance() {
+        return substance;
+    }
+
+    public Alignment getAlignment() {
+        return alignment;
+    }
+
     public double getDiameter() {
         return outlet.getDiameter();
     }

@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<div class="companiesList" xmlns:th="http://www.w3.org/1999/xhtml">
+<div xmlns:th="http://www.w3.org/1999/xhtml">
     
-    <div class="companyInfoHeader">
-        <span id="id" th:text="${{companyName.id}}"></span>
-        <span id="name" th:text="${{companyName.name}}"></span>
+    <div th:fragment="company-header" class="companyInfoHeader">
+        <div>
+            <span>Придприятие</span>
+            <span id="name" th:text="${{company.name}}"></span>
+        </div>
+        <div>
+            <span th:text="${{company.usageType.name}}"></span>
+        </div>
+    </div>
+    <div>
+        <a th:href="@{/company/{id}/update(id=${company.id})}">Редактировать</a>
+        <form th:action="@{'/company/{id}'(id=${company.id})}" th:method="DELETE">
+            <button type="submit" id="submitButton">Удалить</button>
+        </form>
     </div>
     
-    <h2>Outlets</h2>
-    
-    <style>
-        h1 {
-            color: red;
-        }
-        
-        table > input:checked{
-            display: none;
-        }
-        
-        .true{
-            visibility: hidden;
-        }
-        
-        .false{
-            
-        }
-        
-        p {
-            color: blue;
-        }
-    </style>
-    
-
-    
+    <h2>Выпуски</h2>
+    <a th:href="@{/company/{companyId}/outlet/create(companyId=${company.id})}">Добавить выпуск</a>
     <table class="">
-        <input type="checkbox"/>
         <thead>
         <tr>
-            <th>ID</th>
-            <th>DIAMETER</th>
-            <th>FLOW_RATE</th>
-            <th>ANGLE</th>
-            <th>DEPTH</th>
-            <th>DISTANCE_TO_COAST</th>
+            <th>Номер</th>
+            <th>Диаметр</th>
+            <th>Минимальная скорость течения воды</th>
+            <th>Угол истечения</th>
+            <th>Глубинна</th>
+            <th>Расстояние до берега</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
         </tr>
         </thead>
         <tbody>
@@ -52,8 +40,24 @@
             <td th:text="${{out.angle}}"></td>
             <td th:text="${{out.depth}}"></td>
             <td th:text="${{out.distanceToCoast}}"></td>
-            <td><button><a  th:href="@{/mpd/create}">добавить измерение</a></button></td>
+            <td>
+                <a th:href="@{/company/{companyId}/outlet/{outletId}/update(companyId=${company.id},outletId=${out.id})}">
+                    Редактировать</a>
+            </td>
+            <td>
+                <form th:action="@{'/outlet/{id}'(id=${out.id})}" th:method="DELETE">
+                    <button type="submit">Удалить</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
+    
+    <form th:action="@{/company/{id}/timeRange(id = ${company.id})}" th:method="post">
+        <div>Просмотр перечня всех выбросов для выбранного предприятия в выбранных момент времени</div>
+        <input name="dateBegin" type="date"/>
+        <input name="dateEnd" type="date"/>
+        <button type="submit">Показать</button>
+    </form>
+    
 </div>
